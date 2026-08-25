@@ -6,6 +6,7 @@ export const site = {
   email: "a.n.sudakov@gmail.com",
   telegram: "https://t.me/sashasdkv",
   telegramHandle: "@sashasdkv",
+  telegramContact: "https://t.me/sashasudakov",
   instagram: "https://www.instagram.com/ademoscu",
   instagramHandle: "@ademoscu",
   resume: "https://hh.ru/resume/2e68dc8bff07075f900039ed1f556c79685871",
@@ -30,6 +31,8 @@ export type IconKey =
   | "skillbox"
   | "vk"
   | "communicator"
+  | "batumi"
+  | "flag"
   | "misc";
 
 export type WorkLink = {
@@ -110,6 +113,20 @@ export const workCases: WorkCase[] = [
     ],
   },
   {
+    slug: "batumi",
+    icon: "batumi",
+    company: "«Свой Дубай» в Батуми",
+    tagline: "Премиальный лендинг на английском",
+    body: [
+      "Английский лендинг премиального жилого комплекса в Батуми — с позиционированием «свой Дубай у моря».",
+      "Работал с англоязычной аудиторией инвесторов: тон, структура и убедительность текста под премиальный сегмент недвижимости.",
+    ],
+    highlights: ["Премиум-сегмент", "Текст на английском", "Позиционирование проекта"],
+    links: [
+      { label: "Лендинг про Дубай в Батуми", url: "https://docs.google.com/document/d/1qvu7j1WqGXeOutNEpIp5yQ0uqYP6Cu4OzC9FHxdyWac/edit?usp=sharing" },
+    ],
+  },
+  {
     slug: "alpina",
     icon: "alpina",
     company: "Альпина Паблишер",
@@ -158,6 +175,19 @@ export const workCases: WorkCase[] = [
       { label: "Тексты для личного кабинета", url: "https://www.figma.com/file/ZsLRBfLeHcKWlZO900SRSY/yandex-delivery?node-id=34%3A13347" },
       { label: "Раздел «Помощь»", url: "https://yandex.ru/support/delivery-profile/index.html" },
       { label: "Шаблоны писем", url: "https://docs.google.com/document/d/18fFgdBBNNEGKbeLWuQIagee4yNl5opGtNlv4yiQaXCk/edit?usp=sharing" },
+    ],
+  },
+  {
+    slug: "lebedev",
+    icon: "flag",
+    company: "Студия Артемия Лебедева",
+    tagline: "Сайт бренда одежды Red Flag",
+    body: [
+      "Креативно копирайтил для Студии Лебедева: делали сайт бренда одежды Red Flag.",
+    ],
+    highlights: ["Бренд одежды", "Креативный копирайтинг"],
+    links: [
+      { label: "Студия Лебедева: сайт Red Flag", url: "https://www.artlebedev.ru/red-flag/" },
     ],
   },
   {
@@ -274,17 +304,15 @@ export const workCases: WorkCase[] = [
     company: "Разные работы",
     tagline: "Винегрет из лендингов, статей и презентаций — из разных лет",
     body: [
-      "Отдельные проекты вне штата и вне долгих контрактов: лендинги, UX-тексты, статьи и презентации для разных заказчиков.",
-      "Редачил для Газпромбанк Инвестиций, Yota, Райффайзен Банка и Студии Артемия Лебедева.",
+      "Отдельные проекты вне штата и вне долгих контрактов: лендинги, UX-тексты, статьи и презентации для разных заказчиков. Пополняется по мере новых работ.",
+      "Редачил для Газпромбанк Инвестиций, Yota и Райффайзен Банка.",
     ],
     highlights: [
-      "8 разных заказчиков",
+      "6 разных заказчиков",
       "Лендинги, статьи, презентации",
-      "Газпромбанк, Райффайзен, Студия Лебедева",
+      "Газпромбанк, Yota, Райффайзен",
     ],
     links: [
-      { label: "Лендинг про Дубай в Батуми", url: "https://docs.google.com/document/d/1qvu7j1WqGXeOutNEpIp5yQ0uqYP6Cu4OzC9FHxdyWac/edit?usp=sharing" },
-      { label: "Студия Лебедева: сайт Red Flag", url: "https://www.artlebedev.ru/red-flag/" },
       { label: "Статья для Райффайзен Банка", url: "https://www.raiffeisen-media.ru/zhizn/gde-eshhe-prodat-starye-veshhi-smartfony-mebel-i-nenuzhnye-bilety-krome-kak-na-avito-i-yule/" },
       { label: "Газпромбанк Инвестиции: экраны входа", url: "https://www.figma.com/file/A9kQukRawXGJrcTwhSqEJG/Self%3A-%D0%93%D0%9F%D0%91-%D0%A3%D0%90-%D0%9B%D0%9A-%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=8662%3A1" },
       { label: "Презентация для ThePartners", url: "https://docs.google.com/presentation/d/1pxvLr8Vof0VWfhbU-ywsuUYuvk1Lxp6hf52IP51UkUs/edit?usp=sharing" },

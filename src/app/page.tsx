@@ -35,12 +35,14 @@ export default function Home() {
               >
                 Написать
               </a>
-              <Link
-                href="/projects"
+              <a
+                href={site.telegramContact}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
               >
-                Проекты и опыт →
-              </Link>
+                Написать в Telegram
+              </a>
             </div>
           </div>
         </Container>

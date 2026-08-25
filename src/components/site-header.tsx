@@ -29,6 +29,26 @@ export function SiteHeader() {
           >
             Написать
           </a>
+          <a
+            href={site.telegramContact}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Написать в Telegram"
+            className="ml-1 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent hover:text-accent"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 4 3 11.2l6 2.3M21 4 14.8 20l-5.8-6.5M21 4 9 13.5" />
+            </svg>
+          </a>
           <div className="ml-1 sm:ml-2">
             <ThemeToggle />
           </div>

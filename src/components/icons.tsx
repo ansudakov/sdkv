@@ -104,6 +104,24 @@ function CommunicatorIcon(props: IconProps) {
   );
 }
 
+function BatumiIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M12 21c4-4.2 6.5-7.6 6.5-10.8A6.5 6.5 0 0 0 5.5 10.2C5.5 13.4 8 16.8 12 21Z" />
+      <circle cx="12" cy="10.2" r="2.2" />
+    </Base>
+  );
+}
+
+function FlagIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <path d="M6 21V4" />
+      <path d="M6 5c2-1.3 4-1.3 6 0s4 1.3 6 0v8c-2 1.3-4 1.3-6 0s-4-1.3-6 0Z" />
+    </Base>
+  );
+}
+
 function MiscIcon(props: IconProps) {
   return (
     <Base {...props}>
@@ -125,6 +143,8 @@ export const workIcons: Record<IconKey, (props: IconProps) => React.ReactElement
   skillbox: SkillboxIcon,
   vk: VkIcon,
   communicator: CommunicatorIcon,
+  batumi: BatumiIcon,
+  flag: FlagIcon,
   misc: MiscIcon,
 };
 

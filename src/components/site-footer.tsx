@@ -13,12 +13,22 @@ export function SiteFooter() {
               <br />
               что-то ёмкое.
             </p>
-            <a
-              href={`mailto:${site.email}`}
-              className="mt-4 inline-block text-lg text-accent underline decoration-1 underline-offset-4"
-            >
-              {site.email}
-            </a>
+            <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+              <a
+                href={`mailto:${site.email}`}
+                className="text-lg text-accent underline decoration-1 underline-offset-4"
+              >
+                {site.email}
+              </a>
+              <a
+                href={site.telegramContact}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-lg text-accent underline decoration-1 underline-offset-4"
+              >
+                Написать в Telegram
+              </a>
+            </div>
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
             <div className="flex flex-col gap-2">
@@ -32,7 +42,7 @@ export function SiteFooter() {
             <div className="flex flex-col gap-2">
               <span className="text-muted">Где ещё</span>
               <a href={site.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-                Telegram
+                Телеграм-канал
               </a>
               <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
                 Instagram

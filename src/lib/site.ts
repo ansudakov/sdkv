@@ -50,6 +50,7 @@ export type WorkCase = {
   body: string[];
   highlights: string[];
   links: WorkLink[];
+  callout?: boolean;
 };
 
 export const workCases: WorkCase[] = [
@@ -117,6 +118,7 @@ export const workCases: WorkCase[] = [
     icon: "batumi",
     company: "«Свой Дубай» в Батуми",
     tagline: "Премиальный лендинг на английском",
+    callout: true,
     body: [
       "Английский лендинг премиального жилого комплекса в Батуми — с позиционированием «свой Дубай у моря».",
       "Работал с англоязычной аудиторией инвесторов: тон, структура и убедительность текста под премиальный сегмент недвижимости.",
@@ -182,6 +184,7 @@ export const workCases: WorkCase[] = [
     icon: "flag",
     company: "Студия Артемия Лебедева",
     tagline: "Сайт бренда одежды Red Flag",
+    callout: true,
     body: [
       "Креативно копирайтил для Студии Лебедева: делали сайт бренда одежды Red Flag.",
     ],

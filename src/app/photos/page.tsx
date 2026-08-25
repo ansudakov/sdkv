@@ -27,13 +27,13 @@ export default function PhotosPage() {
     <>
       <section className="border-b border-border pt-16 pb-14 sm:pt-20 sm:pb-16">
         <Container>
-          <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-muted">
+          <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
             Фото
           </p>
           <h1 className="balance font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
             В кадре и
             <br />
-            за кадром.
+            за кадром<span className="text-accent">.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted">
             Галерея пока пустая — это места под фотографии. Каждый блок

@@ -20,7 +20,7 @@ export default function Home() {
           <h1 className="balance font-display text-[13vw] font-semibold leading-[0.92] tracking-tight sm:text-[8.5vw] lg:text-[7rem]">
             Александр
             <br />
-            Судаков
+            Судаков<span className="text-accent">.</span>
           </h1>
           <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <p className="max-w-xl text-lg leading-relaxed text-muted sm:text-xl">

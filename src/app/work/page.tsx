@@ -21,7 +21,7 @@ export default function WorkPage() {
           </p>
           <h1 className="balance font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
             Тексты, редакции
-            <br />и результаты.
+            <br />и результаты<span className="text-accent">.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted">
             Кейсы целиком, с примерами конкретных работ по ссылкам — без
@@ -36,6 +36,43 @@ export default function WorkPage() {
 
       <Container className="divide-y divide-border">
         {workCases.map((item) => {
+          if (item.callout) {
+            return (
+              <div key={item.slug} id={item.slug} className="scroll-mt-24 py-10 sm:py-12">
+                <div className="rounded-3xl border-2 border-accent/50 bg-surface p-6 sm:p-10">
+                  <p className="mb-5 font-mono text-xs uppercase tracking-widest text-accent">
+                    Отдельный проект
+                  </p>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <IconBadge icon={item.icon} size="lg" />
+                    <div>
+                      <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                        {item.company}
+                      </h2>
+                      <p className="mt-1 text-muted">{item.tagline}</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed">
+                    {item.body.map((paragraph, i) => (
+                      <p key={i}>{paragraph}</p>
+                    ))}
+                  </div>
+                  <ul className="mt-6 flex flex-wrap gap-2">
+                    {item.highlights.map((h) => (
+                      <li
+                        key={h}
+                        className="rounded-full border border-border bg-background px-3 py-1.5 text-sm text-muted transition-colors hover:border-accent hover:text-accent"
+                      >
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+                  <WorkLinks links={item.links} />
+                </div>
+              </div>
+            );
+          }
+
           const [first, ...rest] = item.body;
           return (
             <article

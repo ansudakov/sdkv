@@ -20,7 +20,7 @@ export default function ProjectsPage() {
           <h1 className="balance font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
             {experienceStats.years} в редактуре,
             <br />
-            по порядку.
+            по порядку<span className="text-accent">.</span>
           </h1>
           <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-4">
             <p className="max-w-xl text-lg text-muted">

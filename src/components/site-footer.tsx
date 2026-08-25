@@ -11,7 +11,13 @@ export function SiteFooter() {
             <p className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
               Давайте сделаем
               <br />
-              что-то ёмкое.
+              что-то{" "}
+              <span className="relative inline-block leading-none">
+                е
+                <span className="absolute -top-[0.14em] left-[8%] h-[0.1em] w-[0.1em] rounded-full bg-accent" />
+                <span className="absolute -top-[0.14em] left-[42%] h-[0.1em] w-[0.1em] rounded-full bg-accent" />
+              </span>
+              мкое<span className="text-accent">.</span>
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
               <a

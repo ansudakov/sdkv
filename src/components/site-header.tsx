@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -9,22 +10,33 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between sm:h-20">
         <Link
           href="/"
-          className="flex items-start font-display text-lg font-semibold tracking-tight sm:text-xl"
+          className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight sm:text-xl"
         >
-          SDK<span className="text-accent">V</span>
-          <svg
-            width="11"
-            height="11"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="-ml-[5px] -mt-1.5 shrink-0 text-accent"
-          >
-            <path d="M7 17 17 7M9 7h8v8" />
-          </svg>
+          <span className="h-7 w-7 shrink-0 overflow-hidden rounded-full border border-accent">
+            <Image
+              src="/photos/alexander-main.png"
+              alt=""
+              width={56}
+              height={56}
+              className="h-full w-full object-cover"
+            />
+          </span>
+          <span className="relative">
+            SDK<span className="text-accent">V</span>
+            <svg
+              width="11"
+              height="11"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="absolute -right-[2px] top-[3px] text-accent"
+            >
+              <path d="M7 17 17 7M9 7h8v8" />
+            </svg>
+          </span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">
           {nav.map((item) => (

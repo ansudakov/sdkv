@@ -19,7 +19,7 @@ export default function WorkPage() {
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
             Работы
           </p>
-          <h1 className="balance font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
+          <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
             Тексты<span className="text-accent">,</span> редакции
             <br />и результаты<span className="text-accent">.</span>
           </h1>
@@ -50,7 +50,7 @@ export default function WorkPage() {
                     <div className="flex items-center gap-4">
                       <IconBadge icon={item.icon} size="lg" />
                       <div>
-                        <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                        <h2 className="break-words font-display text-2xl font-semibold tracking-tight sm:text-3xl">
                           {item.company}
                         </h2>
                         <p className="mt-1 text-muted">{item.tagline}</p>
@@ -97,9 +97,9 @@ export default function WorkPage() {
               id={item.slug}
               className="scroll-mt-24 grid grid-cols-1 gap-6 py-14 sm:py-16 lg:grid-cols-[minmax(0,1fr)_2fr]"
             >
-              <div>
+              <div className="min-w-0">
                 <IconBadge icon={item.icon} size="lg" />
-                <h2 className="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+                <h2 className="mt-4 break-words font-display text-3xl font-semibold tracking-tight sm:text-4xl">
                   {item.company}
                 </h2>
                 <p className="mt-2 text-muted">{item.tagline}</p>
@@ -114,7 +114,7 @@ export default function WorkPage() {
                   </p>
                 )}
               </div>
-              <div className="max-w-2xl">
+              <div className="min-w-0 max-w-2xl">
                 <Expandable
                   visible={<p>{first}</p>}
                   rest={rest.map((paragraph, i) => (

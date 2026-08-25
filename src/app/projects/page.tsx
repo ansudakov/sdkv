@@ -17,7 +17,7 @@ export default function ProjectsPage() {
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
             Проекты
           </p>
-          <h1 className="balance font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
+          <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
             {experienceStats.years} в редактуре<span className="text-accent">,</span>
             <br />
             по порядку<span className="text-accent">.</span>

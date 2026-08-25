@@ -12,11 +12,11 @@ export function WorkLinks({ links }: { links: WorkLink[] }) {
   if (links.length === 0) return null;
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 min-w-0">
       <p className="mb-3 font-mono text-xs uppercase tracking-widest text-muted">
         Примеры работ
       </p>
-      <div className="-mx-6 flex gap-3 overflow-x-auto px-6 pb-2 sm:mx-0 sm:px-0 [scrollbar-width:thin]">
+      <div className="flex min-w-0 gap-3 overflow-x-auto pb-2 [scrollbar-width:thin]">
         {links.map((link) => (
           <a
             key={link.url}

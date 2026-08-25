@@ -18,7 +18,7 @@ export default function BlogPage() {
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
             Блог
           </p>
-          <h1 className="balance font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
+          <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
             Про редактуру
             <br />и тексты<span className="text-accent">.</span>
           </h1>

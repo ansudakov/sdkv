@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { nav, site } from "@/lib/site";
 
@@ -39,15 +40,17 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-accent sm:px-4"
-            >
-              {item.label}
-            </Link>
-          ))}
+          <div className="hidden items-center gap-1 sm:flex sm:gap-2">
+            {nav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-accent sm:px-4"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
           <a
             href={`mailto:${site.email}`}
             className="ml-1 hidden rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85 sm:inline-block"
@@ -76,6 +79,9 @@ export function SiteHeader() {
           </a>
           <div className="ml-1 sm:ml-2">
             <ThemeToggle />
+          </div>
+          <div className="ml-1">
+            <MobileNav />
           </div>
         </nav>
       </Container>

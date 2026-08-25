@@ -11,7 +11,7 @@ export function SiteHeader() {
           href="/"
           className="font-display text-lg font-semibold tracking-tight sm:text-xl"
         >
-          {site.brand}
+          SDK<span className="text-accent">V</span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">
           {nav.map((item) => (

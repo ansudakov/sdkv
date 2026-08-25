@@ -1,6 +1,5 @@
 export const site = {
   name: "Александр Судаков",
-  brand: "SDKV",
   role: "Редактор, контент-лид, креативный копирайтер",
   domain: "sdkv.ru",
   url: "https://sdkv.ru",
@@ -30,7 +29,13 @@ export type IconKey =
   | "alpina"
   | "skillbox"
   | "vk"
-  | "communicator";
+  | "communicator"
+  | "misc";
+
+export type WorkLink = {
+  label: string;
+  url: string;
+};
 
 export type WorkCase = {
   slug: string;
@@ -41,6 +46,7 @@ export type WorkCase = {
   audience?: string;
   body: string[];
   highlights: string[];
+  links: WorkLink[];
 };
 
 export const workCases: WorkCase[] = [
@@ -65,6 +71,16 @@ export const workCases: WorkCase[] = [
       "Система клиентских кейсов",
       "Редполитика с нуля",
     ],
+    links: [
+      { label: "Главная страница сайта", url: "https://docs.google.com/document/d/1g-EmE_iaaHLGTwmuzRcgDZ96JOzgJn505VW-txdX9Jg/edit?usp=share_link" },
+      { label: "Страница о компании", url: "https://docs.google.com/document/d/19Thy8K3sS7FpStLbJ8rIeew2hGqOU0sqefwMUwALw1c/edit?usp=share_link" },
+      { label: "Посты для ТГ, ВК и Дзена", url: "https://docs.google.com/document/d/1P8j9HDL5Cff0W36GaGMrm2Ajf8gWGgEP145ATi79c5Y/edit?usp=share_link" },
+      { label: "Клиентские кейсы", url: "https://timeweb.cloud/success-story" },
+      { label: "Тон-оф-войс компании", url: "https://docs.google.com/document/d/1pkMBuumORmv_bFnBk7C9mJGXJ0c9xhzxjxNfsB1Ta4M/edit?usp=share_link" },
+      { label: "Дайджест обновлений", url: "https://timeweb.cloud/blog/digest-july-2023" },
+      { label: "Кейс про дайджест на vc.ru", url: "https://vc.ru/u/66957-timeweb-cloud/898702-digest-as-a-product-kak-rasskazyvat-pro-novye-fichi-regulyarno-mnogo-frendli-i-bez-podvigov" },
+      { label: "Фигма: UX-тексты, пуши, карточки", url: "https://www.figma.com/file/hpMbg8ETlyD64ijPdQ8don/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D1%8B-Timeweb-Cloud?type=design&node-id=1534%3A851&mode=design" },
+    ],
   },
   {
     slug: "hostman",
@@ -81,6 +97,67 @@ export const workCases: WorkCase[] = [
       "Home page и SEO-страницы баз данных",
       "MySQL / PostgreSQL / MongoDB / Redis",
       "Англоязычная редакция с нуля",
+    ],
+    links: [
+      { label: "Home page", url: "https://docs.google.com/document/d/1j36m45hK4HovnbJPoIBPASvgJNv2_mpNnkOsYQDfCWI/edit?usp=sharing" },
+      { label: "Managed databases", url: "https://docs.google.com/document/d/1k4oh05ya7CFtctLFKa-oZcYCcuLodvd8PGpvCfDt3pw/edit" },
+      { label: "SEO-страница про базы данных", url: "https://docs.google.com/document/d/1tYuI8OWti1W8b_D6eKv6FlE_X3surQfPGHX5MgsZ_mU/edit?usp=sharing" },
+      { label: "MySQL", url: "https://docs.google.com/document/d/1uNGuUhlwo6ImFncvvJLwtAp_951gN4oYspS3TeKZgow/edit?usp=sharing" },
+      { label: "PostgreSQL", url: "https://docs.google.com/document/d/1zTCuly20Pe-GJljenpjTrfRApP4qquYSxvClXNGad0M/edit?usp=sharing" },
+      { label: "MongoDB", url: "https://docs.google.com/document/d/1b13YVkdQr_gukvT7_pqtL5uk8_sS2VOQ7c6eVOPckNI/edit?usp=sharing" },
+      { label: "Redis", url: "https://docs.google.com/document/d/1V51ALb0uB4uVOJ1sP64orvmSL4RwRh6I7cu-QITT_6M/edit?usp=sharing" },
+      { label: "Cloud Servers", url: "https://docs.google.com/document/d/1WuuhrEbeb50PGvH_2EcaF3xVCTFT3Ts1GPcRO5YWdws/edit?usp=sharing" },
+    ],
+  },
+  {
+    slug: "alpina",
+    icon: "alpina",
+    company: "Альпина Паблишер",
+    tagline: "Учебник о презентациях для недизайнеров",
+    period: "Ноябрь 2021 — Октябрь 2022 · 1 год",
+    body: [
+      "Проектная работа: редактировал и готовил к публикации учебник про создание презентаций для недизайнеров. Заказчик — Академия презентаций и школа дизайна Bonnie&Slide.",
+      "За референс взяли первое издание «Пиши, сокращай»: строгая структура + художественная часть в виде комикса, пронизывающего всю книгу.",
+      "Написал сценарий комикса — в книгу он не вошёл, но это то, чем я особенно горжусь.",
+    ],
+    highlights: [
+      "Полноценный учебник, 4 раздела",
+      "Сценарий сквозного комикса",
+      "Книга: Ozon и Wildberries",
+    ],
+    links: [
+      { label: "Раздел 1: «Рыба презентации»", url: "https://docs.google.com/document/d/1Z3D3hv2JY290VDwZ-8TVluLlAuiBEoU4iaUvPzesVOg/edit?usp=sharing" },
+      { label: "Раздел 2: «Композиция»", url: "https://docs.google.com/document/d/1qDn6QFM7fNk9NiO44_fpb2GKyau4akBWtmgBqB1hxu0/edit?usp=sharing" },
+      { label: "Раздел 3: «Визуальная концепция»", url: "https://docs.google.com/document/d/1t_rjFcRJo14MzWbf_TKHf1kU4V09liDTcNoJp00EvL4/edit?usp=sharing" },
+      { label: "Раздел 4: «Сложный контент»", url: "https://docs.google.com/document/d/1prrkE4VepdNFtMUzv--HjeCynr0UjAD4eI2h6RpA3Es/edit?usp=sharing" },
+      { label: "Комикс: персонажи и сюжеты", url: "https://docs.google.com/document/d/1MHXUOyhVKSzWTwRaj099ZD7vjaQrYFtF1K65CTrz5zU/edit?usp=sharing" },
+      { label: "Комикс: полный сценарий", url: "https://docs.google.com/document/d/1dJEnTLJL0vPecu39CvmsMNjcMqCjaYeOQiFMlWaWWWo/edit?usp=sharing" },
+      { label: "Книга на Ozon", url: "https://www.ozon.ru/product/sekrety-uboynyh-prezentatsiy-nikolay-pere-svetlana-firsova-1393131873/" },
+    ],
+  },
+  {
+    slug: "yandex-delivery",
+    icon: "yandex",
+    company: "Яндекс Доставка",
+    tagline: "Маркетинг и раздел «Помощь» с нуля",
+    period: "Июль 2021 — Июнь 2022 · 1 год",
+    body: [
+      "Помогал подразделению Яндекс Доставки в качестве внештатного редактора.",
+      "Занимался посадочными страницами, лендингами, рассылками, презентациями, пушами и баннерами в приложении Яндекс Go.",
+      "С нуля запустили раздел «Справка» и наполнили его инструкциями по всем продуктам, которые были на тот момент.",
+    ],
+    highlights: [
+      "Раздел «Помощь» с нуля",
+      "Пуши и баннеры в приложении",
+      "Шаблоны писем для клиентов",
+    ],
+    links: [
+      { label: "Карточки «Актуальное»", url: "https://docs.google.com/document/d/14KVeYmE1URPBVDoozrKEV5qlomflmsw4GSQqm3gjld0/edit?usp=sharing" },
+      { label: "Фигма: пуши и баннеры", url: "https://www.figma.com/file/2aYHh1WTPvRSia2DOmK0cD/%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B8%D0%BD%D0%B0%D0%BF%D0%BF%D0%BE%D0%B2?node-id=262%3A2923" },
+      { label: "Лендинг про доставку по ссылке", url: "https://www.figma.com/file/U4vlBvFZ17QFehRn53EnXA/%D0%BB%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B5?node-id=0%3A1" },
+      { label: "Тексты для личного кабинета", url: "https://www.figma.com/file/ZsLRBfLeHcKWlZO900SRSY/yandex-delivery?node-id=34%3A13347" },
+      { label: "Раздел «Помощь»", url: "https://yandex.ru/support/delivery-profile/index.html" },
+      { label: "Шаблоны писем", url: "https://docs.google.com/document/d/18fFgdBBNNEGKbeLWuQIagee4yNl5opGtNlv4yiQaXCk/edit?usp=sharing" },
     ],
   },
   {
@@ -102,6 +179,47 @@ export const workCases: WorkCase[] = [
       "Воронка из ~1000 авторов",
       "Сценарии рекламных роликов",
     ],
+    links: [
+      { label: "Лендинги о тарифах для бизнеса", url: "https://alfabank.ru/sme/tariffs/onepercent/" },
+      { label: "Лендинг про овердрафт", url: "https://alfabank.ru/sme/profits/overdraft/" },
+      { label: "Статья об изменениях в законодательстве", url: "https://docs.google.com/document/d/1zkQAIenn9Lwml19SGjdAa1F0HeWq53vN7zobkRoKLUo/edit" },
+      { label: "Лендинг про карту для зарплаты", url: "https://www.figma.com/file/s6ZtqnchvAVFpTAMHOVdDo/%D0%9B%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3-%D0%98%D0%97%D0%9A-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%8B?node-id=0%3A1" },
+      { label: "Онбординг зарплатного проекта", url: "https://www.figma.com/file/kYfVDjqoYrpGBQPTxvyi90/Concepts?node-id=0%3A1" },
+    ],
+  },
+  {
+    slug: "skillbox",
+    icon: "skillbox",
+    company: "Skillbox",
+    tagline: "Единственный автор соцсетей 9 месяцев подряд",
+    period: "Март 2019 — Ноябрь 2019 · 9 месяцев",
+    body: [
+      "Проектная работа: 9 месяцев был единственным автором в соцсетях одной из крупнейших образовательных платформ.",
+      "Придумывал контент-план и писал все посты для FB, VK, TG, IG и YT.",
+    ],
+    highlights: ["Контент на 5 площадок", "Игры в сторис", "Анонсы мероприятий"],
+    links: [
+      { label: "Типичная неделя постов", url: "https://docs.google.com/document/d/1rHxKnfQx4bBSebbOz8HSAOjJzmovL9KMla9TBt7e4hc/edit#heading=h.s98sl2wux4tq" },
+      { label: "Ещё одна неделя", url: "https://docs.google.com/document/d/1eyD5MjWxr7mqQ-IYXmF0U3pWOYc0al7llNMOZbyzYVw/edit" },
+      { label: "Игры в сторис", url: "https://docs.google.com/document/d/1K26PSRew3OLgSS3FzTOz9c1n_Z1D2EVX6xeQZClpeMY/edit" },
+      { label: "Анонсы мероприятий", url: "https://docs.google.com/document/d/1oFpuBS24m6r1De_zctMEDP-jvz9zNjwD4Dcl5_thKPQ/edit#heading=h.xei7ss7aw6bl" },
+    ],
+  },
+  {
+    slug: "vk",
+    icon: "vk",
+    company: "VK",
+    tagline: "Mail.ru для бизнеса — статьи в корпоративный блог",
+    body: [
+      "Подработка на аутсорсе: писал статьи о том, как технологии помогают развивать бизнес — дропшиппинг, email-маркетинг, выбор между конструктором и разработкой сайта с нуля.",
+    ],
+    highlights: ["Формат «вопрос–ответ»", "Обзоры книг", "b2b-блог"],
+    links: [
+      { label: "Статья про дропшиппинг", url: "https://biz.mail.ru/blog/dropshipping-kak-otkryt-onlajn-magazin-bez-sklada-i-dostavki/" },
+      { label: "Обзор книг про тексты", url: "https://biz.mail.ru/blog/kak-pisat-teksty-kotorye-privlekut-vnimanie-klientov-7-knig-i-koe-chto-eshhe/" },
+      { label: "Обзор книг про email-маркетинг", url: "https://biz.mail.ru/blog/email-direct_marketing/" },
+      { label: "Конструктор сайтов или разработка с нуля", url: "https://docs.google.com/document/d/1S7A5aEBI0Ff_10dNqCq95fypA04-qpfUAPcURxlfvnk/edit?usp=sharing" },
+    ],
   },
   {
     slug: "t-bank",
@@ -119,62 +237,13 @@ export const workCases: WorkCase[] = [
       "Лендинги, хелпы, сторис",
       "Про овердрафт, конструктор сайтов, регистрацию ИП",
     ],
-  },
-  {
-    slug: "yandex-delivery",
-    icon: "yandex",
-    company: "Яндекс Доставка",
-    tagline: "Маркетинг и раздел «Помощь» с нуля",
-    period: "Июль 2021 — Июнь 2022 · 1 год",
-    body: [
-      "Помогал подразделению Яндекс Доставки в качестве внештатного редактора.",
-      "Занимался посадочными страницами, лендингами, рассылками, презентациями, пушами и баннерами в приложении Яндекс Go.",
-      "С нуля запустили раздел «Справка» и наполнили его инструкциями по всем продуктам, которые были на тот момент.",
+    links: [
+      { label: "Как работает овердрафт", url: "https://drive.google.com/file/d/1Cny_srTzGQN7RIkYLv-PJJGcODSSMBts/view?usp=sharing" },
+      { label: "Сторис: конструктор сайтов", url: "https://docs.google.com/document/d/1UNRPV1YHAk2RfzPC5L3KByBRbCPbBkm-Dp41nOOLGGk/" },
+      { label: "Сторис: регистрация ИП", url: "https://docs.google.com/document/d/1EHu3s9RHP4nB0QM0XY7xr0V-E8U1PnMb3FJrmcZ4Kb8/" },
+      { label: "Лендинг для чата на сайт", url: "https://www.tinkoff.ru/business/chat/" },
+      { label: "Хелп для СМС-рассылок", url: "https://help.tinkoff.ru/mailing-sms/" },
     ],
-    highlights: [
-      "Раздел «Помощь» с нуля",
-      "Пуши и баннеры в приложении",
-      "Шаблоны писем для клиентов",
-    ],
-  },
-  {
-    slug: "alpina",
-    icon: "alpina",
-    company: "Альпина Паблишер",
-    tagline: "Учебник о презентациях для недизайнеров",
-    period: "Ноябрь 2021 — Октябрь 2022 · 1 год",
-    body: [
-      "Проектная работа: редактировал и готовил к публикации учебник про создание презентаций для недизайнеров. Заказчик — Академия презентаций и школа дизайна Bonnie&Slide.",
-      "За референс взяли первое издание «Пиши, сокращай»: строгая структура + художественная часть в виде комикса, пронизывающего всю книгу.",
-      "Написал сценарий комикса — в книгу он не вошёл, но это то, чем я особенно горжусь.",
-    ],
-    highlights: [
-      "Полноценный учебник, 4 раздела",
-      "Сценарий сквозного комикса",
-      "Книга: Ozon и Wildberries",
-    ],
-  },
-  {
-    slug: "skillbox",
-    icon: "skillbox",
-    company: "Skillbox",
-    tagline: "Единственный автор соцсетей 9 месяцев подряд",
-    period: "Март 2019 — Ноябрь 2019 · 9 месяцев",
-    body: [
-      "Проектная работа: 9 месяцев был единственным автором в соцсетях одной из крупнейших образовательных платформ.",
-      "Придумывал контент-план и писал все посты для FB, VK, TG, IG и YT.",
-    ],
-    highlights: ["Контент на 5 площадок", "Игры в сторис", "Анонсы мероприятий"],
-  },
-  {
-    slug: "vk",
-    icon: "vk",
-    company: "VK",
-    tagline: "Mail.ru для бизнеса — статьи в корпоративный блог",
-    body: [
-      "Подработка на аутсорсе: писал статьи о том, как технологии помогают развивать бизнес — дропшиппинг, email-маркетинг, выбор между конструктором и разработкой сайта с нуля.",
-    ],
-    highlights: ["Формат «вопрос–ответ»", "Обзоры книг", "b2b-блог"],
   },
   {
     slug: "communicator",
@@ -191,6 +260,37 @@ export const workCases: WorkCase[] = [
       "Первая редакторская роль",
       "Контент-стратегия блога с нуля",
       "Новый фирстиль и сайт агентства",
+    ],
+    links: [
+      { label: "Статьи для блога агентства", url: "http://creativevents.ru/articles/" },
+      { label: "Сайт агентства", url: "http://creativevents.ru/" },
+      { label: "Сайт студии компьютерной графики", url: "http://greenfx.ru/" },
+      { label: "Сайт юрфирмы для ритейла", url: "http://retailtrusts.ru/" },
+    ],
+  },
+  {
+    slug: "misc",
+    icon: "misc",
+    company: "Разные работы",
+    tagline: "Винегрет из лендингов, статей и презентаций — из разных лет",
+    body: [
+      "Отдельные проекты вне штата и вне долгих контрактов: лендинги, UX-тексты, статьи и презентации для разных заказчиков.",
+      "Редачил для Газпромбанк Инвестиций, Yota, Райффайзен Банка и Студии Артемия Лебедева.",
+    ],
+    highlights: [
+      "8 разных заказчиков",
+      "Лендинги, статьи, презентации",
+      "Газпромбанк, Райффайзен, Студия Лебедева",
+    ],
+    links: [
+      { label: "Лендинг про Дубай в Батуми", url: "https://docs.google.com/document/d/1qvu7j1WqGXeOutNEpIp5yQ0uqYP6Cu4OzC9FHxdyWac/edit?usp=sharing" },
+      { label: "Студия Лебедева: сайт Red Flag", url: "https://www.artlebedev.ru/red-flag/" },
+      { label: "Статья для Райффайзен Банка", url: "https://www.raiffeisen-media.ru/zhizn/gde-eshhe-prodat-starye-veshhi-smartfony-mebel-i-nenuzhnye-bilety-krome-kak-na-avito-i-yule/" },
+      { label: "Газпромбанк Инвестиции: экраны входа", url: "https://www.figma.com/file/A9kQukRawXGJrcTwhSqEJG/Self%3A-%D0%93%D0%9F%D0%91-%D0%A3%D0%90-%D0%9B%D0%9A-%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=8662%3A1" },
+      { label: "Презентация для ThePartners", url: "https://docs.google.com/presentation/d/1pxvLr8Vof0VWfhbU-ywsuUYuvk1Lxp6hf52IP51UkUs/edit?usp=sharing" },
+      { label: "Статья про надёжность застройщика", url: "https://docs.google.com/document/d/1jTCfxywRpvDN02U3mo8yvxQJmroSj1l5sER69v9Jlo4/" },
+      { label: "Интервью для Бюро Горбунова", url: "http://studentbureau.ru/anna-chjornaja/" },
+      { label: "Статья про страх перед психологами", url: "https://lively.ru/psihologicheskaja-pomoshh/" },
     ],
   },
 ];

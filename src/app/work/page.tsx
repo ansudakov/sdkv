@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container } from "@/components/container";
 import { Expandable } from "@/components/expandable";
 import { IconBadge } from "@/components/icon-badge";
+import { WorkLinks } from "@/components/work-links";
 import { workCases } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -23,8 +24,8 @@ export default function WorkPage() {
             <br />и результаты.
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted">
-            Девять компаний, все кейсы целиком — без ссылок на другие
-            странички. Хронологию по датам смотри в{" "}
+            Кейсы целиком, с примерами конкретных работ по ссылкам — без
+            переходов на другие странички. Хронологию по датам смотри в{" "}
             <a href="/projects" className="text-accent underline underline-offset-4">
               разделе «Проекты»
             </a>
@@ -76,6 +77,7 @@ export default function WorkPage() {
                     </li>
                   ))}
                 </ul>
+                <WorkLinks links={item.links} />
               </div>
             </article>
           );

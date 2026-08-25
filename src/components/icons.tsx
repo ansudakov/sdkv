@@ -104,6 +104,17 @@ function CommunicatorIcon(props: IconProps) {
   );
 }
 
+function MiscIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <rect x="4.5" y="4.5" width="6" height="6" rx="1.4" />
+      <rect x="13.5" y="4.5" width="6" height="6" rx="1.4" />
+      <rect x="4.5" y="13.5" width="6" height="6" rx="1.4" />
+      <circle cx="16.5" cy="16.5" r="3" />
+    </Base>
+  );
+}
+
 export const workIcons: Record<IconKey, (props: IconProps) => React.ReactElement> = {
   timeweb: TimewebIcon,
   hostman: HostmanIcon,
@@ -114,6 +125,7 @@ export const workIcons: Record<IconKey, (props: IconProps) => React.ReactElement
   skillbox: SkillboxIcon,
   vk: VkIcon,
   communicator: CommunicatorIcon,
+  misc: MiscIcon,
 };
 
 export function WorkIcon({

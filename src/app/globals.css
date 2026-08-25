@@ -8,8 +8,8 @@
   --foreground: #0d0d0c;
   --muted: #68675f;
   --border: #e3e1d9;
-  --accent: #ff4d1f;
-  --accent-foreground: #0d0d0c;
+  --accent: #f5a300;
+  --accent-foreground: #171208;
 }
 
 .dark {
@@ -18,8 +18,8 @@
   --foreground: #f4f3ee;
   --muted: #9a988e;
   --border: #262620;
-  --accent: #ff5a2b;
-  --accent-foreground: #0a0a09;
+  --accent: #ffc233;
+  --accent-foreground: #14100a;
 }
 
 @theme inline {

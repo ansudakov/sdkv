@@ -18,7 +18,7 @@ export default function ProjectsPage() {
             Проекты
           </p>
           <h1 className="balance font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
-            {experienceStats.years} в редактуре,
+            {experienceStats.years} в редактуре<span className="text-accent">,</span>
             <br />
             по порядку<span className="text-accent">.</span>
           </h1>

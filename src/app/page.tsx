@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { IconBadge } from "@/components/icon-badge";
 import { PhotoSlot } from "@/components/photo-slot";
+import { TypewriterName } from "@/components/typewriter-name";
 import { getAllPosts } from "@/lib/posts";
 import { experience, experienceStats, site, workCases } from "@/lib/site";
 
@@ -12,16 +14,24 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-border pt-16 pb-20 sm:pt-24 sm:pb-28">
-        <Container>
-          <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
+      <section className="relative border-b border-border pt-16 pb-20 sm:pt-24 sm:pb-28">
+        <Container className="relative">
+          <div className="absolute right-6 top-0 sm:right-8">
+            <div className="h-20 w-20 overflow-hidden rounded-full border-2 border-accent sm:h-28 sm:w-28 md:h-36 md:w-36">
+              <Image
+                src="/photos/alexander-main.png"
+                alt="Александр Судаков"
+                width={288}
+                height={288}
+                priority
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+          <p className="mb-6 max-w-[70%] font-mono text-sm uppercase tracking-[0.2em] text-accent sm:max-w-none">
             {site.role}
           </p>
-          <h1 className="balance font-display text-[13vw] font-semibold leading-[0.92] tracking-tight sm:text-[8.5vw] lg:text-[7rem]">
-            Александр
-            <br />
-            Судаков<span className="text-accent">.</span>
-          </h1>
+          <TypewriterName className="balance font-display text-[13vw] font-semibold leading-[0.92] tracking-tight sm:text-[8.5vw] lg:text-[7rem]" />
           <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <p className="max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
               Редачил для Альфа-Банка, Т-Банка, VK, Skillbox, Газпромбанк
@@ -41,7 +51,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
               >
-                Написать в Telegram
+                Написать в ТГ
               </a>
             </div>
           </div>

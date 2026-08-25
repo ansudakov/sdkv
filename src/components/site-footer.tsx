@@ -26,7 +26,7 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="text-lg text-accent underline decoration-1 underline-offset-4"
               >
-                Написать в Telegram
+                Написать в ТГ
               </a>
             </div>
           </div>
@@ -45,7 +45,7 @@ export function SiteFooter() {
                 Телеграм-канал
               </a>
               <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-                Instagram
+                Инстаграм
               </a>
               <a href={site.resume} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
                 Резюме на hh.ru

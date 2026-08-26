@@ -25,17 +25,17 @@ export function SiteHeader() {
           <span className="relative">
             SDK<span className="text-accent">V</span>
             <svg
-              width="11"
-              height="11"
+              width="15"
+              height="15"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="3.4"
+              strokeWidth="4.2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="absolute -right-[5px] top-[-1px] rotate-[-30deg] text-accent"
+              className="absolute -right-[2px] top-[-2px] rotate-[-24.6deg] text-accent"
             >
-              <path d="M7 17 17 7M9 7h8v8" />
+              <path d="M6 15 12 4 18 15" />
             </svg>
           </span>
         </Link>

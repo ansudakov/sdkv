@@ -33,7 +33,7 @@ export function SiteHeader() {
               strokeWidth="3.4"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="absolute -right-[2px] top-[3px] text-accent"
+              className="absolute -right-[2px] top-[3px] rotate-[-15deg] text-accent"
             >
               <path d="M7 17 17 7M9 7h8v8" />
             </svg>

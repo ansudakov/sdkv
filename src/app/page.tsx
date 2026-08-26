@@ -90,6 +90,18 @@ export default function Home() {
                 </p>
                 <p className="text-sm text-muted">компаний и проектов</p>
               </div>
+              <div>
+                <p className="font-display text-3xl font-semibold text-accent">
+                  {experienceStats.languages}
+                </p>
+                <p className="text-sm text-muted">языка: рус, англ</p>
+              </div>
+              <div>
+                <p className="font-display text-3xl font-semibold text-accent">
+                  {experienceStats.skills}
+                </p>
+                <p className="text-sm text-muted">навыков</p>
+              </div>
               <Link
                 href="/projects"
                 className="ml-auto text-sm font-medium text-muted transition-colors hover:text-accent"

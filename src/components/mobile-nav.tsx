@@ -1,11 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { nav } from "@/lib/site";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <div className="sm:hidden">
@@ -14,7 +21,7 @@ export function MobileNav() {
         aria-label={open ? "Закрыть меню" : "Открыть меню"}
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent hover:text-accent"
+        className="relative z-50 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:border-accent hover:text-accent"
       >
         {open ? (
           <svg
@@ -44,22 +51,25 @@ export function MobileNav() {
           </svg>
         )}
       </button>
-      {open && (
-        <div className="absolute inset-x-0 top-full border-b border-border bg-background shadow-lg">
-          <nav className="flex flex-col divide-y divide-border">
-            {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="px-6 py-4 text-base font-medium text-foreground transition-colors hover:text-accent"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
+      <div
+        className={`fixed inset-x-0 top-16 bottom-0 z-40 bg-background transition-transform duration-300 ease-out ${
+          open ? "translate-x-0" : "translate-x-full"
+        }`}
+        aria-hidden={!open}
+      >
+        <nav className="flex h-full flex-col justify-center gap-1 px-8 pb-16">
+          {nav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className="border-b border-border py-5 font-display text-4xl font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 }

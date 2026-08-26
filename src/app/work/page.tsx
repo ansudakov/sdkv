@@ -131,6 +131,8 @@ export default function WorkPage() {
                     </li>
                   ))}
                 </ul>
+              </div>
+              <div className="min-w-0 lg:col-span-2">
                 <WorkLinks links={item.links} />
               </div>
             </article>

@@ -116,7 +116,7 @@ export const workCases: WorkCase[] = [
   {
     slug: "batumi",
     icon: "batumi",
-    company: "«Свой Дубай» в Батуми",
+    company: "Ambassador Island, Батуми",
     tagline: "Премиальный лендинг на английском",
     callout: true,
     body: [
@@ -281,7 +281,7 @@ export const workCases: WorkCase[] = [
   {
     slug: "communicator",
     icon: "communicator",
-    company: "COMMUNICATOR Creative Events",
+    company: "Communicator Creative Events",
     tagline: "Первая редакторская роль — блог ивент-агентства",
     period: "Август 2017 — Июнь 2018 · 11 месяцев",
     body: [
@@ -406,7 +406,7 @@ export const experience: ExperienceItem[] = [
   {
     period: "Август 2017 — Июнь 2018",
     duration: "11 месяцев",
-    company: "COMMUNICATOR Creative Events",
+    company: "Communicator Creative Events",
     role: "Главный редактор, издатель корпоративного блога",
     location: "Москва",
     icon: "communicator",
@@ -456,5 +456,7 @@ export const skills = [
 
 export const experienceStats = {
   years: "9 лет",
-  companies: `${experience.length}`,
+  companies: `${workCases.length}`,
+  languages: "2",
+  skills: `${skills.length}`,
 };

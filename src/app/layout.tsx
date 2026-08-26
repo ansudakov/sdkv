@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Unbounded, Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { YandexMetrika } from "@/components/yandex-metrika";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -58,6 +61,9 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter />
         </ThemeProvider>
+        <Analytics />
+        <GoogleAnalytics gaId="G-7DVJMHMHJD" />
+        <YandexMetrika />
       </body>
     </html>
   );

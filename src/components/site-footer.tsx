@@ -56,6 +56,12 @@ export function SiteFooter() {
               <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
                 Инстаграм
               </a>
+              <a href={site.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                Ютуб
+              </a>
+              <a href={site.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                Тикток
+              </a>
               <a href={site.resume} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
                 Резюме на hh.ru
               </a>

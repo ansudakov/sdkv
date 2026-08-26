@@ -24,8 +24,8 @@ export default function ProjectsPage() {
           </h1>
           <div className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-4">
             <p className="max-w-xl text-lg text-muted">
-              Все проекты от первой редакторской
-              роли до нынешней. Полные кейсы — на{" "}
+              Крупные проекты и штатные роли за {experienceStats.years} — без
+              разовых подработок и мелких заказов. Полные кейсы — на{" "}
               <Link href="/work" className="text-accent underline underline-offset-4">
                 странице «Работы»
               </Link>

@@ -22,15 +22,8 @@ export function SiteHeader() {
               className="h-full w-full object-cover"
             />
           </span>
-          <span className="relative">
+          <span>
             SDK<span className="text-accent">V</span>
-            <svg
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="absolute right-[0.02em] top-[-0.42em] h-[1.15em] w-[1.15em] rotate-[-24.6deg] text-accent"
-            >
-              <path d="M12 1.5 21 12h-6.9v12h-4.2V12H3Z" />
-            </svg>
           </span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">

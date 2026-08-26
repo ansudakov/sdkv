@@ -116,7 +116,7 @@ export const workCases: WorkCase[] = [
   {
     slug: "batumi",
     icon: "batumi",
-    company: "Ambassador Island, Батуми",
+    company: "Ambassadori Island Batumi",
     tagline: "Премиальный лендинг на английском",
     callout: true,
     body: [

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/container";
-import { PhotoSlot } from "@/components/photo-slot";
+import { PhotoCard } from "@/components/photo-card";
 
 export const metadata: Metadata = {
   title: "Фото",
@@ -8,18 +8,18 @@ export const metadata: Metadata = {
 };
 
 const slots = [
-  { label: "Портрет", tall: true },
-  { label: "Рилс, кадр" },
-  { label: "Бэкстейдж" },
-  { label: "За текстом", tall: true },
-  { label: "В поездке" },
-  { label: "Портрет" },
-  { label: "Рилс, кадр", tall: true },
-  { label: "С командой" },
-  { label: "На созвоне" },
-  { label: "Портрет", tall: true },
-  { label: "Рилс, кадр" },
-  { label: "Кофе / рутина" },
+  { src: "/photos/portrait-main.jpg", label: "Портрет", tall: true },
+  { src: "/photos/reel-city.jpg", label: "Рилс, кадр" },
+  { src: "/photos/backstage-park.jpg", label: "Бэкстейдж" },
+  { src: "/photos/writing-indoor.jpg", label: "За текстом", tall: true },
+  { src: "/photos/travel-cathedral.jpg", label: "В поездке" },
+  { src: "/photos/portrait-office.jpg", label: "Портрет" },
+  { src: "/photos/reel-steps.jpg", label: "Рилс, кадр", tall: true },
+  { src: "/photos/onset-gold-doors.jpg", label: "В деле" },
+  { src: "/photos/call-glass.jpg", label: "На созвоне" },
+  { src: "/photos/portrait-stairs.jpg", label: "Портрет", tall: true },
+  { src: "/photos/reel-registan.jpg", label: "Рилс, кадр" },
+  { src: "/photos/coffee-routine.jpg", label: "Кофе / рутина" },
 ];
 
 export default function PhotosPage() {
@@ -36,8 +36,7 @@ export default function PhotosPage() {
             за кадром<span className="text-accent">.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted">
-            Галерея пока пустая — это места под фотографии. Каждый блок
-            ниже соответствует будущему снимку.
+            Портреты, кадры из рилсов и рабочие будни — без глянца.
           </p>
         </Container>
       </section>
@@ -45,8 +44,9 @@ export default function PhotosPage() {
       <Container className="py-14 sm:py-16">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {slots.map((slot, i) => (
-            <PhotoSlot
-              key={i}
+            <PhotoCard
+              key={slot.src}
+              src={slot.src}
               index={i + 1}
               label={slot.label}
               className={slot.tall ? "aspect-[3/4] sm:mt-8" : "aspect-square"}

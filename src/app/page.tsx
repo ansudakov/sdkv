@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { IconBadge } from "@/components/icon-badge";
-import { PhotoSlot } from "@/components/photo-slot";
+import { PhotoCard } from "@/components/photo-card";
 import { TypewriterName } from "@/components/typewriter-name";
 import { getAllPosts } from "@/lib/posts";
 import { experience, experienceStats, site, workCases } from "@/lib/site";
@@ -206,14 +206,26 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-            <PhotoSlot index={1} label="Портрет" className="aspect-[3/4]" />
-            <PhotoSlot
+            <PhotoCard
+              src="/photos/portrait-main.jpg"
+              index={1}
+              label="Портрет"
+              className="aspect-[3/4]"
+            />
+            <PhotoCard
+              src="/photos/reel-city.jpg"
               index={2}
               label="Рилс, кадр"
               className="aspect-[3/4] sm:mt-8"
             />
-            <PhotoSlot index={3} label="Бэкстейдж" className="aspect-[3/4]" />
-            <PhotoSlot
+            <PhotoCard
+              src="/photos/backstage-park.jpg"
+              index={3}
+              label="Бэкстейдж"
+              className="aspect-[3/4]"
+            />
+            <PhotoCard
+              src="/photos/writing-indoor.jpg"
               index={4}
               label="За текстом"
               className="aspect-[3/4] sm:mt-8"

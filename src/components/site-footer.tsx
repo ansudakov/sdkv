@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { TrackedLink } from "@/components/tracked-link";
 import { site, nav } from "@/lib/site";
 
 export function SiteFooter() {
@@ -20,20 +21,22 @@ export function SiteFooter() {
               мкое<span className="text-accent">.</span>
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
-              <a
+              <TrackedLink
+                gaEvent="contact_email_click"
                 href={`mailto:${site.email}`}
                 className="text-lg text-accent underline decoration-1 underline-offset-4"
               >
                 {site.email}
-              </a>
-              <a
+              </TrackedLink>
+              <TrackedLink
+                gaEvent="contact_telegram_click"
                 href={site.telegramContact}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-lg text-accent underline decoration-1 underline-offset-4"
               >
                 Написать в ТГ
-              </a>
+              </TrackedLink>
             </div>
           </div>
           <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">

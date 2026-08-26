@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { TrackedLink } from "@/components/tracked-link";
 import { nav, site } from "@/lib/site";
 
 export function SiteHeader() {
@@ -45,13 +46,15 @@ export function SiteHeader() {
               </Link>
             ))}
           </div>
-          <a
+          <TrackedLink
+            gaEvent="contact_email_click"
             href={`mailto:${site.email}`}
             className="ml-1 hidden rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85 sm:inline-block"
           >
             Написать
-          </a>
-          <a
+          </TrackedLink>
+          <TrackedLink
+            gaEvent="contact_telegram_click"
             href={site.telegramContact}
             target="_blank"
             rel="noopener noreferrer"
@@ -70,7 +73,7 @@ export function SiteHeader() {
             >
               <path d="M21 4 3 11.2l6 2.3M21 4 14.8 20l-5.8-6.5M21 4 9 13.5" />
             </svg>
-          </a>
+          </TrackedLink>
           <div className="ml-1 sm:ml-2">
             <ThemeToggle />
           </div>

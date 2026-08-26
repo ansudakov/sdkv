@@ -62,7 +62,7 @@ export default function RootLayout({
           <SiteFooter />
         </ThemeProvider>
         <Analytics />
-        <GoogleAnalytics gaId="G-7DVJMHMHJD" />
+        <GoogleAnalytics gaId="G-NQR4XVNLJS" />
         <YandexMetrika />
       </body>
     </html>

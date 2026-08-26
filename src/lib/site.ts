@@ -1,8 +1,8 @@
 export const site = {
   name: "Александр Судаков",
   role: "Редактор, контент-лид, креативный копирайтер",
-  domain: "sdkv.ru",
-  url: "https://sdkv.ru",
+  domain: "ansudakov.ru",
+  url: "https://ansudakov.ru",
   email: "a.n.sudakov@gmail.com",
   telegram: "https://t.me/sashasdkv",
   telegramHandle: "@sashasdkv",

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { IconBadge } from "@/components/icon-badge";
 import { PhotoCard } from "@/components/photo-card";
+import { TrackedLink } from "@/components/tracked-link";
 import { TypewriterName } from "@/components/typewriter-name";
 import { getAllPosts } from "@/lib/posts";
 import { experience, experienceStats, site, workCases } from "@/lib/site";
@@ -40,20 +41,22 @@ export default function Home() {
               Timeweb Cloud и Hostman.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a
+              <TrackedLink
+                gaEvent="contact_email_click"
                 href={`mailto:${site.email}`}
                 className="rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
               >
                 Написать
-              </a>
-              <a
+              </TrackedLink>
+              <TrackedLink
+                gaEvent="contact_telegram_click"
                 href={site.telegramContact}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
               >
                 Написать в ТГ
-              </a>
+              </TrackedLink>
             </div>
           </div>
         </Container>

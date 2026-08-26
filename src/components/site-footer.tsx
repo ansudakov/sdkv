@@ -14,8 +14,8 @@ export function SiteFooter() {
               что-то{" "}
               <span className="relative inline-block leading-none">
                 е
-                <span className="absolute top-[0.02em] left-[18%] h-[0.13em] w-[0.13em] rounded-full bg-accent" />
-                <span className="absolute top-[0.02em] left-[58%] h-[0.13em] w-[0.13em] rounded-full bg-accent" />
+                <span className="absolute top-[0.02em] left-[14%] h-[0.22em] w-[0.22em] rounded-full bg-accent" />
+                <span className="absolute top-[0.02em] left-[54%] h-[0.22em] w-[0.22em] rounded-full bg-accent" />
               </span>
               мкое<span className="text-accent">.</span>
             </p>

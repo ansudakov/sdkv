@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Unbounded, Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -62,6 +63,7 @@ export default function RootLayout({
           <SiteFooter />
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
         <GoogleAnalytics gaId="G-NQR4XVNLJS" />
         <YandexMetrika />
       </body>

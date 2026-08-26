@@ -20,7 +20,8 @@ export default function BlogPage() {
           </p>
           <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
             Про редактуру
-            <br />и тексты<span className="text-accent">.</span>
+            <br />и нейросети
+            <br />в работе<span className="text-accent">.</span>
           </h1>
         </Container>
       </section>

@@ -359,7 +359,7 @@ export const experience: ExperienceItem[] = [
   {
     period: "Ноябрь 2021 — Октябрь 2022",
     duration: "1 год",
-    company: "«Альпина Паблишер»",
+    company: "Альпина Паблишер",
     role: "Литературный редактор, сценарист",
     location: "Москва",
     icon: "alpina",
@@ -378,7 +378,7 @@ export const experience: ExperienceItem[] = [
   {
     period: "Август 2019 — Сентябрь 2021",
     duration: "2 года 2 месяца",
-    company: "Альфа-Банк (Россия)",
+    company: "Альфа-Банк",
     role: "Продуктовый редактор, креативный копирайтер",
     location: "Москва",
     icon: "alfa",
@@ -456,7 +456,7 @@ export const skills = [
 
 export const experienceStats = {
   years: "9 лет",
-  companies: `${workCases.length}`,
+  companies: `${workCases.filter((w) => w.slug !== "misc").length}`,
   languages: "2",
   skills: `${skills.length}`,
 };

@@ -19,7 +19,7 @@ const slots = [
   { src: "/photos/call-glass.jpg", label: "На созвоне" },
   { src: "/photos/portrait-stairs.jpg", label: "Портрет", tall: true },
   { src: "/photos/reel-registan.jpg", label: "Рилс, кадр" },
-  { src: "/photos/coffee-routine.jpg", label: "Кофе / рутина" },
+  { src: "/photos/coffee-routine.jpg", label: "Кофе / рутина", tall: true },
 ];
 
 export default function PhotosPage() {

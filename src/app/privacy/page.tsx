@@ -14,7 +14,7 @@ export default function PrivacyPage() {
         <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
           Конфиденциальность
         </p>
-        <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-6xl">
+        <h1 className="hyphens-auto balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-6xl sm:hyphens-none">
           Политика конфиденциальности<span className="text-accent">.</span>
         </h1>
 

@@ -4,6 +4,8 @@ export const site = {
   domain: "ansudakov.ru",
   url: "https://ansudakov.ru",
   email: "a.n.sudakov@gmail.com",
+  inn: "602506776119",
+  ogrnip: "320602700021351",
   telegram: "https://t.me/sashasdkv",
   telegramHandle: "@sashasdkv",
   telegramContact: "https://t.me/sashasudakov",

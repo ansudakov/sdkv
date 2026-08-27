@@ -24,11 +24,11 @@ export default function WorkPage() {
             <br />и результаты<span className="text-accent">.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted">
-            Кейсы целиком, с примерами конкретных работ по ссылкам — где-то
-            это Google-документ, где-то сам сайт, где-то Figma. Хронологию по
-            датам смотри в{" "}
+            Кейсы целиком, с примерами конкретных работ по ссылкам: где-то
+            это Google-документ, где-то сам сайт, где-то Фигма. Хронологию по
+            датам смотри на{" "}
             <a href="/projects" className="text-accent underline underline-offset-4">
-              разделе «Проекты»
+              странице «Проекты»
             </a>
             .
           </p>

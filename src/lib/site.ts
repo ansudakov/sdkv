@@ -20,7 +20,7 @@ export const site = {
 
 export const nav = [
   { href: "/projects", label: "Проекты" },
-  { href: "/work", label: "Работы" },
+  { href: "/works", label: "Работы" },
   { href: "/blog", label: "Блог" },
   { href: "/photos", label: "Фото" },
 ];

@@ -125,7 +125,7 @@ export default function Home() {
               Избранные работы
             </p>
             <Link
-              href="/work"
+              href="/works"
               className="text-sm font-medium text-muted transition-colors hover:text-accent"
             >
               Все работы →
@@ -135,7 +135,7 @@ export default function Home() {
             {selectedWork.map((item) => (
               <Link
                 key={item.slug}
-                href={`/work#${item.slug}`}
+                href={`/works#${item.slug}`}
                 className="group flex flex-col justify-between gap-8 bg-background p-8 transition-colors hover:bg-surface"
               >
                 <div className="flex items-center justify-between">

@@ -26,11 +26,11 @@ export function SiteHeader() {
           <span className="flex items-baseline">
             SDK
             <svg
-              viewBox="-2 -20 115 135"
+              viewBox="-20 -20 135 135"
               fill="currentColor"
               className="ml-[0.02em] h-[1.05em] w-[0.9em] text-accent"
             >
-              <path d="M44 110 L2 14 L24 14 L44 84 L57 40 L108 -15 L98 48 L75 40 Z" />
+              <path d="M44 110 L-10 14 L24 14 L44 84 L57 40 L108 -15 L98 48 L75 40 Z" />
             </svg>
           </span>
         </Link>

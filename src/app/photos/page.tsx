@@ -36,7 +36,7 @@ export default function PhotosPage() {
             за кадром<span className="text-accent">.</span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted">
-            Портреты, кадры из рилсов и рабочие будни — без глянца.
+            Портреты, кадры из рилсов и рабочие будни. Без глянца.
           </p>
         </Container>
       </section>

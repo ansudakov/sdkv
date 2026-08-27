@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { Unbounded, Inter } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { AnalyticsGate } from "@/components/analytics-gate";
 import { CookieConsent } from "@/components/cookie-consent";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { YandexMetrika } from "@/components/yandex-metrika";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -69,8 +68,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalytics gaId="G-NQR4XVNLJS" />
-        <YandexMetrika />
+        <AnalyticsGate />
         <CookieConsent />
       </body>
     </html>

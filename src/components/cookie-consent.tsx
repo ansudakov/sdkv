@@ -2,40 +2,16 @@
 
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
-
-const STORAGE_KEY = "cookie-consent-ack";
-const listeners = new Set<() => void>();
-
-function subscribe(callback: () => void) {
-  listeners.add(callback);
-  return () => listeners.delete(callback);
-}
-
-function getSnapshot() {
-  try {
-    return localStorage.getItem(STORAGE_KEY) === null;
-  } catch {
-    return true;
-  }
-}
-
-function getServerSnapshot() {
-  return false;
-}
-
-function acknowledge() {
-  try {
-    localStorage.setItem(STORAGE_KEY, "1");
-  } catch {
-    // ignore — storage unavailable, banner just won't be remembered
-  }
-  listeners.forEach((notify) => notify());
-}
+import { cookieConsentStore } from "@/lib/cookie-consent-store";
 
 export function CookieConsent() {
-  const visible = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const consent = useSyncExternalStore(
+    cookieConsentStore.subscribe,
+    cookieConsentStore.getSnapshot,
+    cookieConsentStore.getServerSnapshot,
+  );
 
-  if (!visible) return null;
+  if (consent !== null) return null;
 
   return (
     <div className="fixed inset-x-0 bottom-0 z-50 border-t border-border bg-surface/95 backdrop-blur">
@@ -47,13 +23,22 @@ export function CookieConsent() {
           </Link>
           .
         </p>
-        <button
-          type="button"
-          onClick={acknowledge}
-          className="shrink-0 rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
-        >
-          Окей
-        </button>
+        <div className="flex shrink-0 items-center gap-2">
+          <button
+            type="button"
+            onClick={() => cookieConsentStore.setConsent("declined")}
+            className="rounded-full border border-border px-5 py-2 text-sm font-medium text-muted transition-colors hover:border-accent hover:text-accent"
+          >
+            Отклонить
+          </button>
+          <button
+            type="button"
+            onClick={() => cookieConsentStore.setConsent("accepted")}
+            className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
+          >
+            Окей
+          </button>
+        </div>
       </div>
     </div>
   );

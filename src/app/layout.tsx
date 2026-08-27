@@ -57,6 +57,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${unbounded.variable} ${inter.variable}`}
     >
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://mc.yandex.ru" />
+      </head>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SiteHeader />

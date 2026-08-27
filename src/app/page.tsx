@@ -20,7 +20,7 @@ export default function Home() {
           <div className="absolute right-6 top-0 hidden sm:right-8 sm:block">
             <div className="h-32 w-32 overflow-hidden rounded-full border-2 border-accent md:h-44 md:w-44 lg:h-52 lg:w-52">
               <Image
-                src="/photos/alexander-main.png"
+                src="/photos/alexander-main.jpg"
                 alt="Александр Судаков"
                 width={320}
                 height={320}

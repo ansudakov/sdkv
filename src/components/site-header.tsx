@@ -16,7 +16,7 @@ export function SiteHeader() {
         >
           <span className="h-7 w-7 shrink-0 overflow-hidden rounded-full border border-accent">
             <Image
-              src="/photos/alexander-main.png"
+              src="/photos/alexander-main.jpg"
               alt=""
               width={56}
               height={56}

@@ -25,13 +25,20 @@ export function SiteHeader() {
           </span>
           <span className="flex items-baseline">
             SDK
-            <svg
-              viewBox="-20 -20 135 135"
-              fill="currentColor"
-              className="ml-[0.02em] h-[1.05em] w-[0.9em] text-accent"
-            >
-              <path d="M44 110 L-10 14 L24 14 L44 84 L57 40 L108 -15 L98 48 L75 40 Z" />
-            </svg>
+            <span className="relative text-accent">
+              V
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="absolute -top-[0.28em] -right-[0.02em] h-[0.4em] w-[0.4em]"
+              >
+                <path d="M5 19 19 5M9 5h10v10" />
+              </svg>
+            </span>
           </span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">

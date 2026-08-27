@@ -1,13 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const FULL_TEXT = "Александр\nСудаков";
 const TYPE_SPEED = 85;
+// ~30% faster on phones (not tablets) — matches Tailwind's `sm` breakpoint.
+const MOBILE_TYPE_SPEED = Math.round(TYPE_SPEED * 0.7);
 
 export function TypewriterName({ className }: { className?: string }) {
   const [count, setCount] = useState(0);
   const done = count >= FULL_TEXT.length;
+  const speedRef = useRef(TYPE_SPEED);
+
+  useEffect(() => {
+    speedRef.current = window.matchMedia("(max-width: 639px)").matches
+      ? MOBILE_TYPE_SPEED
+      : TYPE_SPEED;
+  }, []);
 
   useEffect(() => {
     if (done) return;
@@ -18,7 +27,7 @@ export function TypewriterName({ className }: { className?: string }) {
 
     const timer = setTimeout(
       () => setCount(reduceMotion ? FULL_TEXT.length : (c) => c + 1),
-      reduceMotion ? 0 : TYPE_SPEED,
+      reduceMotion ? 0 : speedRef.current,
     );
     return () => clearTimeout(timer);
   }, [count, done]);

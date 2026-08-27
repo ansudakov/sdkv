@@ -70,7 +70,12 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} {site.name}</span>
-          <span>{site.role}</span>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="hover:text-accent">
+              Политика конфиденциальности
+            </Link>
+            <span>{site.role}</span>
+          </div>
         </div>
       </Container>
     </footer>

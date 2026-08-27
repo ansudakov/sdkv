@@ -3,6 +3,7 @@ import { Unbounded, Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { CookieConsent } from "@/components/cookie-consent";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -66,6 +67,7 @@ export default function RootLayout({
         <SpeedInsights />
         <GoogleAnalytics gaId="G-NQR4XVNLJS" />
         <YandexMetrika />
+        <CookieConsent />
       </body>
     </html>
   );

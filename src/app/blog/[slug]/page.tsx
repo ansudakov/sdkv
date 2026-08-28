@@ -4,6 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { Container } from "@/components/container";
 import { getAllPosts, getPost } from "@/lib/posts";
+import { site } from "@/lib/site";
 
 export async function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
@@ -38,8 +39,24 @@ export default async function BlogPostPage({
   const post = getPost(slug);
   if (!post) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    datePublished: post.date,
+    url: `${site.url}/blog/${slug}`,
+    author: { "@type": "Person", name: site.name, url: site.url },
+  };
+
   return (
     <article className="pt-16 pb-24 sm:pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Container className="max-w-3xl">
         <p className="font-mono text-xs uppercase tracking-widest text-muted">
           {post.date} · {post.readingTime}

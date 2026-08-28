@@ -14,6 +14,7 @@ export const site = {
   youtube: "https://www.youtube.com/@ademoscu",
   tiktok: "https://www.tiktok.com/@ademoscu",
   resume: "https://hh.ru/resume/2e68dc8bff07075f900039ed1f556c79685871",
+  resumePdf: "/resume.pdf",
   description:
     "Сеньор-редактор, контент-лид и креативный копирайтер. Пишу, руковожу редакциями и снимаю рилсы.",
 };

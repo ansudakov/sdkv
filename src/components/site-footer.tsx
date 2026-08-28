@@ -62,6 +62,9 @@ export function SiteFooter() {
               <a href={site.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
                 Тикток
               </a>
+              <a href={site.resumePdf} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+                Резюме (PDF)
+              </a>
               <a href={site.resume} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
                 Резюме на hh.ru
               </a>

@@ -37,8 +37,8 @@ export default function Home() {
             <p className="max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
               Редачил для Альфа-Банка, Т-Банка, VK, Skillbox, Газпромбанк
               Инвестиций, Яндекс Доставки, Альпины, Студии Лебедева и
-              Ambassadori Island Batumi. Последние четыре года — главред в
-              Timeweb Cloud и Hostman.
+              Ambassadori Island Batumi. Последние четыре года главредил в
+              облачных платформах Timeweb Cloud и Hostman.
             </p>
             <div className="flex flex-wrap gap-3">
               <TrackedLink

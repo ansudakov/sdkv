@@ -45,6 +45,17 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: site.name,
+  url: site.url,
+  image: `${site.url}/photos/alexander-main.jpg`,
+  jobTitle: site.role,
+  email: site.email,
+  sameAs: [site.telegram, site.instagram, site.youtube, site.tiktok, site.resume],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -59,9 +70,15 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://mc.yandex.ru" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
       </head>
       <body className="flex min-h-screen flex-col font-sans antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />

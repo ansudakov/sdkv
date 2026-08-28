@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { IconBadge } from "@/components/icon-badge";
+import { LogoMarquee } from "@/components/logo-marquee";
 import { PhotoCard } from "@/components/photo-card";
 import { TrackedLink } from "@/components/tracked-link";
 import { TypewriterName } from "@/components/typewriter-name";
@@ -58,6 +59,9 @@ export default function Home() {
                 Написать в ТГ
               </TrackedLink>
             </div>
+          </div>
+          <div className="mt-14">
+            <LogoMarquee />
           </div>
         </Container>
       </section>

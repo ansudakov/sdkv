@@ -14,7 +14,7 @@ export function SiteHeader() {
           href="/"
           className="group flex items-center gap-2 font-display text-lg font-semibold tracking-tight sm:text-xl"
         >
-          <span className="h-7 w-7 shrink-0 overflow-hidden rounded-full border border-accent">
+          <span className="logo-shake-avatar inline-block h-7 w-7 shrink-0 overflow-hidden rounded-full border border-accent">
             <Image
               src="/photos/alexander-main.jpg"
               alt=""
@@ -23,9 +23,11 @@ export function SiteHeader() {
               className="h-full w-full object-cover"
             />
           </span>
-          <span className="logo-wiggle flex items-baseline">
-            SDK
-            <span className="relative text-accent">
+          <span className="flex items-baseline">
+            <span className="logo-shake-1 inline-block">S</span>
+            <span className="logo-shake-2 inline-block">D</span>
+            <span className="logo-shake-3 inline-block">K</span>
+            <span className="logo-shake-2 relative inline-block text-accent">
               V
               <svg
                 viewBox="0 0 24 24"
@@ -34,7 +36,7 @@ export function SiteHeader() {
                 strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="absolute -top-[0.28em] -right-[0.02em] h-[0.4em] w-[0.4em]"
+                className="logo-shake-arrow absolute -top-[0.28em] -right-[0.02em] h-[0.4em] w-[0.4em]"
               >
                 <path d="M5 19 19 5M9 5h10v10" />
               </svg>

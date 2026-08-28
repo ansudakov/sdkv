@@ -4,8 +4,8 @@ type LogoEntry =
 
 const logos: LogoEntry[] = [
   { src: "/logos/alfa-bank.svg", alt: "Альфа-Банк", ratio: 728.6 / 146.4 },
-  { text: "Т-Банк", alt: "Т-Банк" },
-  { text: "VK", alt: "VK" },
+  { src: "/logos/t-bank.svg", alt: "Т-Банк", ratio: 95 / 34 },
+  { src: "/logos/vk.svg", alt: "VK", ratio: 32.2 / 20.1 },
   { src: "/logos/skillbox.svg", alt: "Skillbox", ratio: 99 / 22 },
   { src: "/logos/gazprombank.svg", alt: "Газпромбанк", ratio: 288.496 / 60.494 },
   { src: "/logos/yandex.svg", alt: "Яндекс", ratio: 350 / 135 },

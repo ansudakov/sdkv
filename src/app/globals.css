@@ -10,6 +10,7 @@
   --border: #e3e1d9;
   --accent: #cd7700;
   --accent-vivid: #f5a300;
+  --accent-hover: #9a5900;
   --accent-foreground: #ffffff;
 }
 
@@ -21,6 +22,7 @@
   --border: #262620;
   --accent: #ffc233;
   --accent-vivid: #ffc233;
+  --accent-hover: #bf9126;
   --accent-foreground: #14100a;
 }
 
@@ -32,6 +34,7 @@
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-vivid: var(--accent-vivid);
+  --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-foreground);
   --font-display: var(--font-unbounded);
   --font-sans: var(--font-inter);

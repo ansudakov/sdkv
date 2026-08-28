@@ -34,7 +34,7 @@ export function CookieConsentBanner() {
           <button
             type="button"
             onClick={() => cookieConsentStore.setConsent("accepted")}
-            className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
+            className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-hover"
           >
             Окей
           </button>

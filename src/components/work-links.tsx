@@ -43,7 +43,7 @@ export function WorkLinks({ links }: { links: WorkLink[] }) {
                 <path d="M7 17 17 7M9 7h8v8" />
               </svg>
             </div>
-            <span className="text-base font-medium leading-snug text-foreground">
+            <span className="text-base font-medium leading-snug text-foreground transition-colors group-hover:text-accent">
               {link.label}
             </span>
           </a>

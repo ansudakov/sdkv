@@ -38,7 +38,7 @@ export default function BlogPage() {
                 className="group flex flex-col gap-2 py-8 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
               >
                 <div className="flex-1">
-                  <h2 className="font-display text-2xl font-semibold tracking-tight group-hover:text-accent sm:text-3xl">
+                  <h2 className="font-display text-2xl font-semibold tracking-tight transition-colors group-hover:text-accent sm:text-3xl">
                     {post.title}
                   </h2>
                   <p className="mt-2 max-w-2xl text-muted">

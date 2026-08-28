@@ -44,7 +44,7 @@ export default function Home() {
               <TrackedLink
                 gaEvent="contact_email_click"
                 href={`mailto:${site.email}`}
-                className="rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
+                className="rounded-full bg-accent-vivid px-5 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
               >
                 Написать
               </TrackedLink>
@@ -260,7 +260,7 @@ export default function Home() {
                   <p className="font-mono text-xs uppercase tracking-widest text-muted">
                     {post.date}
                   </p>
-                  <h3 className="mt-3 font-display text-xl font-semibold tracking-tight group-hover:text-accent">
+                  <h3 className="mt-3 font-display text-xl font-semibold tracking-tight transition-colors group-hover:text-accent">
                     {post.title}
                   </h3>
                   <p className="mt-2 text-sm text-muted">{post.description}</p>

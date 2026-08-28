@@ -15,8 +15,8 @@ export function SiteFooter() {
               что-то{" "}
               <span className="relative inline-block leading-none">
                 е
-                <span className="absolute top-[0.02em] left-[14%] h-[0.22em] w-[0.22em] rounded-full bg-accent" />
-                <span className="absolute top-[0.02em] left-[54%] h-[0.22em] w-[0.22em] rounded-full bg-accent" />
+                <span className="absolute top-[0.02em] left-[14%] h-[0.22em] w-[0.22em] rounded-full bg-accent-vivid" />
+                <span className="absolute top-[0.02em] left-[54%] h-[0.22em] w-[0.22em] rounded-full bg-accent-vivid" />
               </span>
               мкое<span className="text-accent">.</span>
             </p>
@@ -43,33 +43,33 @@ export function SiteFooter() {
             <div className="flex flex-col gap-2">
               <span className="text-muted">Разделы</span>
               {nav.map((item) => (
-                <Link key={item.href} href={item.href} className="hover:text-accent">
+                <Link key={item.href} href={item.href} className="transition-colors hover:text-accent">
                   {item.label}
                 </Link>
               ))}
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-muted">Соцсети</span>
-              <a href={site.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+              <a href={site.telegram} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
                 ТГ-канал
               </a>
-              <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+              <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
                 Инстаграм
               </a>
-              <a href={site.youtube} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+              <a href={site.youtube} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
                 Ютуб
               </a>
-              <a href={site.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
+              <a href={site.tiktok} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
                 Тикток
               </a>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-muted">Резюме</span>
-              <a href={site.resumePdf} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-                Резюме (PDF)
+              <a href={site.resumePdf} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
+                PDF
               </a>
-              <a href={site.resume} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-                Резюме на hh.ru
+              <a href={site.resume} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
+                hh.ru
               </a>
             </div>
           </div>
@@ -79,7 +79,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} ИП {site.name}, ИНН {site.inn}
           </span>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-accent">
+            <Link href="/privacy" className="transition-colors hover:text-accent">
               Политика конфиденциальности
             </Link>
             <span>{site.role}</span>

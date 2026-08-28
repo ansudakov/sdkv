@@ -8,7 +8,8 @@
   --foreground: #0d0d0c;
   --muted: #68675f;
   --border: #e3e1d9;
-  --accent: #f5a300;
+  --accent: #a05f00;
+  --accent-vivid: #f5a300;
   --accent-foreground: #171208;
 }
 
@@ -19,6 +20,7 @@
   --muted: #9a988e;
   --border: #262620;
   --accent: #ffc233;
+  --accent-vivid: #ffc233;
   --accent-foreground: #14100a;
 }
 
@@ -29,6 +31,7 @@
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-accent: var(--accent);
+  --color-accent-vivid: var(--accent-vivid);
   --color-accent-foreground: var(--accent-foreground);
   --font-display: var(--font-unbounded);
   --font-sans: var(--font-inter);
@@ -65,7 +68,7 @@ summary {
 }
 
 ::selection {
-  background: var(--accent);
+  background: var(--accent-vivid);
   color: var(--accent-foreground);
 }
 
@@ -91,6 +94,35 @@ summary {
 @media (prefers-reduced-motion: reduce) {
   .animate-blink {
     animation: none;
+  }
+}
+
+@keyframes logo-wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-6deg);
+  }
+  40% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-3deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+
+.group:hover .logo-wiggle {
+  animation: logo-wiggle 0.5s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-wiggle {
+    animation: none !important;
   }
 }
 

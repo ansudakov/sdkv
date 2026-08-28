@@ -49,7 +49,7 @@ export function SiteFooter() {
               ))}
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-muted">Ещё</span>
+              <span className="text-muted">Соцсети</span>
               <a href={site.telegram} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
                 ТГ-канал
               </a>
@@ -62,6 +62,9 @@ export function SiteFooter() {
               <a href={site.tiktok} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
                 Тикток
               </a>
+            </div>
+            <div className="flex flex-col gap-2">
+              <span className="text-muted">Резюме</span>
               <a href={site.resumePdf} target="_blank" rel="noopener noreferrer" className="hover:text-accent">
                 Резюме (PDF)
               </a>

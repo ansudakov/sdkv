@@ -56,7 +56,7 @@ export function SiteHeader() {
           <TrackedLink
             gaEvent="contact_email_click"
             href={`mailto:${site.email}`}
-            className="ml-1 hidden rounded-full bg-accent-vivid px-4 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85 sm:inline-block"
+            className="ml-1 hidden rounded-full bg-accent px-4 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85 sm:inline-block"
           >
             Написать
           </TrackedLink>

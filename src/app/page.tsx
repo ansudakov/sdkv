@@ -45,7 +45,7 @@ export default function Home() {
               <TrackedLink
                 gaEvent="contact_email_click"
                 href={`mailto:${site.email}`}
-                className="rounded-full bg-accent-vivid px-5 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
+                className="rounded-full bg-accent px-5 py-3 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-85"
               >
                 Написать
               </TrackedLink>

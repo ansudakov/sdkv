@@ -75,7 +75,7 @@ export default function Home() {
           <div className="max-w-3xl">
             <div className="space-y-6 font-display text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
               <p>
-                Берусь за любые задачи без брезгливости — от лаконичных смс и
+                Берусь за любые задачи без брезгливости — от ёмких смс и
                 баннеров до сложных лонгридов и лендингов.
               </p>
               <p className="text-muted">

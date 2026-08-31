@@ -92,7 +92,9 @@ export default function Home() {
               </Reveal>
               <Reveal delayMs={200}>
                 <p className="text-muted">
-                  В профессии 9 лет. Пишу на русском (C2) и английском (C1).
+                  В профессии 9 лет. Пишу на{" "}
+                  <span className="text-foreground">русском (C2)</span> и{" "}
+                  <span className="text-accent">английском (C1)</span>.
                   Работаю по ТК или ИП: есть шаблон договора, КЭП и ЭДО,
                   полный комплект.
                 </p>

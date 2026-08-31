@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Unbounded, Inter } from "next/font/google";
+import { Unbounded, Inter, Golos_Text } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AnalyticsGate } from "@/components/analytics-gate";
@@ -20,6 +20,16 @@ const unbounded = Unbounded({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "cyrillic"],
+  display: "swap",
+});
+
+// Used only for the "Hostman" wordmark in the logo marquee — Hostman has no
+// downloadable brand SVG, so we approximate it with the closest real
+// typeface (Golos Text) instead of falling back to the site's own display font.
+const golosText = Golos_Text({
+  variable: "--font-golos",
+  subsets: ["latin"],
+  weight: ["600"],
   display: "swap",
 });
 
@@ -65,7 +75,7 @@ export default function RootLayout({
     <html
       lang="ru"
       suppressHydrationWarning
-      className={`${unbounded.variable} ${inter.variable}`}
+      className={`${unbounded.variable} ${inter.variable} ${golosText.variable}`}
     >
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />

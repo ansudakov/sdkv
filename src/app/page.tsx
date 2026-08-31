@@ -102,25 +102,25 @@ export default function Home() {
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-border pt-8">
               <div>
-                <p className="font-display text-3xl font-semibold text-accent">
+                <p className="font-display text-4xl font-bold text-accent sm:text-5xl">
                   {experienceStats.years}
                 </p>
                 <p className="text-sm text-muted">в редактуре</p>
               </div>
               <div>
-                <p className="font-display text-3xl font-semibold text-accent">
+                <p className="font-display text-4xl font-bold text-accent sm:text-5xl">
                   {experienceStats.companies}
                 </p>
                 <p className="text-sm text-muted">компаний и проектов</p>
               </div>
               <div>
-                <p className="font-display text-3xl font-semibold text-accent">
+                <p className="font-display text-4xl font-bold text-accent sm:text-5xl">
                   {experienceStats.languages}
                 </p>
                 <p className="text-sm text-muted">языка: рус, англ</p>
               </div>
               <div>
-                <p className="font-display text-3xl font-semibold text-accent">
+                <p className="font-display text-4xl font-bold text-accent sm:text-5xl">
                   {experienceStats.skills}
                 </p>
                 <p className="text-sm text-muted">навыков</p>

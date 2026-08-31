@@ -117,7 +117,7 @@ export default function Home() {
                 <p className="font-display text-4xl font-bold text-accent sm:text-5xl">
                   {experienceStats.skills}
                 </p>
-                <p className="text-sm text-muted">навыков</p>
+                <p className="text-sm text-muted">навыков и инструментов</p>
               </div>
               <Link
                 href="/projects"

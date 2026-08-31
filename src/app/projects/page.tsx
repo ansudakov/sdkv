@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { IconBadge } from "@/components/icon-badge";
+import { TimelineConnector } from "@/components/timeline-connector";
 import { education, experience, experienceStats, skills } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -26,9 +27,9 @@ export default function ProjectsPage() {
             <p className="max-w-xl text-lg text-muted">
               Крупные проекты и штатные роли за последние {experienceStats.years}.
               Здесь я не беру небольшие заказы и разовые подработки. Полные
-              кейсы на{" "}
+              кейсы —{" "}
               <Link href="/works" className="text-accent underline underline-offset-4">
-                странице «Работы»
+                на странице «Работы»
               </Link>
               .
             </p>
@@ -39,19 +40,24 @@ export default function ProjectsPage() {
       {/* Timeline */}
       <section className="border-b border-border py-14 sm:py-16">
         <Container>
-          <div className="relative">
-            <div
-              aria-hidden
-              className="absolute top-2 bottom-2 left-[21px] hidden w-px bg-border sm:block"
-            />
+          <TimelineConnector>
             <div className="space-y-10 sm:space-y-12">
               {experience.map((item) => (
                 <div
                   key={item.company}
                   className="relative flex flex-col gap-4 sm:flex-row sm:gap-8 sm:pl-0"
                 >
-                  <div className="relative z-10 flex shrink-0 items-center gap-4 sm:w-56">
-                    <IconBadge icon={item.icon} />
+                  <div
+                    data-timeline-icon
+                    className="relative z-10 flex shrink-0 items-center gap-4 sm:w-56"
+                  >
+                    <div className="relative h-11 w-11 shrink-0">
+                      <div
+                        aria-hidden
+                        className="absolute inset-0 hidden rounded-full bg-background sm:block"
+                      />
+                      <IconBadge icon={item.icon} />
+                    </div>
                     <div className="sm:hidden">
                       <p className="font-display text-lg font-semibold tracking-tight">
                         {item.company}
@@ -72,7 +78,9 @@ export default function ProjectsPage() {
                       <p className="text-sm text-muted">{item.role}</p>
                     </div>
                     <p className="mt-2 font-mono text-xs uppercase tracking-widest text-muted sm:hidden">
-                      {item.period} · {item.duration}
+                      {item.period}
+                      <br />
+                      {item.duration}
                     </p>
                     <p className="mt-3 max-w-2xl text-base leading-relaxed">
                       {item.summary}
@@ -82,7 +90,7 @@ export default function ProjectsPage() {
                 </div>
               ))}
             </div>
-          </div>
+          </TimelineConnector>
         </Container>
       </section>
 

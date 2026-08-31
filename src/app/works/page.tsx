@@ -45,31 +45,29 @@ export default function WorkPage() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block rounded-3xl border-2 border-accent/50 bg-surface p-6 transition-colors hover:bg-background sm:p-10"
+                  className="group relative block rounded-3xl border-2 border-accent/50 bg-surface p-6 transition-colors hover:bg-background sm:p-10"
                 >
-                  <div className="flex flex-wrap items-center justify-between gap-4">
-                    <div className="flex items-center gap-4">
-                      <IconBadge icon={item.icon} size="lg" />
-                      <div>
-                        <h2 className="break-words font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-                          {item.company}
-                        </h2>
-                        <p className="mt-1 text-muted">{item.tagline}</p>
-                      </div>
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="absolute right-6 top-6 shrink-0 text-muted transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-accent sm:right-10 sm:top-10"
+                  >
+                    <path d="M7 17 17 7M9 7h8v8" />
+                  </svg>
+                  <div className="flex flex-wrap items-center gap-4 pr-8">
+                    <IconBadge icon={item.icon} size="lg" />
+                    <div>
+                      <h2 className="break-words font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                        {item.company}
+                      </h2>
+                      <p className="mt-1 text-muted">{item.tagline}</p>
                     </div>
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="shrink-0 text-muted transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-accent"
-                    >
-                      <path d="M7 17 17 7M9 7h8v8" />
-                    </svg>
                   </div>
                   <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed">
                     {item.body.map((paragraph, i) => (
@@ -106,7 +104,12 @@ export default function WorkPage() {
                 <p className="mt-2 text-muted">{item.tagline}</p>
                 {item.period && (
                   <p className="mt-4 font-mono text-xs uppercase tracking-widest text-accent">
-                    {item.period}
+                    {item.period.split(" · ").map((line, i) => (
+                      <span key={i}>
+                        {i > 0 && <br />}
+                        {line}
+                      </span>
+                    ))}
                   </p>
                 )}
                 {item.audience && (

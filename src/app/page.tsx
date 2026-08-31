@@ -4,6 +4,7 @@ import { Container } from "@/components/container";
 import { IconBadge } from "@/components/icon-badge";
 import { LogoMarquee } from "@/components/logo-marquee";
 import { PhotoCard } from "@/components/photo-card";
+import { Reveal } from "@/components/reveal";
 import { TrackedLink } from "@/components/tracked-link";
 import { TypewriterName } from "@/components/typewriter-name";
 import { getAllPosts } from "@/lib/posts";
@@ -74,22 +75,28 @@ export default function Home() {
           </p>
           <div className="max-w-3xl">
             <div className="space-y-6 font-display text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
-              <p>
-                Пишу смело, редачу деликатно. Строю контент-стратегии и
-                настраиваю конвейеры с аутсорс-авторами и нейросетями.
-                Умею включать тумблер{" "}
-                <span className="text-accent">UX thinking</span>.
-              </p>
-              <p className="text-muted">
-                Мультиформатный, омниканальный редактор. Без брезгливости
-                берусь за любой формат: от лаконичных смс и баннеров до
-                сложных лонгридов, лендингов и книг.
-              </p>
-              <p className="text-muted">
-                В профессии 9 лет. Пишу на русском (C2) и английском (C1).
-                Работаю по ТК или ИП: есть шаблон договора, КЭП и ЭДО,
-                полный комплект.
-              </p>
+              <Reveal>
+                <p>
+                  Пишу смело, редачу деликатно. Строю контент-стратегии и
+                  настраиваю конвейеры с аутсорс-авторами и нейросетями.
+                  Умею включать тумблер{" "}
+                  <span className="text-accent">UX thinking</span>.
+                </p>
+              </Reveal>
+              <Reveal delayMs={100}>
+                <p className="text-muted">
+                  Мультиформатный, омниканальный редактор. Без брезгливости
+                  берусь за любой формат: от лаконичных смс и баннеров до
+                  сложных лонгридов, лендингов и книг.
+                </p>
+              </Reveal>
+              <Reveal delayMs={200}>
+                <p className="text-muted">
+                  В профессии 9 лет. Пишу на русском (C2) и английском (C1).
+                  Работаю по ТК или ИП: есть шаблон договора, КЭП и ЭДО,
+                  полный комплект.
+                </p>
+              </Reveal>
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-x-10 gap-y-4 border-t border-border pt-8">
               <div>

@@ -1,67 +1,50 @@
-import { svgLogos } from "@/lib/logo-marquee-data";
-
 type LogoEntry =
-  | { kind: "svg"; alt: string; viewBox: string; markup: string; tall?: boolean }
-  | { kind: "img"; alt: string; src: string }
-  | { kind: "text"; alt: string; text: string };
-
-const svgLogo = (alt: string): LogoEntry => {
-  const logo = svgLogos.find((l) => l.alt === alt);
-  if (!logo) throw new Error(`Missing logo data for ${alt}`);
-  return { kind: "svg", ...logo, tall: alt === "VK" };
-};
+  | { src: string; alt: string; ratio: number; text?: undefined }
+  | { text: string; alt: string; src?: undefined; ratio?: undefined };
 
 const logos: LogoEntry[] = [
-  svgLogo("Альфа-Банк"),
-  svgLogo("Т-Банк"),
-  svgLogo("VK"),
-  svgLogo("Skillbox"),
-  svgLogo("Газпромбанк"),
-  svgLogo("Яндекс"),
-  { kind: "img", alt: "Альпина Паблишер", src: "/logos/alpina.png" },
-  svgLogo("Студия Артемия Лебедева"),
-  svgLogo("Ambassadori Island Batumi"),
-  svgLogo("Timeweb Cloud"),
-  { kind: "text", alt: "Hostman", text: "Hostman" },
+  { src: "/logos/alfa-bank.svg", alt: "Альфа-Банк", ratio: 728.6 / 146.4 },
+  { src: "/logos/t-bank.svg", alt: "Т-Банк", ratio: 95 / 34 },
+  { src: "/logos/vk.svg", alt: "VK", ratio: 32.2 / 20.1 },
+  { src: "/logos/skillbox.svg", alt: "Skillbox", ratio: 99 / 22 },
+  { src: "/logos/gazprombank.svg", alt: "Газпромбанк", ratio: 288.496 / 60.494 },
+  { src: "/logos/yandex.svg", alt: "Яндекс", ratio: 350 / 135 },
+  { src: "/logos/alpina.png", alt: "Альпина Паблишер", ratio: 1000 / 282 },
+  { src: "/logos/lebedev.svg", alt: "Студия Артемия Лебедева", ratio: 767 / 149 },
+  { src: "/logos/ambassadori.svg", alt: "Ambassadori Island Batumi", ratio: 549 / 370 },
+  { src: "/logos/timeweb.svg", alt: "Timeweb Cloud", ratio: 190 / 28 },
+  { text: "Hostman", alt: "Hostman" },
 ];
 
 function LogoMark({ logo }: { logo: LogoEntry }) {
-  if (logo.kind === "text") {
+  if (logo.text) {
     return (
       <span
         role="img"
         aria-label={logo.alt}
-        className="shrink-0 whitespace-nowrap text-xl font-semibold text-muted sm:text-2xl"
-        style={{ fontFamily: "var(--font-golos)" }}
+        className="shrink-0 whitespace-nowrap font-display text-xl font-semibold tracking-tight text-muted sm:text-2xl"
       >
         {logo.text}
       </span>
     );
   }
 
-  if (logo.kind === "img") {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element -- intrinsic aspect-ratio sizing needed
-      <img
-        src={logo.src}
-        alt={logo.alt}
-        className="h-6 w-auto shrink-0 opacity-70 grayscale sm:h-7"
-      />
-    );
-  }
-
   return (
-    <svg
+    <div
       role="img"
       aria-label={logo.alt}
-      viewBox={logo.viewBox}
-      fill="currentColor"
-      className={
-        logo.tall
-          ? "h-8 w-auto shrink-0 text-muted sm:h-9"
-          : "h-6 w-auto shrink-0 text-muted sm:h-7"
-      }
-      dangerouslySetInnerHTML={{ __html: logo.markup }}
+      className="h-6 shrink-0 bg-muted sm:h-7"
+      style={{
+        aspectRatio: logo.ratio,
+        WebkitMaskImage: `url(${logo.src})`,
+        maskImage: `url(${logo.src})`,
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: "center left",
+        maskPosition: "center left",
+      }}
     />
   );
 }

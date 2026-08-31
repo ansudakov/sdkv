@@ -25,10 +25,10 @@ export default function WorkPage() {
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted">
             Кейсы целиком, с примерами конкретных работ по ссылкам: где-то
-            это Google-документ, где-то сам сайт, где-то Фигма. Хронологию по
-            датам смотри на{" "}
+            это Гугл-документ, где-то сам сайт, а где-то Фигма. Хронология по
+            датам —{" "}
             <a href="/projects" className="text-accent underline underline-offset-4">
-              странице «Проекты»
+              на странице «Проекты»
             </a>
             .
           </p>

@@ -1,11 +1,11 @@
 type LogoEntry =
-  | { src: string; alt: string; ratio: number; text?: undefined }
-  | { text: string; alt: string; src?: undefined; ratio?: undefined };
+  | { src: string; alt: string; ratio: number; tall?: boolean; text?: undefined }
+  | { text: string; alt: string; src?: undefined; ratio?: undefined; tall?: undefined };
 
 const logos: LogoEntry[] = [
   { src: "/logos/alfa-bank.svg", alt: "Альфа-Банк", ratio: 728.6 / 146.4 },
-  { src: "/logos/t-bank.svg", alt: "Т-Банк", ratio: 95 / 34 },
-  { src: "/logos/vk.svg", alt: "VK", ratio: 32.2 / 20.1 },
+  { src: "/logos/t-bank.svg", alt: "Т-Банк", ratio: 90 / 15 },
+  { src: "/logos/vk.svg", alt: "VK", ratio: 32.2 / 20.1, tall: true },
   { src: "/logos/skillbox.svg", alt: "Skillbox", ratio: 99 / 22 },
   { src: "/logos/gazprombank.svg", alt: "Газпромбанк", ratio: 288.496 / 60.494 },
   { src: "/logos/yandex.svg", alt: "Яндекс", ratio: 350 / 135 },
@@ -33,7 +33,11 @@ function LogoMark({ logo }: { logo: LogoEntry }) {
     <div
       role="img"
       aria-label={logo.alt}
-      className="h-6 shrink-0 bg-muted sm:h-7"
+      className={
+        logo.tall
+          ? "h-8 shrink-0 bg-muted sm:h-9"
+          : "h-6 shrink-0 bg-muted sm:h-7"
+      }
       style={{
         aspectRatio: logo.ratio,
         WebkitMaskImage: `url(${logo.src})`,

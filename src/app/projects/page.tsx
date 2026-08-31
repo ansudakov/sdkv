@@ -56,7 +56,9 @@ export default function ProjectsPage() {
                         aria-hidden
                         className="absolute inset-0 hidden rounded-full bg-background sm:block"
                       />
-                      <IconBadge icon={item.icon} />
+                      <div className="relative">
+                        <IconBadge icon={item.icon} />
+                      </div>
                     </div>
                     <div className="sm:hidden">
                       <p className="font-display text-lg font-semibold tracking-tight">

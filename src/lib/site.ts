@@ -462,6 +462,5 @@ export const skills = [
 export const experienceStats = {
   years: "9 лет",
   companies: `${workCases.filter((w) => w.slug !== "misc").length}`,
-  languages: "2",
   skills: `${skills.length}`,
 };

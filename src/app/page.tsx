@@ -92,7 +92,7 @@ export default function Home() {
               </Reveal>
               <Reveal delayMs={200}>
                 <p className="text-muted">
-                  В профессии 9 лет. Пишу на{" "}
+                  Пишу на{" "}
                   <span className="text-foreground">русском (C2)</span> и{" "}
                   <span className="text-accent">английском (C1)</span>.
                   Работаю по ТК или ИП: есть шаблон договора, КЭП и ЭДО,
@@ -112,12 +112,6 @@ export default function Home() {
                   {experienceStats.companies}
                 </p>
                 <p className="text-sm text-muted">компаний и проектов</p>
-              </div>
-              <div>
-                <p className="font-display text-4xl font-bold text-accent sm:text-5xl">
-                  {experienceStats.languages}
-                </p>
-                <p className="text-sm text-muted">языка: рус, англ</p>
               </div>
               <div>
                 <p className="font-display text-4xl font-bold text-accent sm:text-5xl">

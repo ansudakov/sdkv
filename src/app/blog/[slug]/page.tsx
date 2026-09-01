@@ -62,7 +62,13 @@ export default async function BlogPostPage({
         }}
       />
       <Container className="max-w-3xl">
-        <p className="font-mono text-xs uppercase tracking-widest text-muted">
+        <Link
+          href="/blog"
+          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
+        >
+          ← Блог
+        </Link>
+        <p className="mt-6 font-mono text-xs uppercase tracking-widest text-muted">
           {post.date} · {post.readingTime}
         </p>
         <h1 className="balance mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">

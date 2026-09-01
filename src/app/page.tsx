@@ -270,7 +270,18 @@ export default function Home() {
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
               {posts.map((post) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                  <p className="font-mono text-xs uppercase tracking-widest text-muted">
+                  {post.image && (
+                    <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-surface">
+                      <Image
+                        src={post.image}
+                        alt=""
+                        fill
+                        sizes="(min-width: 640px) 33vw, 100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <p className="mt-4 font-mono text-xs uppercase tracking-widest text-muted">
                     {post.date}
                   </p>
                   <h3 className="mt-3 font-display text-xl font-semibold tracking-tight transition-colors group-hover:text-accent">

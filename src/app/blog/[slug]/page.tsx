@@ -87,6 +87,9 @@ export default async function BlogPostPage({
             ))}
           </div>
         )}
+        {post.description && (
+          <p className="mt-6 text-lg text-muted">{post.description}</p>
+        )}
         {post.image && (
           <div className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-border bg-surface">
             <Image src={post.image} alt="" fill className="object-cover" />

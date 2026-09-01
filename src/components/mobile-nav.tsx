@@ -63,9 +63,22 @@ export function MobileNav() {
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="border-b border-border py-5 font-display text-4xl font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
+              className="group flex items-center justify-between gap-4 border-b border-border py-5 font-display text-4xl font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
             >
               {item.label}
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="shrink-0 text-accent opacity-0 transition-all group-hover:translate-x-1 group-hover:opacity-100"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
             </Link>
           ))}
         </nav>

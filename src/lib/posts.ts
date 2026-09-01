@@ -79,6 +79,17 @@ export function getHeadings(content: string): Heading[] {
   });
 }
 
+export function splitIntro(content: string): { intro: string; body: string } {
+  const match = content.match(/^##\s+/m);
+  if (!match || match.index === undefined) {
+    return { intro: content.trim(), body: "" };
+  }
+  return {
+    intro: content.slice(0, match.index).trim(),
+    body: content.slice(match.index),
+  };
+}
+
 export function getAdjacentPosts(slug: string): {
   newer: PostMeta | null;
   older: PostMeta | null;

@@ -8,7 +8,13 @@ import remarkGfm from "remark-gfm";
 import { Container } from "@/components/container";
 import { PostKeyboardNav } from "@/components/post-keyboard-nav";
 import { PostReaction } from "@/components/post-reaction";
-import { getAdjacentPosts, getAllPosts, getHeadings, getPost } from "@/lib/posts";
+import {
+  getAdjacentPosts,
+  getAllPosts,
+  getHeadings,
+  getPost,
+  splitIntro,
+} from "@/lib/posts";
 import { site } from "@/lib/site";
 
 export async function generateStaticParams() {
@@ -45,6 +51,7 @@ export default async function BlogPostPage({
   if (!post) notFound();
   const { newer, older } = getAdjacentPosts(slug);
   const headings = getHeadings(post.content);
+  const { intro, body } = splitIntro(post.content);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -102,6 +109,14 @@ export default async function BlogPostPage({
             <Image src={post.image} alt="" fill className="object-cover" />
           </div>
         )}
+        {intro && (
+          <div className="prose-article mt-10">
+            <MDXRemote
+              source={intro}
+              options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+            />
+          </div>
+        )}
         {headings.length > 1 && (
           <div className="mt-10 rounded-2xl border border-border bg-surface p-6">
             <p className="font-mono text-xs uppercase tracking-widest text-accent">
@@ -123,7 +138,7 @@ export default async function BlogPostPage({
         )}
         <div className="prose-article mt-12">
           <MDXRemote
-            source={post.content}
+            source={body}
             options={{
               mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] },
             }}

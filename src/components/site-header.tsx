@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { HeaderLogo } from "@/components/header-logo";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { TrackedLink } from "@/components/tracked-link";
@@ -10,39 +10,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <Container className="flex h-16 items-center justify-between sm:h-20">
-        <Link
-          href="/"
-          className="group flex items-center gap-2 font-display text-lg font-semibold tracking-tight sm:text-xl"
-        >
-          <span className="logo-shake-avatar inline-block h-7 w-7 shrink-0 overflow-hidden rounded-full border border-accent">
-            <Image
-              src="/photos/alexander-main.jpg"
-              alt=""
-              width={56}
-              height={56}
-              className="h-full w-full object-cover"
-            />
-          </span>
-          <span className="flex items-baseline">
-            <span className="logo-shake-1 inline-block">S</span>
-            <span className="logo-shake-2 inline-block">D</span>
-            <span className="logo-shake-3 inline-block">K</span>
-            <span className="logo-shake-2 relative inline-block text-accent">
-              V
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="logo-shake-arrow absolute -top-[0.28em] -right-[0.02em] h-[0.4em] w-[0.4em]"
-              >
-                <path d="M5 19 19 5M9 5h10v10" />
-              </svg>
-            </span>
-          </span>
-        </Link>
+        <HeaderLogo />
         <nav className="flex items-center gap-1 sm:gap-2">
           <div className="hidden items-center gap-1 sm:flex sm:gap-2">
             {nav.map((item) => (

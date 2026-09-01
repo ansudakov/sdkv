@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { Container } from "@/components/container";
+import { PostKeyboardNav } from "@/components/post-keyboard-nav";
 import { PostReaction } from "@/components/post-reaction";
 import { getAdjacentPosts, getAllPosts, getPost } from "@/lib/posts";
 import { site } from "@/lib/site";
@@ -60,6 +61,10 @@ export default async function BlogPostPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
+      />
+      <PostKeyboardNav
+        olderHref={older ? `/blog/${older.slug}` : undefined}
+        newerHref={newer ? `/blog/${newer.slug}` : undefined}
       />
       <Container className="max-w-3xl">
         <Link

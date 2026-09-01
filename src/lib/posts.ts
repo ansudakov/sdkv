@@ -11,6 +11,7 @@ export type PostMeta = {
   description: string;
   date: string;
   tags: string[];
+  image?: string;
   readingTime: string;
 };
 
@@ -44,6 +45,7 @@ export function getPostMeta(slug: string): PostMeta | null {
     description: data.description ?? "",
     date: data.date ?? "",
     tags: data.tags ?? [],
+    image: data.image,
     readingTime: readingTime(content).text,
   };
 }
@@ -59,7 +61,21 @@ export function getPost(slug: string): Post | null {
     description: data.description ?? "",
     date: data.date ?? "",
     tags: data.tags ?? [],
+    image: data.image,
     readingTime: readingTime(content).text,
     content,
+  };
+}
+
+export function getAdjacentPosts(slug: string): {
+  newer: PostMeta | null;
+  older: PostMeta | null;
+} {
+  const posts = getAllPosts();
+  const index = posts.findIndex((p) => p.slug === slug);
+  if (index === -1) return { newer: null, older: null };
+  return {
+    newer: index > 0 ? posts[index - 1] : null,
+    older: index < posts.length - 1 ? posts[index + 1] : null,
   };
 }

@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import GithubSlugger from "github-slugger";
 import readingTime from "reading-time";
 
 const POSTS_DIR = path.join(process.cwd(), "src/content/posts");
@@ -65,6 +66,17 @@ export function getPost(slug: string): Post | null {
     readingTime: readingTime(content).text,
     content,
   };
+}
+
+export type Heading = { text: string; slug: string };
+
+export function getHeadings(content: string): Heading[] {
+  const slugger = new GithubSlugger();
+  const matches = content.matchAll(/^##\s+(.+)$/gm);
+  return Array.from(matches, (m) => {
+    const text = m[1].trim();
+    return { text, slug: slugger.slug(text) };
+  });
 }
 
 export function getAdjacentPosts(slug: string): {

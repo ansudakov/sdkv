@@ -38,9 +38,9 @@ export default function Home() {
           <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <p className="max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
               Редачил для Альфа-Банка, Т-Банка, VK, Skillbox, Газпромбанк
-              Инвестиций, Яндекс Доставки, Альпины, Студии Лебедева и
-              Ambassadori Island Batumi. Последние четыре года главредил в
-              облачных платформах Timeweb Cloud и Hostman.
+              Инвестиций, Yota, Райффайзен Банка, Яндекс Доставки, Альпины,
+              Студии Лебедева и Ambassadori Island Batumi. Последние четыре
+              года главредил в облачных платформах Timeweb Cloud и Hostman.
             </p>
             <div className="flex flex-wrap gap-3">
               <TrackedLink

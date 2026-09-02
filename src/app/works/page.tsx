@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Работы",
   description:
     "Кейсы редактуры и контент-лидерства: Альфа-Банк, Т-Банк, Timeweb Cloud, Hostman, Яндекс Доставка и другие.",
+  alternates: {
+    canonical: "/works",
+  },
 };
 
 export default function WorkPage() {

@@ -3,6 +3,7 @@ import Image from "next/image";
 type PostCoverImageProps = {
   src: string;
   srcDark?: string;
+  alt: string;
   sizes: string;
   className?: string;
 };
@@ -15,17 +16,18 @@ type PostCoverImageProps = {
 export function PostCoverImage({
   src,
   srcDark,
+  alt,
   sizes,
   className = "object-cover",
 }: PostCoverImageProps) {
   if (!srcDark) {
-    return <Image src={src} alt="" fill sizes={sizes} className={className} />;
+    return <Image src={src} alt={alt} fill sizes={sizes} className={className} />;
   }
   return (
     <>
       <Image
         src={src}
-        alt=""
+        alt={alt}
         fill
         sizes={sizes}
         className={`${className} dark:hidden`}

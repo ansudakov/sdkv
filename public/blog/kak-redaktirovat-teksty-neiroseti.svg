@@ -52,7 +52,7 @@
       markerHeight="7"
       orient="auto-start-reverse"
     >
-      <path d="M0,0 L10,5 L0,10 Z" fill="#cd7700" />
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d65600" />
     </marker>
   </defs>
 
@@ -61,9 +61,9 @@
   <rect x="0" y="-70" width="960" height="540" rx="24" fill="#ffffff" />
 
   <!-- Arrows connecting the four stages -->
-  <line x1="212" y1="200" x2="247" y2="200" stroke="#cd7700" stroke-width="3" marker-end="url(#kr-arrowhead)" />
-  <line x1="462" y1="200" x2="497" y2="200" stroke="#cd7700" stroke-width="3" marker-end="url(#kr-arrowhead)" />
-  <line x1="712" y1="200" x2="747" y2="200" stroke="#cd7700" stroke-width="3" marker-end="url(#kr-arrowhead)" />
+  <line x1="212" y1="200" x2="247" y2="200" stroke="#d65600" stroke-width="3" marker-end="url(#kr-arrowhead)" />
+  <line x1="462" y1="200" x2="497" y2="200" stroke="#d65600" stroke-width="3" marker-end="url(#kr-arrowhead)" />
+  <line x1="712" y1="200" x2="747" y2="200" stroke="#d65600" stroke-width="3" marker-end="url(#kr-arrowhead)" />
 
   <!-- Block 1: Черновик (вход) -->
   <g>
@@ -82,35 +82,35 @@
   <!-- Block 2: ИИ-правка (машинный фильтр — угловатая форма с "ножками" чипа) -->
   <g>
     <rect x="250" y="70" width="210" height="260" rx="6"
-      fill="#ffffff" stroke="#cd7700" stroke-width="2" />
-    <rect x="250" y="70" width="210" height="34" rx="6" fill="#cd7700" />
-    <rect x="250" y="86" width="210" height="18" fill="#cd7700" />
+      fill="#ffffff" stroke="#d65600" stroke-width="2" />
+    <rect x="250" y="70" width="210" height="34" rx="6" fill="#d65600" />
+    <rect x="250" y="86" width="210" height="18" fill="#d65600" />
     <!-- chip pins (only near top/bottom — kept clear of the arrow lane at y=200) -->
-    <rect x="240" y="103" width="10" height="14" fill="#cd7700" />
-    <rect x="240" y="263" width="10" height="14" fill="#cd7700" />
-    <rect x="460" y="103" width="10" height="14" fill="#cd7700" />
-    <rect x="460" y="263" width="10" height="14" fill="#cd7700" />
+    <rect x="240" y="103" width="10" height="14" fill="#d65600" />
+    <rect x="240" y="263" width="10" height="14" fill="#d65600" />
+    <rect x="460" y="103" width="10" height="14" fill="#d65600" />
+    <rect x="460" y="263" width="10" height="14" fill="#d65600" />
     <text x="355" y="92" class="kr-header-text">ИИ-ПРАВКА</text>
 
     <!-- checklist chips: sharp corners, square bullets -->
     <g>
       <rect x="270" y="120" width="170" height="26" rx="4" fill="#faf9f6" stroke="#e3e1d9" stroke-width="1" />
-      <rect x="280" y="130" width="6" height="6" fill="#cd7700" />
+      <rect x="280" y="130" width="6" height="6" fill="#d65600" />
       <text x="296" y="137" class="kr-chip-text">орфография</text>
     </g>
     <g>
       <rect x="270" y="168" width="170" height="26" rx="4" fill="#faf9f6" stroke="#e3e1d9" stroke-width="1" />
-      <rect x="280" y="178" width="6" height="6" fill="#cd7700" />
+      <rect x="280" y="178" width="6" height="6" fill="#d65600" />
       <text x="296" y="185" class="kr-chip-text">повторы</text>
     </g>
     <g>
       <rect x="270" y="216" width="170" height="26" rx="4" fill="#faf9f6" stroke="#e3e1d9" stroke-width="1" />
-      <rect x="280" y="226" width="6" height="6" fill="#cd7700" />
+      <rect x="280" y="226" width="6" height="6" fill="#d65600" />
       <text x="296" y="233" class="kr-chip-text">длина предложений</text>
     </g>
     <g>
       <rect x="270" y="264" width="170" height="26" rx="4" fill="#faf9f6" stroke="#e3e1d9" stroke-width="1" />
-      <rect x="280" y="274" width="6" height="6" fill="#cd7700" />
+      <rect x="280" y="274" width="6" height="6" fill="#d65600" />
       <text x="296" y="281" class="kr-chip-text">штампы</text>
     </g>
   </g>
@@ -122,22 +122,22 @@
     <text x="605" y="100" class="kr-title" font-size="16">Правка</text>
     <text x="605" y="122" class="kr-title" font-size="16">редактора</text>
     <path d="M525,134 Q538,128 551,134 T577,134 T603,134 T629,134 T655,134 T681,134"
-      fill="none" stroke="#9a5900" stroke-width="2" stroke-linecap="round" />
+      fill="none" stroke="#993d00" stroke-width="2" stroke-linecap="round" />
 
     <!-- checklist chips: pill corners, round bullets -->
     <g>
       <rect x="520" y="150" width="170" height="26" rx="13" fill="#faf9f6" stroke="#e3e1d9" stroke-width="1" />
-      <circle cx="533" cy="163" r="3" fill="#9a5900" />
+      <circle cx="533" cy="163" r="3" fill="#993d00" />
       <text x="544" y="167" class="kr-chip-text">голос бренда</text>
     </g>
     <g>
       <rect x="520" y="198" width="170" height="26" rx="13" fill="#faf9f6" stroke="#e3e1d9" stroke-width="1" />
-      <circle cx="533" cy="211" r="3" fill="#9a5900" />
+      <circle cx="533" cy="211" r="3" fill="#993d00" />
       <text x="544" y="215" class="kr-chip-text">контекст читателя</text>
     </g>
     <g>
       <rect x="520" y="246" width="170" height="26" rx="13" fill="#faf9f6" stroke="#e3e1d9" stroke-width="1" />
-      <circle cx="533" cy="259" r="3" fill="#9a5900" />
+      <circle cx="533" cy="259" r="3" fill="#993d00" />
       <text x="544" y="263" class="kr-chip-text">точная цифра</text>
     </g>
   </g>
@@ -145,7 +145,7 @@
   <!-- Block 4: Готовый текст (выход) -->
   <g>
     <rect x="750" y="70" width="190" height="260" rx="12"
-      fill="#ffffff" stroke="#f5a300" stroke-width="2.5" />
+      fill="#ffffff" stroke="#ff781f" stroke-width="2.5" />
     <text x="845" y="102" class="kr-title" font-size="16">Готовый</text>
     <text x="845" y="122" class="kr-title" font-size="16">текст</text>
     <line x1="770" y1="136" x2="920" y2="136" stroke="#e3e1d9" stroke-width="1" />
@@ -156,7 +156,7 @@
     <line x1="775" y1="244" x2="915" y2="244" stroke="#0d0d0c" stroke-width="4" stroke-linecap="round" />
     <line x1="775" y1="272" x2="880" y2="272" stroke="#0d0d0c" stroke-width="4" stroke-linecap="round" />
     <!-- done badge -->
-    <circle cx="912" cy="92" r="16" fill="#f5a300" />
+    <circle cx="912" cy="92" r="16" fill="#ff781f" />
     <path d="M904,92 L910,98 L921,85" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
   </g>
 </svg>

@@ -40,7 +40,7 @@ export default async function Image() {
           height={240}
           style={{
             borderRadius: "50%",
-            border: "6px solid #f5a300",
+            border: "6px solid #ff781f",
             objectFit: "cover",
           }}
         />
@@ -60,7 +60,7 @@ export default async function Image() {
               lineHeight: 1.5,
               textTransform: "uppercase",
               letterSpacing: 2,
-              color: "#f5a300",
+              color: "#ff781f",
             }}
           >
             {site.role}

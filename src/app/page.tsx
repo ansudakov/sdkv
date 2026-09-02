@@ -276,6 +276,7 @@ export default function Home() {
                       <PostCoverImage
                         src={post.image}
                         srcDark={post.imageDark}
+                        alt={post.title}
                         sizes="(min-width: 640px) 33vw, 100vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />

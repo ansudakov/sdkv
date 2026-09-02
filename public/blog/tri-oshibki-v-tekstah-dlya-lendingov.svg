@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
   <rect width="800" height="450" fill="#171208"/>
   <rect x="150" y="100" width="500" height="250" rx="18" fill="none" stroke="#3a3226" stroke-width="2"/>
-  <g stroke="#cd7700" stroke-width="4" stroke-linecap="round">
+  <g stroke="#d65600" stroke-width="4" stroke-linecap="round">
     <line x1="230" y1="165" x2="256" y2="191"/>
     <line x1="256" y1="165" x2="230" y2="191"/>
     <line x1="374" y1="165" x2="400" y2="191"/>
@@ -9,7 +9,7 @@
     <line x1="518" y1="165" x2="544" y2="191"/>
     <line x1="544" y1="165" x2="518" y2="191"/>
   </g>
-  <g stroke="#f5a300" stroke-width="3" stroke-linecap="round" opacity="0.85">
+  <g stroke="#ff781f" stroke-width="3" stroke-linecap="round" opacity="0.85">
     <line x1="210" y1="250" x2="270" y2="250"/>
     <line x1="354" y1="250" x2="414" y2="250"/>
     <line x1="498" y1="250" x2="558" y2="250"/>

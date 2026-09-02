@@ -5,6 +5,9 @@ import { PhotoCard } from "@/components/photo-card";
 export const metadata: Metadata = {
   title: "Фото",
   description: "Фотографии и кадры из рилсов Александра Судакова.",
+  alternates: {
+    canonical: "/photos",
+  },
 };
 
 const slots = [

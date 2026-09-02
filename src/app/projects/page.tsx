@@ -8,6 +8,9 @@ import { education, experience, experienceStats, skills } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Проекты",
   description: "Хронология опыта: компании, роли и даты — как в резюме, по порядку.",
+  alternates: {
+    canonical: "/projects",
+  },
 };
 
 export default function ProjectsPage() {

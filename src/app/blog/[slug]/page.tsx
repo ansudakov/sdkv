@@ -33,11 +33,15 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.description,
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.description,
       type: "article",
       publishedTime: post.date,
+      modifiedTime: post.updated ?? post.date,
     },
   };
 }
@@ -55,14 +59,19 @@ export default async function BlogPostPage({
   const headings = getHeadings(post.content);
   const { intro, body } = splitIntro(post.content);
 
+  const postUrl = `${site.url}/blog/${slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
     description: post.description,
+    image: `${postUrl}/opengraph-image`,
     datePublished: post.date,
-    url: `${site.url}/blog/${slug}`,
+    dateModified: post.updated ?? post.date,
+    url: postUrl,
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
     author: { "@type": "Person", name: site.name, url: site.url },
+    publisher: { "@type": "Person", name: site.name, url: site.url },
   };
 
   return (
@@ -112,6 +121,7 @@ export default async function BlogPostPage({
               <PostCoverImage
                 src={post.image}
                 srcDark={post.imageDark}
+                alt={post.title}
                 sizes="(min-width: 1024px) 960px, (min-width: 640px) 768px, 100vw"
               />
             </div>

@@ -7,6 +7,9 @@ import { getAllPosts } from "@/lib/posts";
 export const metadata: Metadata = {
   title: "Блог",
   description: "Статьи про редактуру, контент-маркетинг и нейросети.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default function BlogPage() {
@@ -43,6 +46,7 @@ export default function BlogPage() {
                     <PostCoverImage
                       src={post.image}
                       srcDark={post.imageDark}
+                      alt={post.title}
                       sizes="(min-width: 640px) 256px, 100vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />

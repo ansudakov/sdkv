@@ -11,6 +11,7 @@ export type PostMeta = {
   title: string;
   description: string;
   date: string;
+  updated?: string;
   tags: string[];
   image?: string;
   imageDark?: string;
@@ -46,6 +47,7 @@ export function getPostMeta(slug: string): PostMeta | null {
     title: data.title ?? slug,
     description: data.description ?? "",
     date: data.date ?? "",
+    updated: data.updated,
     tags: data.tags ?? [],
     image: data.image,
     imageDark: data.imageDark,
@@ -63,6 +65,7 @@ export function getPost(slug: string): Post | null {
     title: data.title ?? slug,
     description: data.description ?? "",
     date: data.date ?? "",
+    updated: data.updated,
     tags: data.tags ?? [],
     image: data.image,
     imageDark: data.imageDark,

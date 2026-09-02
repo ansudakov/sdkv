@@ -27,7 +27,7 @@ export default function WorkPage() {
             Кейсы целиком, с примерами конкретных работ по ссылкам: где-то
             это Гугл-документ, где-то сам сайт, а где-то Фигма. Хронология по
             датам —{" "}
-            <a href="/projects" className="text-accent underline underline-offset-4">
+            <a href="/projects" className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover">
               на странице «Проекты»
             </a>
             .

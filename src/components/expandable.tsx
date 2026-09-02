@@ -22,7 +22,7 @@ export function Expandable({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="inline-flex items-center gap-1 text-sm font-medium text-accent"
+        className="inline-flex items-center gap-1 text-sm font-medium text-accent transition-colors hover:text-accent-hover"
       >
         {open ? "Свернуть" : "Показать полностью"}
         <span className={open ? "rotate-180 transition-transform" : "transition-transform"}>

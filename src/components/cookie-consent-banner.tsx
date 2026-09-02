@@ -18,7 +18,7 @@ export function CookieConsentBanner() {
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-3 px-6 py-4 text-sm sm:flex-row sm:justify-between sm:px-8">
         <p className="text-muted">
           Сайт использует cookie для анализа посещаемости.{" "}
-          <Link href="/privacy" className="text-accent underline underline-offset-4">
+          <Link href="/privacy" className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover">
             Политика конфиденциальности
           </Link>
           .

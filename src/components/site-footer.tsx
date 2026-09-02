@@ -24,7 +24,7 @@ export function SiteFooter() {
               <TrackedLink
                 gaEvent="contact_email_click"
                 href={`mailto:${site.email}`}
-                className="text-lg text-accent underline decoration-1 underline-offset-4"
+                className="text-lg text-accent underline decoration-1 underline-offset-4 transition-colors hover:text-accent-hover"
               >
                 {site.email}
               </TrackedLink>
@@ -33,7 +33,7 @@ export function SiteFooter() {
                 href={site.telegramContact}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-lg text-accent underline decoration-1 underline-offset-4"
+                className="text-lg text-accent underline decoration-1 underline-offset-4 transition-colors hover:text-accent-hover"
               >
                 Написать в ТГ
               </TrackedLink>

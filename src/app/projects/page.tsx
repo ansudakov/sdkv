@@ -28,7 +28,7 @@ export default function ProjectsPage() {
               Крупные проекты и штатные роли за последние {experienceStats.years}.
               Здесь я не беру небольшие заказы и разовые подработки. Полные
               кейсы —{" "}
-              <Link href="/works" className="text-accent underline underline-offset-4">
+              <Link href="/works" className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover">
                 на странице «Работы»
               </Link>
               .

@@ -1,0 +1,163 @@
+<svg
+  id="kr-illustration"
+  viewBox="0 0 960 400"
+  width="100%"
+  height="auto"
+  style="display:block;width:100%;height:auto;"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="illus-title illus-desc"
+>
+  <title id="illus-title">Конвейер правки текста: черновик, ИИ-правка, правка редактора, готовый текст</title>
+  <desc id="illus-desc">
+    Схема из четырёх блоков слева направо. Черновик поступает в блок ИИ-правки (орфография,
+    повторы, длина предложений, штампы), затем в блок правки редактора (голос бренда, контекст
+    читателя, точная цифра), и выходит готовым текстом.
+  </desc>
+
+  <style>
+    /* Статичная тёмная версия — парный файл (без -dark) для светлой темы сайта, выбор между
+       ними делает сама страница классами dark: (внешний файл-картинка не видит переменных
+       страницы). Шрифты подгружены явно — next/font тут недоступен, это отдельный файл. */
+    @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500');
+
+    .kr-title {
+      font-family: var(--font-display, "Unbounded", sans-serif);
+      font-weight: 600;
+      fill: #f4f3ee;
+      text-anchor: middle;
+    }
+    .kr-chip-text {
+      font-family: var(--font-sans, "Inter", sans-serif);
+      font-size: 12px;
+      fill: #f4f3ee;
+    }
+    .kr-header-text {
+      font-family: var(--font-display, "Unbounded", sans-serif);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.06em;
+      fill: #14100a;
+      text-anchor: middle;
+    }
+  </style>
+
+  <defs>
+    <marker
+      id="kr-arrowhead"
+      viewBox="0 0 10 10"
+      refX="8"
+      refY="5"
+      markerWidth="7"
+      markerHeight="7"
+      orient="auto-start-reverse"
+    >
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ffc233" />
+    </marker>
+  </defs>
+
+  <!-- Card background for the whole illustration — makes the illustration read as one
+       surface against the page's background, not just the four inner blocks. -->
+  <rect x="0" y="0" width="960" height="400" rx="24" fill="#1c150d" />
+
+  <!-- Arrows connecting the four stages -->
+  <line x1="212" y1="200" x2="247" y2="200" stroke="#ffc233" stroke-width="3" marker-end="url(#kr-arrowhead)" />
+  <line x1="462" y1="200" x2="497" y2="200" stroke="#ffc233" stroke-width="3" marker-end="url(#kr-arrowhead)" />
+  <line x1="712" y1="200" x2="747" y2="200" stroke="#ffc233" stroke-width="3" marker-end="url(#kr-arrowhead)" />
+
+  <!-- Block 1: Черновик (вход) -->
+  <g>
+    <rect x="20" y="70" width="190" height="260" rx="12"
+      fill="#1c150d" stroke="#2e2314" stroke-width="2" stroke-dasharray="6 5" />
+    <text x="115" y="102" class="kr-title" font-size="17">Черновик</text>
+    <line x1="40" y1="118" x2="190" y2="118" stroke="#2e2314" stroke-width="1" />
+    <!-- rough, unfinished lines -->
+    <line x1="45" y1="150" x2="185" y2="150" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+    <line x1="45" y1="180" x2="185" y2="180" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+    <line x1="45" y1="210" x2="150" y2="210" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+    <line x1="45" y1="240" x2="185" y2="240" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+    <line x1="45" y1="270" x2="125" y2="270" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+  </g>
+
+  <!-- Block 2: ИИ-правка (машинный фильтр — угловатая форма с "ножками" чипа) -->
+  <g>
+    <rect x="250" y="70" width="210" height="260" rx="6"
+      fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <rect x="250" y="70" width="210" height="34" rx="6" fill="#ffc233" />
+    <rect x="250" y="86" width="210" height="18" fill="#ffc233" />
+    <!-- chip pins (only near top/bottom — kept clear of the arrow lane at y=200) -->
+    <rect x="240" y="103" width="10" height="14" fill="#ffc233" />
+    <rect x="240" y="263" width="10" height="14" fill="#ffc233" />
+    <rect x="460" y="103" width="10" height="14" fill="#ffc233" />
+    <rect x="460" y="263" width="10" height="14" fill="#ffc233" />
+    <text x="355" y="92" class="kr-header-text">ИИ-ПРАВКА</text>
+
+    <!-- checklist chips: sharp corners, square bullets -->
+    <g>
+      <rect x="270" y="120" width="170" height="26" rx="4" fill="#0a0a09" stroke="#2e2314" stroke-width="1" />
+      <rect x="280" y="130" width="6" height="6" fill="#ffc233" />
+      <text x="296" y="137" class="kr-chip-text">орфография</text>
+    </g>
+    <g>
+      <rect x="270" y="168" width="170" height="26" rx="4" fill="#0a0a09" stroke="#2e2314" stroke-width="1" />
+      <rect x="280" y="178" width="6" height="6" fill="#ffc233" />
+      <text x="296" y="185" class="kr-chip-text">повторы</text>
+    </g>
+    <g>
+      <rect x="270" y="216" width="170" height="26" rx="4" fill="#0a0a09" stroke="#2e2314" stroke-width="1" />
+      <rect x="280" y="226" width="6" height="6" fill="#ffc233" />
+      <text x="296" y="233" class="kr-chip-text">длина предложений</text>
+    </g>
+    <g>
+      <rect x="270" y="264" width="170" height="26" rx="4" fill="#0a0a09" stroke="#2e2314" stroke-width="1" />
+      <rect x="280" y="274" width="6" height="6" fill="#ffc233" />
+      <text x="296" y="281" class="kr-chip-text">штампы</text>
+    </g>
+  </g>
+
+  <!-- Block 3: Правка редактора (человеческий фильтр — скруглённая форма с рукописной пометкой) -->
+  <g>
+    <rect x="500" y="70" width="210" height="260" rx="30"
+      fill="#1c150d" stroke="#f4f3ee" stroke-width="2" />
+    <text x="605" y="100" class="kr-title" font-size="16">Правка</text>
+    <text x="605" y="122" class="kr-title" font-size="16">редактора</text>
+    <path d="M525,134 Q538,128 551,134 T577,134 T603,134 T629,134 T655,134 T681,134"
+      fill="none" stroke="#bf9126" stroke-width="2" stroke-linecap="round" />
+
+    <!-- checklist chips: pill corners, round bullets -->
+    <g>
+      <rect x="520" y="150" width="170" height="26" rx="13" fill="#0a0a09" stroke="#2e2314" stroke-width="1" />
+      <circle cx="533" cy="163" r="3" fill="#bf9126" />
+      <text x="544" y="167" class="kr-chip-text">голос бренда</text>
+    </g>
+    <g>
+      <rect x="520" y="198" width="170" height="26" rx="13" fill="#0a0a09" stroke="#2e2314" stroke-width="1" />
+      <circle cx="533" cy="211" r="3" fill="#bf9126" />
+      <text x="544" y="215" class="kr-chip-text">контекст читателя</text>
+    </g>
+    <g>
+      <rect x="520" y="246" width="170" height="26" rx="13" fill="#0a0a09" stroke="#2e2314" stroke-width="1" />
+      <circle cx="533" cy="259" r="3" fill="#bf9126" />
+      <text x="544" y="263" class="kr-chip-text">точная цифра</text>
+    </g>
+  </g>
+
+  <!-- Block 4: Готовый текст (выход) -->
+  <g>
+    <rect x="750" y="70" width="190" height="260" rx="12"
+      fill="#1c150d" stroke="#ffc233" stroke-width="2.5" />
+    <text x="845" y="102" class="kr-title" font-size="16">Готовый</text>
+    <text x="845" y="122" class="kr-title" font-size="16">текст</text>
+    <line x1="770" y1="136" x2="920" y2="136" stroke="#2e2314" stroke-width="1" />
+    <!-- clean, finished lines -->
+    <line x1="775" y1="160" x2="915" y2="160" stroke="#f4f3ee" stroke-width="4" stroke-linecap="round" />
+    <line x1="775" y1="188" x2="915" y2="188" stroke="#f4f3ee" stroke-width="4" stroke-linecap="round" />
+    <line x1="775" y1="216" x2="915" y2="216" stroke="#f4f3ee" stroke-width="4" stroke-linecap="round" />
+    <line x1="775" y1="244" x2="915" y2="244" stroke="#f4f3ee" stroke-width="4" stroke-linecap="round" />
+    <line x1="775" y1="272" x2="880" y2="272" stroke="#f4f3ee" stroke-width="4" stroke-linecap="round" />
+    <!-- done badge -->
+    <circle cx="912" cy="92" r="16" fill="#ffc233" />
+    <path d="M904,92 L910,98 L921,85" fill="none" stroke="#14100a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

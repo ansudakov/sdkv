@@ -108,7 +108,22 @@ export default async function BlogPostPage({
         )}
         {post.image && (
           <div className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-border bg-surface">
-            <Image src={post.image} alt="" fill className="object-cover" />
+            <Image
+              src={post.image}
+              alt=""
+              fill
+              className={
+                post.imageDark ? "object-cover dark:hidden" : "object-cover"
+              }
+            />
+            {post.imageDark && (
+              <Image
+                src={post.imageDark}
+                alt=""
+                fill
+                className="hidden object-cover dark:block"
+              />
+            )}
           </div>
         )}
         {intro && (

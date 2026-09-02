@@ -13,6 +13,7 @@ export type PostMeta = {
   date: string;
   tags: string[];
   image?: string;
+  imageDark?: string;
   readingTime: string;
 };
 
@@ -47,6 +48,7 @@ export function getPostMeta(slug: string): PostMeta | null {
     date: data.date ?? "",
     tags: data.tags ?? [],
     image: data.image,
+    imageDark: data.imageDark,
     readingTime: readingTime(content).text,
   };
 }
@@ -63,6 +65,7 @@ export function getPost(slug: string): Post | null {
     date: data.date ?? "",
     tags: data.tags ?? [],
     image: data.image,
+    imageDark: data.imageDark,
     readingTime: readingTime(content).text,
     content,
   };

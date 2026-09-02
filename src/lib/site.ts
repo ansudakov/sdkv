@@ -261,9 +261,9 @@ export const workCases: WorkCase[] = [
     ],
     highlights: ["Формат «вопрос–ответ»", "Обзоры книг", "b2b-блог"],
     links: [
-      { label: "Статья про дропшиппинг", url: "https://biz.mail.ru/blog/dropshipping-kak-otkryt-onlajn-magazin-bez-sklada-i-dostavki/" },
-      { label: "Обзор книг про тексты", url: "https://biz.mail.ru/blog/kak-pisat-teksty-kotorye-privlekut-vnimanie-klientov-7-knig-i-koe-chto-eshhe/" },
-      { label: "Обзор книг про email-маркетинг", url: "https://biz.mail.ru/blog/email-direct_marketing/" },
+      { label: "Статья про дропшиппинг", url: "https://docs.google.com/document/d/1R-wpjTu8ibM9laRJjMC1HJDjxc5z1eaoNDYlCOrNBzA/edit" },
+      { label: "Обзор книг про тексты", url: "https://docs.google.com/document/d/1LbVTjNd9rw3YCRDC7BdsCcO8zKTOpre1pvYrvZx_gbs/edit" },
+      { label: "Обзор книг про email-маркетинг", url: "https://docs.google.com/document/d/1VsJVLWf391fAsSftCDXGEFRuUguViQ9dvKiFLpeLg10/edit" },
       { label: "Конструктор сайтов или разработка с нуля", url: "https://docs.google.com/document/d/1S7A5aEBI0Ff_10dNqCq95fypA04-qpfUAPcURxlfvnk/edit?usp=sharing" },
     ],
   },
@@ -310,8 +310,8 @@ export const workCases: WorkCase[] = [
     links: [
       { label: "Статьи для блога агентства", url: "http://creativevents.ru/articles/" },
       { label: "Сайт агентства", url: "http://creativevents.ru/" },
-      { label: "Сайт студии компьютерной графики", url: "http://greenfx.ru/" },
-      { label: "Сайт юрфирмы для ритейла", url: "http://retailtrusts.ru/" },
+      { label: "Пример статьи: как выбрать event-агентство", url: "http://creativevents.ru/articles/agencies/" },
+      { label: "Пример статьи: бюджет мероприятия", url: "http://creativevents.ru/articles/budget/" },
     ],
   },
   {
@@ -324,11 +324,12 @@ export const workCases: WorkCase[] = [
       "Редачил для Газпромбанк Инвестиций, Yota и Райффайзен Банка.",
     ],
     highlights: [
-      "6 разных заказчиков",
+      "7 разных заказчиков",
       "Лендинги, статьи, презентации",
       "Газпромбанк, Yota, Райффайзен",
     ],
     links: [
+      { label: "Тексты для Yota: смс и баннеры", url: "https://docs.google.com/document/d/13HiI6SMsJrOtpJ4JG338EgL-TBSqByAClQYCPLPpBDo/edit" },
       { label: "Статья для Райффайзен Банка", url: "https://www.raiffeisen-media.ru/zhizn/gde-eshhe-prodat-starye-veshhi-smartfony-mebel-i-nenuzhnye-bilety-krome-kak-na-avito-i-yule/" },
       { label: "Газпромбанк Инвестиции: экраны входа", url: "https://www.figma.com/file/A9kQukRawXGJrcTwhSqEJG/Self%3A-%D0%93%D0%9F%D0%91-%D0%A3%D0%90-%D0%9B%D0%9A-%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=8662%3A1" },
       { label: "Презентация для ThePartners", url: "https://docs.google.com/presentation/d/1pxvLr8Vof0VWfhbU-ywsuUYuvk1Lxp6hf52IP51UkUs/edit?usp=sharing" },

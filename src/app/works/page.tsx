@@ -45,7 +45,7 @@ export default function WorkPage() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative block rounded-3xl border-2 border-accent/50 bg-card p-6 shadow-sm transition-colors hover:bg-surface sm:p-10"
+                  className="group relative block rounded-3xl border-2 border-accent/50 bg-card p-6 shadow-sm transition-colors hover:bg-background sm:p-10"
                 >
                   <svg
                     width="22"

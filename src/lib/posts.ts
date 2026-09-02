@@ -90,6 +90,23 @@ export function splitIntro(content: string): { intro: string; body: string } {
   };
 }
 
+export function getRelatedPosts(slug: string, limit = 3): PostMeta[] {
+  const posts = getAllPosts();
+  const current = posts.find((p) => p.slug === slug);
+  if (!current) return [];
+  const scored = posts
+    .filter((p) => p.slug !== slug)
+    .map((post) => ({
+      post,
+      shared: post.tags.filter((tag) => current.tags.includes(tag)).length,
+    }));
+  scored.sort((a, b) => {
+    if (b.shared !== a.shared) return b.shared - a.shared;
+    return a.post.date < b.post.date ? 1 : -1;
+  });
+  return scored.slice(0, limit).map((s) => s.post);
+}
+
 export function getAdjacentPosts(slug: string): {
   newer: PostMeta | null;
   older: PostMeta | null;

@@ -13,6 +13,7 @@ import {
   getAllPosts,
   getHeadings,
   getPost,
+  getRelatedPosts,
   splitIntro,
 } from "@/lib/posts";
 import { site } from "@/lib/site";
@@ -50,6 +51,7 @@ export default async function BlogPostPage({
   const post = getPost(slug);
   if (!post) notFound();
   const { newer, older } = getAdjacentPosts(slug);
+  const related = getRelatedPosts(slug);
   const headings = getHeadings(post.content);
   const { intro, body } = splitIntro(post.content);
 
@@ -147,6 +149,27 @@ export default async function BlogPostPage({
 
         <div className="mt-16 space-y-10">
           <PostReaction slug={slug} />
+
+          {related.length > 0 && (
+            <div className="border-t border-border pt-8">
+              <p className="font-mono text-xs uppercase tracking-widest text-accent">
+                Почитать ещё
+              </p>
+              <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3">
+                {related.map((p) => (
+                  <Link key={p.slug} href={`/blog/${p.slug}`} className="group">
+                    <p className="font-mono text-xs uppercase tracking-widest text-muted">
+                      {p.date}
+                    </p>
+                    <h3 className="mt-3 font-display text-lg font-semibold tracking-tight transition-colors group-hover:text-accent">
+                      {p.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted">{p.description}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
 
           {(newer || older) && (
             <div className="grid grid-cols-1 gap-4 border-t border-border pt-8 sm:grid-cols-2">

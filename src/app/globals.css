@@ -268,6 +268,9 @@ summary {
 }
 
 @layer utilities {
+  .prose-article {
+    max-width: 42rem;
+  }
   .prose-article h2 {
     font-family: var(--font-display);
     font-weight: 600;
@@ -348,10 +351,10 @@ summary {
   .prose-article tbody tr:last-child td {
     border-bottom: none;
   }
-  .prose-article .pull-quote {
+  .prose-article .callout {
     font-family: var(--font-sans);
     font-weight: 500;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     line-height: 1.55;
     text-align: center;
     color: var(--accent);
@@ -429,5 +432,12 @@ summary {
   .prose-article hr {
     border-color: var(--border);
     margin: 2.5rem 0;
+  }
+  .prose-article .scene-break {
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    margin: 2.75rem 0;
   }
 }

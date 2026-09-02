@@ -61,6 +61,16 @@ html.dark {
   border-color: var(--border);
 }
 
+/* Специфичные цвета рамок для примеров "было/стало" в статьях — вне @layer, потому что
+   правило "*" выше тоже не слоистое и по спеке cascade layers всегда перебивает @layer utilities,
+   какая бы специфичность у селектора там ни была. */
+.prose-article .example-step-ai {
+  border-color: var(--accent);
+}
+.prose-article .example-step-edited {
+  border-color: var(--accent-vivid);
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -284,6 +294,10 @@ summary {
   .prose-article a {
     color: var(--accent);
     text-underline-offset: 3px;
+    transition: color 0.15s ease;
+  }
+  .prose-article a:hover {
+    color: var(--accent-hover);
   }
   .prose-article ul,
   .prose-article ol {
@@ -297,6 +311,89 @@ summary {
   }
   .prose-article ol {
     list-style: decimal;
+  }
+  .prose-article ul > li::marker,
+  .prose-article ol > li::marker {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .prose-article table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    margin: 1.75rem 0;
+    border: 1px solid var(--border);
+    border-radius: 0.75em;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.95em;
+  }
+  .prose-article th,
+  .prose-article td {
+    padding: 0.75em 1em;
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose-article thead th {
+    font-family: var(--font-display);
+    font-weight: 600;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .prose-article tbody td {
+    border-bottom: 1px solid var(--border);
+  }
+  .prose-article tbody tr:last-child td {
+    border-bottom: none;
+  }
+  .prose-article .pull-quote {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.35rem;
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--accent);
+    margin: 2.5rem 0;
+  }
+  .prose-article .example-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.75rem 0;
+  }
+  .prose-article .example-step {
+    border: 1px solid var(--border);
+    border-radius: 0.75em;
+    padding: 0.9em 1.1em;
+    background: var(--surface);
+  }
+  .prose-article .example-step p {
+    margin: 0;
+  }
+  .prose-article .example-step-label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.4em;
+    color: var(--muted);
+  }
+  .prose-article .example-step-draft {
+    border-style: dashed;
+    color: var(--muted);
+  }
+  .prose-article .example-step-ai .example-step-label {
+    color: var(--accent);
+  }
+  .prose-article .example-step-edited {
+    border-width: 2px;
+  }
+  .prose-article .example-step-edited .example-step-label {
+    color: var(--accent-vivid);
   }
   .prose-article blockquote {
     border-left: 2px solid var(--accent);

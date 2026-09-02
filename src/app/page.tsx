@@ -4,6 +4,7 @@ import { Container } from "@/components/container";
 import { IconBadge } from "@/components/icon-badge";
 import { LogoMarquee } from "@/components/logo-marquee";
 import { PhotoCard } from "@/components/photo-card";
+import { PostCoverImage } from "@/components/post-cover-image";
 import { Reveal } from "@/components/reveal";
 import { TrackedLink } from "@/components/tracked-link";
 import { TypewriterName } from "@/components/typewriter-name";
@@ -272,10 +273,9 @@ export default function Home() {
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                   {post.image && (
                     <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-surface">
-                      <Image
+                      <PostCoverImage
                         src={post.image}
-                        alt=""
-                        fill
+                        srcDark={post.imageDark}
                         sizes="(min-width: 640px) 33vw, 100vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />

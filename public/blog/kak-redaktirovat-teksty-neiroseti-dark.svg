@@ -1,6 +1,6 @@
 <svg
   id="kr-illustration"
-  viewBox="0 0 960 400"
+  viewBox="0 -70 960 540"
   width="100%"
   height="auto"
   style="display:block;width:100%;height:auto;"
@@ -16,12 +16,11 @@
   </desc>
 
   <style>
-    /* Статичная тёмная версия — парный файл (без -dark) для светлой темы сайта, выбор между
-       ними делает сама страница классами dark: (внешний файл-картинка не видит переменных
-       страницы). Шрифты подгружены явно — next/font тут недоступен, это отдельный файл. */
+    /* Подгружаем реальные шрифты сайта на случай просмотра вне страницы (там, где нет
+       next/font). На сайте эти @font-face просто не понадобятся — var(--font-display)/
+       var(--font-sans) уже резолвятся в уже загруженные локальные шрифты. */
     @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700');
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500');
-
     .kr-title {
       font-family: var(--font-display, "Unbounded", sans-serif);
       font-weight: 600;
@@ -59,7 +58,7 @@
 
   <!-- Card background for the whole illustration — makes the illustration read as one
        surface against the page's background, not just the four inner blocks. -->
-  <rect x="0" y="0" width="960" height="400" rx="24" fill="#1c150d" />
+  <rect x="0" y="-70" width="960" height="540" rx="24" fill="#1c150d" />
 
   <!-- Arrows connecting the four stages -->
   <line x1="212" y1="200" x2="247" y2="200" stroke="#ffc233" stroke-width="3" marker-end="url(#kr-arrowhead)" />

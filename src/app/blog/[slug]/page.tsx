@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { Container } from "@/components/container";
+import { PostCoverImage } from "@/components/post-cover-image";
 import { PostKeyboardNav } from "@/components/post-keyboard-nav";
 import { PostReaction } from "@/components/post-reaction";
 import {
@@ -108,22 +108,11 @@ export default async function BlogPostPage({
         )}
         {post.image && (
           <div className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-border bg-surface">
-            <Image
+            <PostCoverImage
               src={post.image}
-              alt=""
-              fill
-              className={
-                post.imageDark ? "object-cover dark:hidden" : "object-cover"
-              }
+              srcDark={post.imageDark}
+              sizes="(min-width: 768px) 768px, 100vw"
             />
-            {post.imageDark && (
-              <Image
-                src={post.imageDark}
-                alt=""
-                fill
-                className="hidden object-cover dark:block"
-              />
-            )}
           </div>
         )}
         {intro && (

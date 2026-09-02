@@ -126,22 +126,24 @@ export default async function BlogPostPage({
           </div>
         )}
         {headings.length > 1 && (
-          <div className="article-toc mt-10 rounded-2xl border border-border bg-surface p-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-accent">
-              В этой статье
-            </p>
-            <ol className="mt-4 space-y-2.5">
-              {headings.map((h) => (
-                <li key={h.slug}>
-                  <a
-                    href={`#${h.slug}`}
-                    className="text-sm text-muted transition-colors hover:text-accent"
-                  >
-                    {h.text}
-                  </a>
-                </li>
-              ))}
-            </ol>
+          <div className="article-toc-wrap mt-10">
+            <div className="article-toc rounded-2xl border border-border bg-surface p-6">
+              <p className="font-mono text-xs uppercase tracking-widest text-accent">
+                В этой статье
+              </p>
+              <ol className="mt-4 space-y-2.5">
+                {headings.map((h) => (
+                  <li key={h.slug}>
+                    <a
+                      href={`#${h.slug}`}
+                      className="text-sm text-muted transition-colors hover:text-accent"
+                    >
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
         )}
         <div className="article-body prose-article mt-12">

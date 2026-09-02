@@ -280,7 +280,6 @@ summary {
       display: grid;
       grid-template-columns: 42rem minmax(0, 1fr);
       column-gap: 3rem;
-      align-items: start;
       grid-template-areas:
         "header header"
         "intro toc"
@@ -294,8 +293,10 @@ summary {
       grid-area: intro;
       min-width: 0;
     }
-    .article-toc {
+    .article-toc-wrap {
       grid-area: toc;
+    }
+    .article-toc {
       position: sticky;
       top: 6rem;
     }

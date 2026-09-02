@@ -6,7 +6,7 @@ import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Блог",
-  description: "Статьи про редактуру, тексты и контент.",
+  description: "Статьи про редактуру, контент-маркетинг и нейросети.",
 };
 
 export default function BlogPage() {
@@ -20,9 +20,9 @@ export default function BlogPage() {
             Блог
           </p>
           <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
-            Про редактуру
-            <br />и нейросети
-            <br />в работе<span className="text-accent">.</span>
+            Про редактуру,
+            <br />контент-маркетинг
+            <br />и нейросети<span className="text-accent">.</span>
           </h1>
         </Container>
       </section>

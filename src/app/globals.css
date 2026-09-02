@@ -268,6 +268,45 @@ summary {
 }
 
 @layer utilities {
+  /* Desktop: заголовок/картинка на всю ширину, дальше текст слева и липкое
+     оглавление справа в освободившемся месте, начинается на уровне интро
+     (сразу под картинкой). Мобильные и планшет — обычный поток, порядок
+     блоков в разметке (header/intro/toc/body/footer) и даёт исходный вид. */
+  .article-grid {
+    display: block;
+  }
+  @media (min-width: 1024px) {
+    .article-grid {
+      display: grid;
+      grid-template-columns: 42rem minmax(0, 1fr);
+      column-gap: 3rem;
+      align-items: start;
+      grid-template-areas:
+        "header header"
+        "intro toc"
+        "body toc"
+        "footer footer";
+    }
+    .article-header {
+      grid-area: header;
+    }
+    .article-intro {
+      grid-area: intro;
+      min-width: 0;
+    }
+    .article-toc {
+      grid-area: toc;
+      position: sticky;
+      top: 6rem;
+    }
+    .article-body {
+      grid-area: body;
+      min-width: 0;
+    }
+    .article-footer {
+      grid-area: footer;
+    }
+  }
   .prose-article {
     max-width: 42rem;
   }

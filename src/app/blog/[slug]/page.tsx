@@ -77,46 +77,48 @@ export default async function BlogPostPage({
         olderHref={older ? `/blog/${older.slug}` : undefined}
         newerHref={newer ? `/blog/${newer.slug}` : undefined}
       />
-      <Container className="max-w-3xl">
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
-        >
-          ← Блог
-        </Link>
-        <p className="mt-6 font-mono text-xs uppercase tracking-widest text-muted">
-          {post.date} · {post.readingTime}
-        </p>
-        <h1 className="balance mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-          {post.title}
-          <span className="text-accent">.</span>
-        </h1>
-        {post.tags.length > 0 && (
-          <div className="mt-6 flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-border px-3 py-1 text-xs text-muted"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-        {post.description && (
-          <p className="mt-6 text-lg text-muted">{post.description}</p>
-        )}
-        {post.image && (
-          <div className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-border bg-surface">
-            <PostCoverImage
-              src={post.image}
-              srcDark={post.imageDark}
-              sizes="(min-width: 768px) 768px, 100vw"
-            />
-          </div>
-        )}
+      <Container className="max-w-3xl lg:max-w-5xl article-grid">
+        <div className="article-header">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-muted transition-colors hover:text-accent"
+          >
+            ← Блог
+          </Link>
+          <p className="mt-6 font-mono text-xs uppercase tracking-widest text-muted">
+            {post.date} · {post.readingTime}
+          </p>
+          <h1 className="balance mt-4 font-display text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+            {post.title}
+            <span className="text-accent">.</span>
+          </h1>
+          {post.tags.length > 0 && (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-border px-3 py-1 text-xs text-muted"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+          {post.description && (
+            <p className="mt-6 text-lg text-muted">{post.description}</p>
+          )}
+          {post.image && (
+            <div className="relative mt-10 aspect-video overflow-hidden rounded-2xl border border-border bg-surface">
+              <PostCoverImage
+                src={post.image}
+                srcDark={post.imageDark}
+                sizes="(min-width: 1024px) 960px, (min-width: 640px) 768px, 100vw"
+              />
+            </div>
+          )}
+        </div>
         {intro && (
-          <div className="prose-article mt-10">
+          <div className="article-intro prose-article mt-10">
             <MDXRemote
               source={intro}
               options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
@@ -124,7 +126,7 @@ export default async function BlogPostPage({
           </div>
         )}
         {headings.length > 1 && (
-          <div className="mt-10 rounded-2xl border border-border bg-surface p-6">
+          <div className="article-toc mt-10 rounded-2xl border border-border bg-surface p-6">
             <p className="font-mono text-xs uppercase tracking-widest text-accent">
               В этой статье
             </p>
@@ -142,7 +144,7 @@ export default async function BlogPostPage({
             </ol>
           </div>
         )}
-        <div className="prose-article mt-12">
+        <div className="article-body prose-article mt-12">
           <MDXRemote
             source={body}
             options={{
@@ -151,7 +153,7 @@ export default async function BlogPostPage({
           />
         </div>
 
-        <div className="mt-16 space-y-10">
+        <div className="article-footer mt-16 space-y-10">
           <PostReaction slug={slug} />
 
           {related.length > 0 && (

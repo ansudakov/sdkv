@@ -1,6 +1,6 @@
 type LogoEntry =
-  | { src: string; alt: string; ratio: number; text?: undefined }
-  | { text: string; alt: string; src?: undefined; ratio?: undefined };
+  | { src: string; alt: string; ratio: number; padded?: boolean; text?: undefined }
+  | { text: string; alt: string; src?: undefined; ratio?: undefined; padded?: undefined };
 
 const logos: LogoEntry[] = [
   { src: "/logos/alfa-bank.svg", alt: "Альфа-Банк", ratio: 728.6 / 146.4 },
@@ -8,7 +8,7 @@ const logos: LogoEntry[] = [
   { src: "/logos/vk.svg", alt: "VK", ratio: 32.2 / 20.1 },
   { src: "/logos/skillbox.svg", alt: "Skillbox", ratio: 99 / 22 },
   { src: "/logos/gazprombank.svg", alt: "Газпромбанк", ratio: 288.496 / 60.494 },
-  { src: "/logos/yota.svg", alt: "Yota", ratio: 1000 / 255.9041595 },
+  { src: "/logos/yota.svg", alt: "Yota", ratio: 1000 / 255.9041595, padded: true },
   { src: "/logos/raiffeisen.svg", alt: "Райффайзен Банк", ratio: 321 / 70 },
   { src: "/logos/yandex.svg", alt: "Яндекс", ratio: 350 / 135 },
   { src: "/logos/alpina.png", alt: "Альпина Паблишер", ratio: 1000 / 282 },
@@ -35,7 +35,7 @@ function LogoMark({ logo }: { logo: LogoEntry }) {
     <div
       role="img"
       aria-label={logo.alt}
-      className="h-6 shrink-0 bg-muted sm:h-7"
+      className={`h-6 shrink-0 bg-muted sm:h-7 ${logo.padded ? "p-1 sm:p-1.5" : ""}`}
       style={{
         aspectRatio: logo.ratio,
         WebkitMaskImage: `url(${logo.src})`,
@@ -44,8 +44,10 @@ function LogoMark({ logo }: { logo: LogoEntry }) {
         maskSize: "contain",
         WebkitMaskRepeat: "no-repeat",
         maskRepeat: "no-repeat",
-        WebkitMaskPosition: "center left",
-        maskPosition: "center left",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+        WebkitMaskOrigin: "content-box",
+        maskOrigin: "content-box",
       }}
     />
   );

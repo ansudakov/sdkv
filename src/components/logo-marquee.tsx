@@ -8,7 +8,7 @@ const logos: LogoEntry[] = [
   { src: "/logos/vk.svg", alt: "VK", ratio: 32.2 / 20.1 },
   { src: "/logos/skillbox.svg", alt: "Skillbox", ratio: 99 / 22 },
   { src: "/logos/gazprombank.svg", alt: "Газпромбанк", ratio: 288.496 / 60.494 },
-  { src: "/logos/yota.svg", alt: "Yota", ratio: 384 / 102 },
+  { src: "/logos/yota.svg", alt: "Yota", ratio: 1000 / 255.9041595 },
   { src: "/logos/raiffeisen.svg", alt: "Райффайзен Банк", ratio: 321 / 70 },
   { src: "/logos/yandex.svg", alt: "Яндекс", ratio: 350 / 135 },
   { src: "/logos/alpina.png", alt: "Альпина Паблишер", ratio: 1000 / 282 },

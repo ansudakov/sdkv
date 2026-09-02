@@ -77,7 +77,7 @@ export default async function BlogPostPage({
         olderHref={older ? `/blog/${older.slug}` : undefined}
         newerHref={newer ? `/blog/${newer.slug}` : undefined}
       />
-      <Container className="max-w-3xl lg:max-w-5xl article-grid">
+      <Container className="article-grid">
         <div className="article-header">
           <Link
             href="/blog"

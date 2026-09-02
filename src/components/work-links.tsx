@@ -23,7 +23,7 @@ export function WorkLinks({ links }: { links: WorkLink[] }) {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex w-72 shrink-0 flex-col justify-between gap-6 rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-accent"
+            className="group flex w-72 shrink-0 flex-col justify-between gap-6 rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-accent"
           >
             <div className="flex items-start justify-between gap-2">
               <span className="font-mono text-xs uppercase tracking-widest text-muted">

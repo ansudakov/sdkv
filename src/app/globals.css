@@ -5,6 +5,7 @@
 :root {
   --background: #faf9f6;
   --surface: #ffffff;
+  --card: #ffffff;
   --foreground: #0d0d0c;
   --muted: #68675f;
   --border: #e3e1d9;
@@ -17,6 +18,7 @@
 .dark {
   --background: #0a0a09;
   --surface: #141412;
+  --card: #201f1a;
   --foreground: #f4f3ee;
   --muted: #9a988e;
   --border: #262620;
@@ -29,6 +31,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);

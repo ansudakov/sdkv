@@ -349,13 +349,14 @@ summary {
     border-bottom: none;
   }
   .prose-article .pull-quote {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.35rem;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.55;
+    text-align: center;
     color: var(--accent);
-    margin: 2.5rem 0;
+    margin: 2.5rem auto;
+    max-width: 32rem;
   }
   .prose-article .example-card {
     display: flex;

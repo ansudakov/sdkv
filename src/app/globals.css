@@ -111,6 +111,9 @@ summary {
 
 .balance {
   text-wrap: balance;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 @keyframes blink {

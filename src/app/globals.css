@@ -116,6 +116,15 @@ summary {
   hyphens: auto;
 }
 
+/* Исключение: собственное имя не переносим по слогам ни при каких условиях
+   — "Судо-ков" выглядит как опечатка, не как книжный перенос. Двойной класс
+   даёт специфичность выше одного .balance, порядок в файле не важен. */
+.balance.no-hyphens {
+  -webkit-hyphens: none;
+  hyphens: none;
+  overflow-wrap: normal;
+}
+
 @keyframes blink {
   0%,
   49% {

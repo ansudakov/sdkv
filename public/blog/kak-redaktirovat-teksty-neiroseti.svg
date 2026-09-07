@@ -56,9 +56,9 @@
     </marker>
   </defs>
 
-  <!-- Card background for the whole illustration — makes the illustration read as one
-       surface against the page's background, not just the four inner blocks. -->
-  <rect x="0" y="-70" width="960" height="540" rx="24" fill="#ffffff" />
+  <!-- Canvas background matches the page background, not the card surface — the four
+       inner blocks carry their own card fill, so they read as distinct from the canvas. -->
+  <rect x="0" y="-70" width="960" height="540" rx="24" fill="#faf9f6" />
 
   <!-- Arrows connecting the four stages -->
   <line x1="212" y1="200" x2="247" y2="200" stroke="#d65600" stroke-width="3" marker-end="url(#kr-arrowhead)" />

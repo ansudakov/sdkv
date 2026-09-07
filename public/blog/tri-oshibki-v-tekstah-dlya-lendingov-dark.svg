@@ -8,7 +8,7 @@
   role="img"
   aria-labelledby="cover-title-dark cover-desc-dark"
 >
-  <title id="cover-title-dark">Три ошибки текста для лендинга: заголовок, выгода, структура</title>
+  <title id="cover-title-dark">Где лендинг теряет конверсию: заголовок, выгода, структура</title>
   <desc id="cover-desc-dark">
     Три равные карточки друг рядом с другом. Первая: заголовок не туда, отвечает не на тот вопрос.
     Вторая: выгода без числа, прилагательное вместо результата. Третья: текст без структуры,
@@ -46,7 +46,7 @@
 
   <rect x="0" y="0" width="960" height="540" rx="28" fill="#0a0a09" />
 
-  <text x="480" y="86" class="cov-title" font-size="28">Три ошибки текста для лендинга</text>
+  <text x="480" y="86" class="cov-title" font-size="28">Где лендинг теряет конверсию</text>
 
   <g>
     <rect x="40" y="140" width="280" height="340" rx="18" fill="#1c150d" stroke="#3a3226" stroke-width="2" />

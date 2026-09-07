@@ -450,7 +450,7 @@ summary {
     top: 100%;
     transform: translateX(-50%);
     width: 2px;
-    height: 12px;
+    height: 14px;
     background: var(--accent-vivid);
   }
   .prose-article .example-step-draft:not(:last-child)::after,

@@ -96,7 +96,7 @@
     </marker>
   </defs>
 
-  <rect x="0" y="0" width="960" height="540" rx="24" fill="#1c150d" />
+  <rect x="0" y="0" width="960" height="540" rx="24" fill="#0a0a09" />
 
   <path d="M318,205 Q480,140 642,205" fill="none" stroke="#ffc233" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" marker-end="url(#kr-arrow-loop)" />
   <text x="480" y="150" class="kr-loop-label">цикл заново</text>

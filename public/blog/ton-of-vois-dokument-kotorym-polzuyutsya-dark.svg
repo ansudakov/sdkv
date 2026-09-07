@@ -1,0 +1,148 @@
+<svg
+  viewBox="0 0 960 540"
+  width="100%"
+  height="auto"
+  style="display:block;width:100%;height:auto;"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="illus-title illus-desc"
+>
+  <title id="illus-title">Цикл документа тон-оф-войс: стержневая идея (шаг 0) вынесена отдельной приподнятой карточкой над циклом и запускает четырехшаговый цикл 1-4 из узлов тексты пишутся, решение на тексте, правило фиксируется, убираем лишние правила и перепроверяем старые</title>
+  <desc id="illus-desc">
+    Узел 0, стержневая идея, стоит отдельной небольшой приглушенной карточкой с пунктирной рамкой
+    наверху по центру, вне контура цикла, и отдает одну короткую стрелку вниз-вправо в узел 1,
+    тексты пишутся, но сам не получает стрелку обратно. Узлы 1, 2, 3 и 4 образуют чистый
+    прямоугольный контур: 1, тексты пишутся, вверху справа; 2, решение принимается на тексте, внизу
+    справа; 3, правило фиксируется в документе, внизу слева; 4, убираем лишние правила и
+    перепроверяем старые, вверху слева. Между узлом 1 и узлом 2 идут две отдельные подписанные
+    стрелки разных акцентных тонов, от правок человека и от работы с ИИ, которые сходятся в одном
+    и том же узле. Короткая пунктирная дуга возврата ведет от узла 4 к узлу 1 вдоль верхнего края
+    прямоугольника, не задевая пространство рядом с узлом 0.
+  </desc>
+
+  <style>
+    .kr-node-title {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      fill: #f4f3ee;
+      text-anchor: middle;
+    }
+    .kr-node-title-sm { font-size: 13px; }
+    .kr-node-title-0 {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      fill: #9a988e;
+      text-anchor: middle;
+    }
+    .kr-node-caption {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 11px;
+      fill: #9a988e;
+      text-anchor: middle;
+    }
+    .kr-node-num {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      fill: #14100a;
+      text-anchor: middle;
+    }
+    .kr-node-num-0 {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      fill: #1c150d;
+      text-anchor: middle;
+    }
+    .kr-label-human {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      fill: #ffc233;
+      text-anchor: middle;
+    }
+    .kr-label-ai {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      fill: #bf9126;
+      text-anchor: middle;
+    }
+    .kr-loop-label {
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.01em;
+      fill: #ffc233;
+      text-anchor: middle;
+    }
+  </style>
+
+  <defs>
+    <marker id="kr-arrow-flow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#9a988e" />
+    </marker>
+    <marker id="kr-arrow-human" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ffc233" />
+    </marker>
+    <marker id="kr-arrow-ai" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#bf9126" />
+    </marker>
+    <marker id="kr-arrow-loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ffc233" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="540" rx="24" fill="#1c150d" />
+
+  <path d="M318,205 Q480,140 642,205" fill="none" stroke="#ffc233" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round" marker-end="url(#kr-arrow-loop)" />
+  <text x="480" y="128" class="kr-loop-label">цикл заново</text>
+
+  <line x1="530" y1="98" x2="720" y2="172" stroke="#9a988e" stroke-width="3" marker-end="url(#kr-arrow-flow)" />
+  <line x1="642" y1="444" x2="318" y2="444" stroke="#9a988e" stroke-width="3" marker-end="url(#kr-arrow-flow)" />
+  <line x1="215" y1="392" x2="215" y2="276" stroke="#9a988e" stroke-width="3" marker-end="url(#kr-arrow-flow)" />
+
+  <path d="M680,268 Q560,330 700,392" fill="none" stroke="#ffc233" stroke-width="3" marker-end="url(#kr-arrow-human)" />
+  <path d="M810,268 Q910,330 790,392" fill="none" stroke="#bf9126" stroke-width="3" marker-end="url(#kr-arrow-ai)" />
+  <text x="555" y="302" class="kr-label-human"><tspan x="555" dy="0">Правки</tspan><tspan x="555" dy="16">человека</tspan></text>
+  <text x="905" y="304" class="kr-label-ai"><tspan x="905" dy="0">Работа</tspan><tspan x="905" dy="16">с ИИ</tspan></text>
+
+  <g>
+    <rect x="380" y="20" width="200" height="72" rx="14" fill="#1c150d" stroke="#9a988e" stroke-width="2" stroke-dasharray="4 4" />
+    <text x="480" y="46" class="kr-node-title-0"><tspan x="480" dy="0">Стержневая</tspan><tspan x="480" dy="16">идея ToV</tspan></text>
+    <text x="480" y="80" class="kr-node-caption">с этого всё начинается</text>
+    <circle cx="480" cy="20" r="11" fill="#9a988e" />
+    <text x="480" y="24" class="kr-node-num-0">0</text>
+  </g>
+
+  <g>
+    <rect x="650" y="180" width="190" height="88" rx="16" fill="#1c150d" stroke="#2e2314" stroke-width="2" />
+    <text x="745" y="220" class="kr-node-title"><tspan x="745" dy="0">Тексты</tspan><tspan x="745" dy="20">пишутся</tspan></text>
+    <circle cx="840" cy="180" r="14" fill="#ffc233" />
+    <text x="840" y="184" class="kr-node-num">1</text>
+  </g>
+
+  <g>
+    <rect x="650" y="400" width="190" height="88" rx="16" fill="#1c150d" stroke="#2e2314" stroke-width="2" />
+    <text x="745" y="430" class="kr-node-title"><tspan x="745" dy="0">Решение</tspan><tspan x="745" dy="18">принимается</tspan><tspan x="745" dy="18">на тексте</tspan></text>
+    <circle cx="840" cy="488" r="14" fill="#ffc233" />
+    <text x="840" y="492" class="kr-node-num">2</text>
+  </g>
+
+  <g>
+    <rect x="120" y="400" width="190" height="88" rx="16" fill="#1c150d" stroke="#2e2314" stroke-width="2" />
+    <text x="215" y="430" class="kr-node-title"><tspan x="215" dy="0">Правило</tspan><tspan x="215" dy="18">фиксируется</tspan><tspan x="215" dy="18">в документе</tspan></text>
+    <circle cx="120" cy="488" r="14" fill="#ffc233" />
+    <text x="120" y="492" class="kr-node-num">3</text>
+  </g>
+
+  <g>
+    <rect x="120" y="180" width="190" height="88" rx="16" fill="#1c150d" stroke="#2e2314" stroke-width="2" />
+    <text x="215" y="218" class="kr-node-title kr-node-title-sm"><tspan x="215" dy="0">Перепроверяем</tspan><tspan x="215" dy="17">старые правила,</tspan><tspan x="215" dy="17">убираем лишние</tspan></text>
+    <circle cx="120" cy="180" r="14" fill="#ffc233" />
+    <text x="120" y="184" class="kr-node-num">4</text>
+  </g>
+</svg>

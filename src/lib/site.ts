@@ -403,7 +403,7 @@ export const experience: ExperienceItem[] = [
     period: "Март 2019 — Ноябрь 2019",
     duration: "9 месяцев",
     company: "Skillbox",
-    role: "Редактор соцсетей",
+    role: "Редактор соцсетей, проектная работа",
     location: "Россия",
     icon: "skillbox",
     summary: "Единственный автор соцсетей образовательной платформы: FB, VK, TG, IG, YT.",

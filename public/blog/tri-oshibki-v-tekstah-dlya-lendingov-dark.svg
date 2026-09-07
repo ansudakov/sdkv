@@ -1,15 +1,15 @@
 <svg
-  id="kr-cover-tri-oshibki"
+  id="kr-cover-tri-oshibki-dark"
   viewBox="0 0 960 540"
   width="100%"
   height="auto"
   style="display:block;width:100%;height:auto;"
   xmlns="http://www.w3.org/2000/svg"
   role="img"
-  aria-labelledby="cover-title cover-desc"
+  aria-labelledby="cover-title-dark cover-desc-dark"
 >
-  <title id="cover-title">Три ошибки текста для лендинга: заголовок, выгода, структура</title>
-  <desc id="cover-desc">
+  <title id="cover-title-dark">Три ошибки текста для лендинга: заголовок, выгода, структура</title>
+  <desc id="cover-desc-dark">
     Три равные карточки друг рядом с другом. Первая: заголовок не туда, отвечает не на тот вопрос.
     Вторая: выгода без числа, прилагательное вместо результата. Третья: текст без структуры,
     абзац вместо сканируемых блоков.
@@ -18,65 +18,65 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700');
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500');
-    #kr-cover-tri-oshibki .cov-title {
+    #kr-cover-tri-oshibki-dark .cov-title {
       font-family: "Unbounded", sans-serif;
       font-weight: 700;
-      fill: #0d0d0c;
+      fill: #f4f3ee;
       text-anchor: middle;
     }
-    #kr-cover-tri-oshibki .cov-card-title {
+    #kr-cover-tri-oshibki-dark .cov-card-title {
       font-family: "Unbounded", sans-serif;
       font-weight: 600;
-      fill: #0d0d0c;
+      fill: #f4f3ee;
       text-anchor: middle;
     }
-    #kr-cover-tri-oshibki .cov-hint {
+    #kr-cover-tri-oshibki-dark .cov-hint {
       font-family: "Inter", sans-serif;
       font-weight: 400;
-      fill: #68675f;
+      fill: #a8a290;
       text-anchor: middle;
     }
-    #kr-cover-tri-oshibki .cov-num {
+    #kr-cover-tri-oshibki-dark .cov-num {
       font-family: "Unbounded", sans-serif;
       font-weight: 700;
-      fill: #ffffff;
+      fill: #14100a;
       text-anchor: middle;
     }
   </style>
 
-  <rect x="0" y="0" width="960" height="540" rx="28" fill="#faf9f6" />
+  <rect x="0" y="0" width="960" height="540" rx="28" fill="#0a0a09" />
 
   <text x="480" y="86" class="cov-title" font-size="28">Три ошибки текста для лендинга</text>
 
   <g>
-    <rect x="40" y="140" width="280" height="340" rx="18" fill="#ffffff" stroke="#e3e1d9" stroke-width="2" />
-    <circle cx="180" cy="196" r="22" fill="#d65600" />
+    <rect x="40" y="140" width="280" height="340" rx="18" fill="#1c150d" stroke="#3a3226" stroke-width="2" />
+    <circle cx="180" cy="196" r="22" fill="#ffc233" />
     <text x="180" y="203" class="cov-num" font-size="20">1</text>
     <text x="180" y="252" class="cov-card-title" font-size="21">Заголовок</text>
     <text x="180" y="278" class="cov-card-title" font-size="21">не туда</text>
-    <line x1="80" y1="304" x2="280" y2="304" stroke="#e3e1d9" stroke-width="1" />
+    <line x1="80" y1="304" x2="280" y2="304" stroke="#3a3226" stroke-width="1" />
     <text x="180" y="340" class="cov-hint" font-size="15">отвечает не на</text>
     <text x="180" y="362" class="cov-hint" font-size="15">тот вопрос</text>
   </g>
 
   <g>
-    <rect x="340" y="140" width="280" height="340" rx="18" fill="#ffffff" stroke="#e3e1d9" stroke-width="2" />
-    <circle cx="480" cy="196" r="22" fill="#ff781f" />
+    <rect x="340" y="140" width="280" height="340" rx="18" fill="#1c150d" stroke="#3a3226" stroke-width="2" />
+    <circle cx="480" cy="196" r="22" fill="#ffc233" />
     <text x="480" y="203" class="cov-num" font-size="20">2</text>
     <text x="480" y="252" class="cov-card-title" font-size="21">Выгода</text>
     <text x="480" y="278" class="cov-card-title" font-size="21">без числа</text>
-    <line x1="380" y1="304" x2="580" y2="304" stroke="#e3e1d9" stroke-width="1" />
+    <line x1="380" y1="304" x2="580" y2="304" stroke="#3a3226" stroke-width="1" />
     <text x="480" y="340" class="cov-hint" font-size="15">прилагательное</text>
     <text x="480" y="362" class="cov-hint" font-size="15">вместо результата</text>
   </g>
 
   <g>
-    <rect x="640" y="140" width="280" height="340" rx="18" fill="#ffffff" stroke="#e3e1d9" stroke-width="2" />
-    <circle cx="780" cy="196" r="22" fill="#993d00" />
+    <rect x="640" y="140" width="280" height="340" rx="18" fill="#1c150d" stroke="#3a3226" stroke-width="2" />
+    <circle cx="780" cy="196" r="22" fill="#bf9126" />
     <text x="780" y="203" class="cov-num" font-size="20">3</text>
     <text x="780" y="252" class="cov-card-title" font-size="21">Текст без</text>
     <text x="780" y="278" class="cov-card-title" font-size="21">структуры</text>
-    <line x1="680" y1="304" x2="880" y2="304" stroke="#e3e1d9" stroke-width="1" />
+    <line x1="680" y1="304" x2="880" y2="304" stroke="#3a3226" stroke-width="1" />
     <text x="780" y="340" class="cov-hint" font-size="15">абзац вместо</text>
     <text x="780" y="362" class="cov-hint" font-size="15">сканируемых блоков</text>
   </g>

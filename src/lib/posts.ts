@@ -10,6 +10,7 @@ export type PostMeta = {
   slug: string;
   title: string;
   description: string;
+  seoDescription?: string;
   date: string;
   updated?: string;
   tags: string[];
@@ -46,6 +47,7 @@ export function getPostMeta(slug: string): PostMeta | null {
     slug,
     title: data.title ?? slug,
     description: data.description ?? "",
+    seoDescription: data.seoDescription ?? data.description ?? "",
     date: data.date ?? "",
     updated: data.updated,
     tags: data.tags ?? [],
@@ -64,6 +66,7 @@ export function getPost(slug: string): Post | null {
     slug,
     title: data.title ?? slug,
     description: data.description ?? "",
+    seoDescription: data.seoDescription ?? data.description ?? "",
     date: data.date ?? "",
     updated: data.updated,
     tags: data.tags ?? [],

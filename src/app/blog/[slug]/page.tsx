@@ -32,13 +32,13 @@ export async function generateMetadata({
   if (!post) return {};
   return {
     title: post.title,
-    description: post.description,
+    description: post.seoDescription,
     alternates: {
       canonical: `/blog/${slug}`,
     },
     openGraph: {
       title: post.title,
-      description: post.description,
+      description: post.seoDescription,
       type: "article",
       publishedTime: post.date,
       modifiedTime: post.updated ?? post.date,
@@ -64,7 +64,7 @@ export default async function BlogPostPage({
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
-    description: post.description,
+    description: post.seoDescription,
     image: `${postUrl}/opengraph-image`,
     datePublished: post.date,
     dateModified: post.updated ?? post.date,

@@ -442,17 +442,17 @@ summary {
     padding: 0.9em 1.1em;
     background: var(--surface);
   }
-  .prose-article .example-step:not(:last-child)::after {
+  .prose-article .example-step-draft:not(:last-child)::after,
+  .prose-article .example-step-ai:not(:last-child)::after {
     content: "";
     position: absolute;
     left: 50%;
-    bottom: -1.25rem;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 8px solid var(--accent-vivid);
+    bottom: -1.15rem;
+    width: 9px;
+    height: 9px;
+    transform: translateX(-50%) rotate(45deg);
+    border-right: 2px solid var(--accent-vivid);
+    border-bottom: 2px solid var(--accent-vivid);
   }
   .prose-article .example-step p {
     margin: 0;

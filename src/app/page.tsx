@@ -94,7 +94,7 @@ export default function Home() {
               <Reveal delayMs={200}>
                 <p className="text-muted">
                   Пишу на{" "}
-                  <span className="text-foreground">русском (C2)</span> и{" "}
+                  <span className="text-foreground">русском (native)</span> и{" "}
                   <span className="text-accent">английском (C1)</span>.
                   Работаю по ТК или ИП: есть шаблон договора, КЭП и ЭДО,
                   полный комплект.

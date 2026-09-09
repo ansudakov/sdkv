@@ -52,7 +52,7 @@ export default function PhotosPage() {
               src={slot.src}
               index={i + 1}
               label={slot.label}
-              className={slot.tall ? "aspect-[3/4] sm:mt-8" : "aspect-square"}
+              className={slot.tall ? "aspect-[3/4] sm:mt-8" : "aspect-[3/4]"}
             />
           ))}
         </div>

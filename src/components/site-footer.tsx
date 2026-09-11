@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { FooterMark } from "@/components/footer-mark";
 import { TrackedLink } from "@/components/tracked-link";
 import { site, nav } from "@/lib/site";
 
@@ -85,12 +86,7 @@ export function SiteFooter() {
             <span>{site.role}</span>
           </div>
         </div>
-        <p
-          className="select-none text-center font-display text-[18vw] font-bold leading-none tracking-tight sm:text-[9vw]"
-          style={{ WebkitTextStroke: "1.5px var(--border)", color: "transparent" }}
-        >
-          SDKV
-        </p>
+        <FooterMark />
       </Container>
     </footer>
   );

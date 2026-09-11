@@ -6,7 +6,7 @@ import { WorkLinks } from "@/components/work-links";
 import { workCases } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Работы",
+  title: "Портфолио",
   description:
     "Кейсы редактуры и контент-лидерства: Альфа-Банк, Т-Банк, Timeweb Cloud, Hostman, Яндекс Доставка и другие.",
   alternates: {
@@ -20,7 +20,7 @@ export default function WorkPage() {
       <section className="border-b border-border pt-16 pb-14 sm:pt-20 sm:pb-16">
         <Container>
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
-            Работы
+            Портфолио
           </p>
           <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
             Тексты<span className="text-accent">,</span> редакции

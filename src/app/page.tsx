@@ -136,13 +136,13 @@ export default function Home() {
         <Container>
           <div className="mb-10 flex items-end justify-between">
             <p className="font-mono text-sm uppercase tracking-[0.2em] text-accent">
-              Избранные работы
+              Из портфолио
             </p>
             <Link
               href="/works"
               className="text-sm font-medium text-muted transition-colors hover:text-accent"
             >
-              Все работы →
+              Всё портфолио →
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">

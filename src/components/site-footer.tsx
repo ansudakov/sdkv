@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { TrackedLink } from "@/components/tracked-link";
@@ -73,6 +74,23 @@ export function SiteFooter() {
               </a>
             </div>
           </div>
+        </div>
+        <div className="flex items-center gap-4 overflow-hidden border-t border-border pt-10 sm:gap-8 sm:pt-14">
+          <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full border border-accent sm:h-20 sm:w-20">
+            <Image
+              src="/photos/alexander-main.jpg"
+              alt=""
+              width={160}
+              height={160}
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <p
+            className="select-none truncate font-display text-[15vw] font-bold leading-none tracking-tight sm:text-[13vw]"
+            style={{ WebkitTextStroke: "1.5px var(--border)", color: "transparent" }}
+          >
+            SDKV
+          </p>
         </div>
         <div className="flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
           <span>

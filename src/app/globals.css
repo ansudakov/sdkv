@@ -109,6 +109,18 @@ summary {
   color: var(--accent-foreground);
 }
 
+.footer-mark {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--border);
+}
+
+.footer-mark::selection {
+  background: transparent;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: var(--accent);
+}
+
 .balance {
   text-wrap: balance;
   overflow-wrap: break-word;

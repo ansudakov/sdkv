@@ -6,6 +6,7 @@ import { AnalyticsGate } from "@/components/analytics-gate";
 import { CookieConsent } from "@/components/cookie-consent";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { TelegramToast } from "@/components/telegram-toast";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -94,6 +95,7 @@ export default function RootLayout({
         <SpeedInsights />
         <AnalyticsGate />
         <CookieConsent />
+        <TelegramToast />
       </body>
     </html>
   );

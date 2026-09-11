@@ -38,7 +38,7 @@ export function WorkLinks({ links }: { links: WorkLink[] }) {
                 strokeWidth="1.8"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="shrink-0 text-muted transition-colors group-hover:text-accent"
+                className="shrink-0 text-muted transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-accent"
               >
                 <path d="M7 17 17 7M9 7h8v8" />
               </svg>

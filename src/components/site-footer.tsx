@@ -11,12 +11,10 @@ export function SiteFooter() {
       <Container className="flex flex-col gap-10 py-14 sm:py-16">
         <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
           <div>
-            <p className="inline-block rounded-2xl border border-border bg-white/5 px-6 py-5 font-display text-2xl font-semibold tracking-tight sm:px-8 sm:py-6 sm:text-3xl">
+            <p className="block w-full rounded-2xl border border-border bg-white/5 px-6 py-5 font-display text-[calc((100vw-96px)/13)] font-semibold tracking-tight sm:inline-block sm:w-auto sm:px-8 sm:py-6 sm:text-3xl">
               Давайте сделаем
               <br />
-              что-то{" "}
-              <br className="sm:hidden" />
-              <FooterTagline />
+              что-то <FooterTagline />
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
               <TrackedLink

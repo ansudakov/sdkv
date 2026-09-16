@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 const WORDS = [
   "ёмкое",
   "сильное",
-  "честное",
   "дерзкое",
   "точное",
   "живое",
@@ -17,11 +16,6 @@ const WORDS = [
 const TYPE_DELAY = 70;
 const ERASE_DELAY = 40;
 const HOLD_DELAY = 2600;
-
-function pickNext(prev: string) {
-  const options = WORDS.filter((word) => word !== prev);
-  return options[Math.floor(Math.random() * options.length)];
-}
 
 function renderWord(word: string) {
   return word.split("").map((char, i) =>
@@ -86,16 +80,17 @@ export function FooterTagline() {
     let cancelled = false;
 
     async function run() {
-      let word = "ёмкое";
+      let index = 0;
       await sleep(HOLD_DELAY);
       while (!cancelled) {
-        const full = `${word}.`;
+        const full = `${WORDS[index]}.`;
         for (let i = full.length; i >= 0; i--) {
           if (cancelled) return;
           setDisplay(full.slice(0, i));
           await sleep(ERASE_DELAY);
         }
-        word = pickNext(word);
+        index = (index + 1) % WORDS.length;
+        const word = WORDS[index];
         for (let i = 1; i <= word.length; i++) {
           if (cancelled) return;
           setDisplay(word.slice(0, i));

@@ -17,7 +17,6 @@ const WORDS = [
 const TYPE_DELAY = 70;
 const ERASE_DELAY = 40;
 const HOLD_DELAY = 2600;
-const MAX_WORD_LENGTH = Math.max(...WORDS.map((word) => word.length));
 
 function pickNext(prev: string) {
   const options = WORDS.filter((word) => word !== prev);
@@ -44,8 +43,27 @@ function sleep(ms: number) {
 
 export function FooterTagline() {
   const ref = useRef<HTMLSpanElement>(null);
+  const measureRef = useRef<HTMLSpanElement>(null);
   const [display, setDisplay] = useState("ёмкое.");
   const [started, setStarted] = useState(false);
+  const [maxWidth, setMaxWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    function measure() {
+      const el = measureRef.current;
+      if (!el) return;
+      let widest = 0;
+      for (const w of WORDS) {
+        el.textContent = `${w}.`;
+        widest = Math.max(widest, el.offsetWidth);
+      }
+      setMaxWidth(widest);
+    }
+    measure();
+    const mql = window.matchMedia("(min-width: 640px)");
+    mql.addEventListener("change", measure);
+    return () => mql.removeEventListener("change", measure);
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -100,13 +118,20 @@ export function FooterTagline() {
   return (
     <span
       ref={ref}
-      style={{ minWidth: `${MAX_WORD_LENGTH + 2}ch` }}
-      className="relative inline-flex items-center gap-x-0.5 rounded-xl border border-border bg-surface p-3 align-middle leading-none sm:p-4"
+      className="relative inline-flex items-center gap-x-0.5 rounded-xl border border-border bg-surface p-0.5 align-middle leading-none sm:p-1"
     >
-      {word.length === 0 && !hasPeriod ? " " : renderWord(word)}
-      {hasPeriod && (
-        <span className="animate-blink text-accent">.</span>
-      )}
+      <span
+        ref={measureRef}
+        aria-hidden="true"
+        className="invisible absolute whitespace-nowrap"
+      />
+      <span
+        style={maxWidth ? { width: maxWidth } : undefined}
+        className="inline-block whitespace-nowrap"
+      >
+        {word.length === 0 && !hasPeriod ? " " : renderWord(word)}
+        {hasPeriod && <span className="animate-blink text-accent">.</span>}
+      </span>
     </span>
   );
 }

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 const WORDS = ["ёмкое", "сильное", "честное", "дерзкое", "точное", "живое"];
 const TYPE_DELAY = 70;
 const ERASE_DELAY = 40;
-const HOLD_DELAY = 1800;
+const HOLD_DELAY = 2600;
 
 function pickNext(prev: string) {
   const options = WORDS.filter((word) => word !== prev);
@@ -86,9 +86,14 @@ export function FooterTagline() {
   const word = hasPeriod ? display.slice(0, -1) : display;
 
   return (
-    <span ref={ref} className="relative inline-block leading-none">
+    <span
+      ref={ref}
+      className="relative inline-flex items-center gap-x-0.5 rounded-xl border border-border bg-surface px-3 py-0.5 align-middle leading-none sm:px-4 sm:py-1"
+    >
       {renderWord(word)}
-      {hasPeriod && <span className="text-accent">.</span>}
+      {hasPeriod && (
+        <span className="animate-blink text-accent">.</span>
+      )}
     </span>
   );
 }

@@ -111,7 +111,7 @@ export function FooterTagline() {
   const word = hasPeriod ? display.slice(0, -1) : display;
 
   return (
-    <span ref={ref} className="relative inline-flex items-center gap-x-0.5 align-middle leading-none">
+    <span ref={ref} className="relative inline-flex items-baseline gap-x-0.5 align-baseline leading-none">
       <span
         ref={measureRef}
         aria-hidden="true"

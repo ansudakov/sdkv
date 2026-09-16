@@ -2,10 +2,22 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const WORDS = ["ёмкое", "сильное", "честное", "дерзкое", "точное", "живое"];
+const WORDS = [
+  "ёмкое",
+  "сильное",
+  "честное",
+  "дерзкое",
+  "точное",
+  "живое",
+  "креативное",
+  "смелое",
+  "лаконичное",
+  "мощное",
+];
 const TYPE_DELAY = 70;
 const ERASE_DELAY = 40;
 const HOLD_DELAY = 2600;
+const MAX_WORD_LENGTH = Math.max(...WORDS.map((word) => word.length));
 
 function pickNext(prev: string) {
   const options = WORDS.filter((word) => word !== prev);
@@ -88,9 +100,10 @@ export function FooterTagline() {
   return (
     <span
       ref={ref}
-      className="relative inline-flex items-center gap-x-0.5 rounded-xl border border-border bg-surface px-3 py-0.5 align-middle leading-none sm:px-4 sm:py-1"
+      style={{ minWidth: `${MAX_WORD_LENGTH + 2}ch` }}
+      className="relative inline-flex items-center gap-x-0.5 rounded-xl border border-border bg-surface p-3 align-middle leading-none sm:p-4"
     >
-      {renderWord(word)}
+      {word.length === 0 && !hasPeriod ? " " : renderWord(word)}
       {hasPeriod && (
         <span className="animate-blink text-accent">.</span>
       )}

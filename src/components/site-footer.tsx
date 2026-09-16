@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { FooterMark } from "@/components/footer-mark";
+import { FooterTagline } from "@/components/footer-tagline";
 import { TrackedLink } from "@/components/tracked-link";
 import { site, nav } from "@/lib/site";
 
@@ -13,13 +14,7 @@ export function SiteFooter() {
             <p className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
               Давайте сделаем
               <br />
-              что-то{" "}
-              <span className="relative inline-block leading-none">
-                е
-                <span className="absolute top-[0.02em] left-[14%] h-[0.22em] w-[0.22em] rounded-full bg-accent" />
-                <span className="absolute top-[0.02em] left-[54%] h-[0.22em] w-[0.22em] rounded-full bg-accent" />
-              </span>
-              мкое<span className="text-accent">.</span>
+              что-то <FooterTagline />
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
               <TrackedLink

@@ -1,0 +1,171 @@
+<svg
+  viewBox="0 0 960 540"
+  width="100%"
+  height="auto"
+  style="display:block;width:100%;height:auto;"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="illus-title illus-desc"
+>
+  <title id="illus-title">Цикл тем для телеграм-канала: сигнал от клиента, разработка, внутренний чейнджлог, отбор в публичный канал</title>
+  <desc id="illus-desc">
+    Замкнутый цикл из четырёх стадий по кругу. Первые три стадии — сигнал от клиента (три источника:
+    интервью с клиентами, обращения в поддержку, идеи и голосование в панели управления), разработка
+    и внутренний чейнджлог — оформлены как нейтральные карточки без цветной заливки. От чейнджлога к
+    публичному каналу ведёт явная стрелка с наконечником поверх воронки-подсказки: из многих
+    внутренних записей дальше проходит только часть, отобранная по сигналу клиента. Публичный канал —
+    четвёртая стадия и конечная точка цикла, выделенная акцентным цветом и более толстой рамкой.
+    Замыкающая пунктирная стрелка возвращает цикл от публичного канала обратно к сигналу от клиента.
+  </desc>
+
+  <style>
+    .tg-title {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 600;
+      fill: #f4f3ee;
+      text-anchor: middle;
+    }
+    .tg-channel-title {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      fill: #14100a;
+      text-anchor: middle;
+    }
+    .tg-num {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      fill: #14100a;
+      text-anchor: middle;
+    }
+    .tg-label {
+      font-family: "Inter", sans-serif;
+      font-size: 11.5px;
+      fill: #f4f3ee;
+      text-anchor: middle;
+    }
+    .tg-caption {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      fill: #9a988e;
+      text-anchor: middle;
+    }
+    .tg-caption-start {
+      text-anchor: start;
+    }
+  </style>
+
+  <defs>
+    <marker id="tg-arrow-accent" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ffc233" />
+    </marker>
+    <marker id="tg-arrow-flow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#ffc233" />
+    </marker>
+  </defs>
+
+  <!-- Фон на весь холст — единая карточка иллюстрации; холст tg-bg, карточки стадий tg-surface. -->
+  <rect x="0" y="0" width="960" height="540" rx="24" fill="#0a0a09" />
+
+  <!-- Стрелка 1: сигнал от клиента → разработка (зазоры ~4px до рамок) -->
+  <line x1="460" y1="150" x2="516" y2="150" stroke="#ffc233" stroke-width="3" marker-end="url(#tg-arrow-accent)" />
+
+  <!-- Стрелка 2: разработка → внутренний чейнджлог -->
+  <line x1="717.5" y1="255" x2="717.5" y2="281" stroke="#ffc233" stroke-width="3" marker-end="url(#tg-arrow-accent)" />
+
+  <!-- Фильтр между чейнджлогом и публичным каналом: воронка-подсказка (сужающиеся направляющие линии) -->
+  <path d="M519,342 L461,363 M519,438 L461,417" fill="none" stroke="#9a988e" stroke-width="1.5" stroke-linecap="round" />
+  <!-- Явная стрелка потока: чейнджлог → публичный канал (острие в ~4px от рамки канала) -->
+  <line x1="517" y1="390" x2="467" y2="390" stroke="#ffc233" stroke-width="6" stroke-linecap="round" marker-end="url(#tg-arrow-flow)" />
+  <text x="490" y="305" class="tg-caption">отбор</text>
+  <text x="490" y="320" class="tg-caption">по</text>
+  <text x="490" y="335" class="tg-caption">сигналу</text>
+
+  <!-- Замыкающая стрелка: публичный канал → сигнал от клиента (цикл продолжается) -->
+  <line x1="262.5" y1="285" x2="262.5" y2="259" stroke="#ffc233" stroke-width="3" stroke-dasharray="4 3" marker-end="url(#tg-arrow-accent)" />
+  <text x="300" y="275" class="tg-caption tg-caption-start">цикл продолжается</text>
+
+  <!-- Стадия 1: сигнал от клиента, три источника -->
+  <g>
+    <rect x="70" y="50" width="385" height="200" rx="12" fill="#1c150d" stroke="#3d2f1b" stroke-width="2" />
+    <text x="262.5" y="90" class="tg-title" font-size="16">3 сигнала от клиента</text>
+
+    <g>
+      <rect x="90" y="110" width="105" height="120" rx="8" fill="#0a0a09" stroke="#3d2f1b" stroke-width="1" />
+      <circle cx="142.5" cy="134" r="13" fill="#ffc233" />
+      <text x="142.5" y="138" class="tg-num">1</text>
+      <text x="142.5" y="175" class="tg-label">Интервью</text>
+      <text x="142.5" y="193" class="tg-label">с клиентами</text>
+    </g>
+
+    <g>
+      <rect x="210" y="110" width="105" height="120" rx="8" fill="#0a0a09" stroke="#3d2f1b" stroke-width="1" />
+      <circle cx="262.5" cy="134" r="13" fill="#ffc233" />
+      <text x="262.5" y="138" class="tg-num">2</text>
+      <text x="262.5" y="175" class="tg-label">Обращения</text>
+      <text x="262.5" y="193" class="tg-label">в поддержку</text>
+    </g>
+
+    <g>
+      <rect x="330" y="110" width="105" height="120" rx="8" fill="#0a0a09" stroke="#3d2f1b" stroke-width="1" />
+      <circle cx="382.5" cy="134" r="13" fill="#ffc233" />
+      <text x="382.5" y="138" class="tg-num">3</text>
+      <text x="382.5" y="175" class="tg-label">Идеи +</text>
+      <text x="382.5" y="193" class="tg-label">голосование</text>
+    </g>
+  </g>
+
+  <!-- Стадия 2: разработка (мини-блоки симметричны относительно центра карточки x=717.5) -->
+  <g>
+    <rect x="525" y="50" width="385" height="200" rx="12" fill="#1c150d" stroke="#3d2f1b" stroke-width="2" />
+    <text x="717.5" y="95" class="tg-title" font-size="18">Разработка</text>
+
+    <rect x="566" y="130" width="136" height="54" rx="8" fill="#0a0a09" stroke="#3d2f1b" stroke-width="1" />
+    <text x="634" y="148" class="tg-label">запрос</text>
+    <text x="634" y="166" class="tg-label">от клиента</text>
+
+    <line x1="706.5" y1="157" x2="725" y2="157" stroke="#ffc233" stroke-width="2.5" marker-end="url(#tg-arrow-accent)" />
+
+    <rect x="733" y="130" width="136" height="54" rx="8" fill="#0a0a09" stroke="#3d2f1b" stroke-width="1" />
+    <text x="801" y="148" class="tg-label">готовая</text>
+    <text x="801" y="166" class="tg-label">фича</text>
+
+    <text x="717.5" y="215" class="tg-caption">приоритет по сигналу клиента</text>
+  </g>
+
+  <!-- Стадия 3: внутренний чейнджлог — нейтральная карточка, без цветной заливки (см. стадии 1-2) -->
+  <g>
+    <rect x="525" y="290" width="385" height="200" rx="12" fill="#1c150d" stroke="#3d2f1b" stroke-width="2" />
+    <text x="717.5" y="328" class="tg-title" font-size="16">Внутренний чейнджлог</text>
+    <text x="717.5" y="351" class="tg-caption">для команды, не для клиентов</text>
+
+    <line x1="555" y1="378" x2="675" y2="378" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+    <line x1="555" y1="410" x2="665" y2="410" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+    <line x1="555" y1="442" x2="650" y2="442" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+
+    <line x1="725" y1="378" x2="845" y2="378" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+    <line x1="725" y1="410" x2="835" y2="410" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+    <line x1="725" y1="442" x2="820" y2="442" stroke="#9a988e" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 9" />
+  </g>
+
+  <!-- Стадия 4: публичный канал — конечная точка цикла, единственная выделенная карточка:
+       заливка заголовка акцентным цветом, более толстая рамка accent-vivid, крупнее скругление -->
+  <g>
+    <rect x="70" y="290" width="385" height="200" rx="20" fill="#1c150d" stroke="#ffc233" stroke-width="3" />
+    <rect x="70" y="290" width="385" height="46" rx="20" fill="#ffc233" />
+    <rect x="70" y="316" width="385" height="20" fill="#ffc233" />
+    <text x="262.5" y="319" class="tg-channel-title">Публичный канал</text>
+
+    <circle cx="395" cy="313" r="13" fill="#1c150d" />
+    <path d="M388,313 L394,319 L405,306" fill="none" stroke="#ffc233" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+    <text x="262.5" y="363" class="tg-caption">то, что выбрали по сигналу</text>
+
+    <circle cx="110" cy="402" r="4" fill="#ffc233" />
+    <line x1="125" y1="402" x2="410" y2="402" stroke="#ffc233" stroke-width="5" stroke-linecap="round" />
+
+    <circle cx="110" cy="434" r="4" fill="#ffc233" />
+    <line x1="125" y1="434" x2="380" y2="434" stroke="#ffc233" stroke-width="5" stroke-linecap="round" />
+  </g>
+</svg>

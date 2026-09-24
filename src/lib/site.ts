@@ -114,8 +114,8 @@ export const workCases: WorkCase[] = [
     period: "Сентябрь 2022 — Март 2024 · 1 год 7 месяцев",
     audience: "Developers, English-speaking market",
     body: [
-      "It's a global cloud provider (Cloud-as-a-Service) serving English-speaking audiences. We have updated the site, considering all the critical factors: audience characteristics and habits, editorial best practices, common sense, SEO, UX principles, and more.",
-      "I invited Sergey Korol to the team — and together, we damn-well did it. As the chief editor, I worked alongside Sergey Korol, a rock-star writer, to make this happen.",
+      "It's a global cloud provider (Cloud-as-a-Service) serving English-speaking audiences. We revamped the site with every critical factor in mind: audience characteristics and habits, editorial best practices, common sense, SEO, UX principles, and more.",
+      "I invited Sergey Korol to the team — and together, we damn well pulled it off. As chief editor, I worked alongside him, a rock-star writer, to make it happen.",
     ],
     highlights: [
       "Home page и SEO-страницы баз данных",
@@ -124,11 +124,11 @@ export const workCases: WorkCase[] = [
     ],
     links: [
       { label: "A cloud provider that gets developers and speaks their language — home page", url: "https://docs.google.com/document/d/1j36m45hK4HovnbJPoIBPASvgJNv2_mpNnkOsYQDfCWI/edit?usp=sharing" },
-      { label: "Always-on managed databases: from SQL to Rabbit", url: "https://docs.google.com/document/d/1k4oh05ya7CFtctLFKa-oZcYCcuLodvd8PGpvCfDt3pw/edit" },
-      { label: "And yet another page to boost SEO", url: "https://docs.google.com/document/d/1tYuI8OWti1W8b_D6eKv6FlE_X3surQfPGHX5MgsZ_mU/edit?usp=sharing" },
+      { label: "The databases hub page — always-on, from SQL to Rabbit", url: "https://docs.google.com/document/d/1k4oh05ya7CFtctLFKa-oZcYCcuLodvd8PGpvCfDt3pw/edit" },
+      { label: "A second hub page, built purely to boost SEO", url: "https://docs.google.com/document/d/1tYuI8OWti1W8b_D6eKv6FlE_X3surQfPGHX5MgsZ_mU/edit?usp=sharing" },
       { label: "Databases: MySQL — the world's most popular open-source database", url: "https://docs.google.com/document/d/1uNGuUhlwo6ImFncvvJLwtAp_951gN4oYspS3TeKZgow/edit?usp=sharing" },
       { label: "Databases: PostgreSQL — the advanced, standards-obsessed database", url: "https://docs.google.com/document/d/1zTCuly20Pe-GJljenpjTrfRApP4qquYSxvClXNGad0M/edit?usp=sharing" },
-      { label: "Databases: MongoDB — flexible NoSQL for document data", url: "https://docs.google.com/document/d/1b13YVkdQr_gukvT7_pqtL5uk8_sS2VOQ7c6eVOPckNI/edit?usp=sharing" },
+      { label: "Databases: MongoDB — the flexible NoSQL choice for document data", url: "https://docs.google.com/document/d/1b13YVkdQr_gukvT7_pqtL5uk8_sS2VOQ7c6eVOPckNI/edit?usp=sharing" },
       { label: "Databases: Redis — the blazing-fast in-memory store", url: "https://docs.google.com/document/d/1V51ALb0uB4uVOJ1sP64orvmSL4RwRh6I7cu-QITT_6M/edit?usp=sharing" },
       { label: "Powerful Cloud Servers that just work", url: "https://docs.google.com/document/d/1WuuhrEbeb50PGvH_2EcaF3xVCTFT3Ts1GPcRO5YWdws/edit?usp=sharing" },
     ],

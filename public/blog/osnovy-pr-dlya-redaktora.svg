@@ -1,0 +1,112 @@
+<svg
+  viewBox="0 0 960 540"
+  width="100%"
+  height="auto"
+  style="display:block;width:100%;height:auto;"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="illus-title illus-desc"
+>
+  <title id="illus-title">Хаб «30 правил PR» в центре и шесть крупных карточек с описанием групп правил по бокам от него</title>
+  <desc id="illus-desc">
+    В центре карточка-хаб с подписью 30 правил PR, число 30 выделено акцентным цветом. Справа от
+    хаба сверху вниз три крупные карточки: фундамент бренда с позиционированием и единым тоном;
+    повседневный PR с пресс-релизами и инфоповодами; иерархия репутационных рисков, где кризис
+    отличают от обычной жалобы. Слева от хаба сверху вниз еще три карточки: этика и охват PR;
+    путь компании после кризиса к доверию аудитории; формула кризисного ответа с эмпатией,
+    фактами и действием. Каждая карточка соединена с хабом отдельной линией-спицей.
+  </desc>
+
+  <style>
+    .kr-hub-number {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 700;
+      font-size: 76px;
+      letter-spacing: -0.01em;
+      text-anchor: middle;
+      fill: #ff781f;
+    }
+    .kr-hub-word {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 600;
+      font-size: 30px;
+      letter-spacing: -0.01em;
+      text-anchor: middle;
+      fill: #0d0d0c;
+    }
+    .kr-chip-label {
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: -0.01em;
+      text-anchor: middle;
+      fill: #0d0d0c;
+    }
+    .kr-chip-desc {
+      font-family: "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 19px;
+      letter-spacing: -0.005em;
+      text-anchor: middle;
+      fill: #68675f;
+    }
+  </style>
+
+  <rect x="0" y="0" width="960" height="540" rx="24" fill="#ffffff" />
+
+  <line x1="595" y1="230" x2="600" y2="100" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="595" y1="270" x2="600" y2="270" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="595" y1="310" x2="600" y2="440" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="365" y1="230" x2="360" y2="100" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="365" y1="270" x2="360" y2="270" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="365" y1="310" x2="360" y2="440" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+
+  <g>
+    <rect x="365" y="155" width="230" height="230" rx="32" fill="#f9e6d9" />
+    <text x="480" y="251" class="kr-hub-number">30</text>
+    <text x="480" y="296" class="kr-hub-word">правил</text>
+    <text x="480" y="335" class="kr-hub-word">PR</text>
+  </g>
+
+  <g>
+    <rect x="600" y="25" width="335" height="150" rx="20" fill="#ffffff" stroke="#d65600" stroke-width="2" />
+    <text x="767.5" y="73" class="kr-chip-label">Фундамент бренда</text>
+    <text x="767.5" y="107" class="kr-chip-desc">Позиционирование и единый</text>
+    <text x="767.5" y="134" class="kr-chip-desc">тон среди рекламы и SMM</text>
+  </g>
+
+  <g>
+    <rect x="600" y="195" width="335" height="150" rx="20" fill="#ffffff" stroke="#d65600" stroke-width="2" />
+    <text x="767.5" y="243" class="kr-chip-label">Повседневный PR</text>
+    <text x="767.5" y="277" class="kr-chip-desc">Пресс-релизы, инфоповоды</text>
+    <text x="767.5" y="304" class="kr-chip-desc">и работа с журналистами</text>
+  </g>
+
+  <g>
+    <rect x="600" y="365" width="335" height="150" rx="20" fill="#ffffff" stroke="#d65600" stroke-width="2" />
+    <text x="767.5" y="413" class="kr-chip-label">Иерархия рисков</text>
+    <text x="767.5" y="447" class="kr-chip-desc">Когда это кризис, а когда</text>
+    <text x="767.5" y="474" class="kr-chip-desc">просто жалоба на сервис</text>
+  </g>
+
+  <g>
+    <rect x="25" y="365" width="335" height="150" rx="20" fill="#ffffff" stroke="#d65600" stroke-width="2" />
+    <text x="192.5" y="413" class="kr-chip-label">Формула ответа</text>
+    <text x="192.5" y="447" class="kr-chip-desc">Эмпатия, факты и</text>
+    <text x="192.5" y="474" class="kr-chip-desc">конкретное действие</text>
+  </g>
+
+  <g>
+    <rect x="25" y="195" width="335" height="150" rx="20" fill="#ffffff" stroke="#d65600" stroke-width="2" />
+    <text x="192.5" y="243" class="kr-chip-label">После кризиса</text>
+    <text x="192.5" y="277" class="kr-chip-desc">Доверие возвращается</text>
+    <text x="192.5" y="304" class="kr-chip-desc">постепенно, не одним постом</text>
+  </g>
+
+  <g>
+    <rect x="25" y="25" width="335" height="150" rx="20" fill="#ffffff" stroke="#d65600" stroke-width="2" />
+    <text x="192.5" y="73" class="kr-chip-label">Этика и охват</text>
+    <text x="192.5" y="107" class="kr-chip-desc">Где граница с черным PR</text>
+    <text x="192.5" y="134" class="kr-chip-desc">и что значит охват на деле</text>
+  </g>
+</svg>

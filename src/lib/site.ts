@@ -110,7 +110,7 @@ export const workCases: WorkCase[] = [
     slug: "hostman",
     icon: "hostman",
     company: "Hostman",
-    tagline: "Cloud-as-a-Service для англоязычной аудитории",
+    tagline: "Cloud-as-a-Service for English-speaking audiences",
     period: "Сентябрь 2022 — Март 2024 · 1 год 7 месяцев",
     audience: "Developers, English-speaking market",
     body: [
@@ -118,9 +118,9 @@ export const workCases: WorkCase[] = [
       "I invited Sergey Korol to the team — and together, we damn well pulled it off. As chief editor, I worked alongside him, a rock-star writer, to make it happen.",
     ],
     highlights: [
-      "Home page и SEO-страницы баз данных",
+      "Home page and database hub pages",
       "MySQL / PostgreSQL / MongoDB / Redis",
-      "Англоязычная редакция с нуля",
+      "English-language edition, built from scratch",
     ],
     links: [
       { label: "A cloud provider that gets developers and speaks their language — home page", url: "https://docs.google.com/document/d/1j36m45hK4HovnbJPoIBPASvgJNv2_mpNnkOsYQDfCWI/edit?usp=sharing" },

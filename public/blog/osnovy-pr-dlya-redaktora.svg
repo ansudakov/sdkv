@@ -52,12 +52,12 @@
     }
   </style>
 
-  <line x1="575" y1="230" x2="600" y2="100" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
-  <line x1="575" y1="270" x2="600" y2="270" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
-  <line x1="575" y1="310" x2="600" y2="440" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
-  <line x1="385" y1="230" x2="360" y2="100" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
-  <line x1="385" y1="270" x2="360" y2="270" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
-  <line x1="385" y1="310" x2="360" y2="440" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="540" y1="230" x2="600" y2="100" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="540" y1="270" x2="600" y2="270" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="540" y1="310" x2="600" y2="440" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="420" y1="230" x2="360" y2="100" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="420" y1="270" x2="360" y2="270" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
+  <line x1="420" y1="310" x2="360" y2="440" stroke="#d65600" stroke-width="2" stroke-linecap="round" />
 
   <g>
     <text x="480" y="251" class="kr-hub-number">30</text>

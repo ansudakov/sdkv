@@ -6,6 +6,13 @@ import readingTime from "reading-time";
 
 const POSTS_DIR = path.join(process.cwd(), "src/content/posts");
 
+// Убираем инлайновые SVG-иллюстрации перед подсчётом времени чтения — их код
+// (атрибуты, координаты путей) reading-time считает "словами", хотя читатель
+// эту разметку не читает, а видит отрисованную картинку.
+function stripIllustrations(content: string): string {
+  return content.replace(/<svg[\s\S]*?<\/svg>/g, "");
+}
+
 export type PostMeta = {
   slug: string;
   title: string;
@@ -53,7 +60,7 @@ export function getPostMeta(slug: string): PostMeta | null {
     tags: data.tags ?? [],
     image: data.image,
     imageDark: data.imageDark,
-    readingTime: readingTime(content).text,
+    readingTime: readingTime(stripIllustrations(content)).text,
   };
 }
 
@@ -72,7 +79,7 @@ export function getPost(slug: string): Post | null {
     tags: data.tags ?? [],
     image: data.image,
     imageDark: data.imageDark,
-    readingTime: readingTime(content).text,
+    readingTime: readingTime(stripIllustrations(content)).text,
     content,
   };
 }

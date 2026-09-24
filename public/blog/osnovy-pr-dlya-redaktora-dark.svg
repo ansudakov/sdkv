@@ -45,24 +45,21 @@
     .kr-chip-desc {
       font-family: "Inter", sans-serif;
       font-weight: 400;
-      font-size: 19px;
+      font-size: 17px;
       letter-spacing: -0.005em;
       text-anchor: middle;
       fill: #9a988e;
     }
   </style>
 
-  <rect x="0" y="0" width="960" height="540" rx="24" fill="#1c150d" />
-
-  <line x1="595" y1="230" x2="600" y2="100" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
-  <line x1="595" y1="270" x2="600" y2="270" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
-  <line x1="595" y1="310" x2="600" y2="440" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
-  <line x1="365" y1="230" x2="360" y2="100" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
-  <line x1="365" y1="270" x2="360" y2="270" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
-  <line x1="365" y1="310" x2="360" y2="440" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
+  <line x1="575" y1="230" x2="600" y2="100" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
+  <line x1="575" y1="270" x2="600" y2="270" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
+  <line x1="575" y1="310" x2="600" y2="440" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
+  <line x1="385" y1="230" x2="360" y2="100" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
+  <line x1="385" y1="270" x2="360" y2="270" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
+  <line x1="385" y1="310" x2="360" y2="440" stroke="#ffc233" stroke-width="2" stroke-linecap="round" />
 
   <g>
-    <rect x="365" y="155" width="230" height="230" rx="32" fill="#3e2f13" />
     <text x="480" y="251" class="kr-hub-number">30</text>
     <text x="480" y="296" class="kr-hub-word">правил</text>
     <text x="480" y="335" class="kr-hub-word">PR</text>

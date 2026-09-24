@@ -34,20 +34,7 @@ export function HeaderLogo() {
         <span className="logo-shake-1 inline-block">S</span>
         <span className="logo-shake-2 inline-block">D</span>
         <span className="logo-shake-3 inline-block">K</span>
-        <span className="logo-shake-2 relative inline-block text-accent">
-          V
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="logo-shake-arrow absolute -top-[0.28em] -right-[0.02em] h-[0.4em] w-[0.4em]"
-          >
-            <path d="M5 19 19 5M9 5h10v10" />
-          </svg>
-        </span>
+        <span className="logo-shake-2 inline-block text-accent">V</span>
       </span>
     </Link>
   );

@@ -203,23 +203,9 @@ summary {
   }
 }
 
-@keyframes logo-shake-arrow {
-  0%,
-  100% {
-    transform: rotate(0deg) translate(0, 0);
-  }
-  30% {
-    transform: rotate(8deg) translate(0.5px, -0.5px);
-  }
-  60% {
-    transform: rotate(-5deg) translate(-0.5px, 0.5px);
-  }
-}
-
 .logo-shake-1,
 .logo-shake-2,
 .logo-shake-3,
-.logo-shake-arrow,
 .logo-shake-avatar {
   transform-origin: 50% 80%;
 }
@@ -236,11 +222,6 @@ summary {
   animation: logo-shake-c 0.45s ease-in-out 0.08s;
 }
 
-.group:hover .logo-shake-arrow {
-  animation: logo-shake-arrow 0.45s ease-in-out 0.05s;
-  transform-origin: 30% 70%;
-}
-
 .group:hover .logo-shake-avatar {
   animation: logo-shake-a 0.45s ease-in-out 0.02s;
 }
@@ -249,7 +230,6 @@ summary {
   .logo-shake-1,
   .logo-shake-2,
   .logo-shake-3,
-  .logo-shake-arrow,
   .logo-shake-avatar {
     animation: none !important;
   }

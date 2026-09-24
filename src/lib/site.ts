@@ -45,6 +45,8 @@ export type WorkLink = {
   url: string;
 };
 
+export type BodyEntry = string | { list: string[] };
+
 export type WorkCase = {
   slug: string;
   icon: IconKey;
@@ -52,7 +54,7 @@ export type WorkCase = {
   tagline: string;
   period?: string;
   audience?: string;
-  body: string[];
+  body: BodyEntry[];
   highlights: string[];
   links: WorkLink[];
   callout?: boolean;
@@ -68,11 +70,15 @@ export const workCases: WorkCase[] = [
     audience: "Разработчики и IT-компании, b2b",
     body: [
       "Главредил российским облачным провайдером из Питера, у которого достаточно амбиций, чтобы конкурировать с сами-знаете-какими грандами рынка. Аудитория — разработчики и IT-компании, би-ту-би. Под моим руководством мы:",
-      "Переписали все продуктовые лендинги на сайте и запустили новые — около 100 страниц: опирались на бизнес-показатели и редакторский здравый смысл — конверсию, SEO, быстро считываемую структуру, ёмкость и полноту информации. Разработали ToV: не гиковский, но технически подкованный язык — энергичный, ясный, с терминами разработчиков.",
-      "Проапгрейдили сервисные и маркетинговые рассылки — в обеих ставка на пользу для пользователей: сервисные перестали быть роботизированными, маркетинговые — продающими. Общаемся с клиентами так, будто помогаем им в личном разговоре.",
-      "Перепродумали телеграм-канал: вместо контента ради контента — ресурсный подход. Клиенты просят фичу в личном кабинете → разработчики её выпускают → мы рассказываем в канале, как ей пользоваться, не просто анонсируя, а показывая на практике. Канал вырос с 2 000 до 10 000 подписчиков и стал источником для остальных соцсетей.",
-      "Запустили ежемесячный дайджест обновлений — статья, рассылка и карточки в телеграме, 12 выпусков в год; формат фирменный и уникальный среди российских облаков, адресован тем, кто не может следить за обновлениями нон-стопом.",
-      "Кейсы — ещё одна большая часть работы. Их два вида. Первый — кейсы облака на VC о том, как делаются крутые штуки внутри компании: это контент, CRM, SEO, редизайн ЛК, поддержка и другие бизнес-направления. Второй вид — истории клиентов облака о том, как они перешли в Timeweb Cloud и каких результатов добились в связи с этим переходом. Составил для кейсов дорожную карту и необходимую документацию: вопросы для интервью с клиентами, единая структура, ToV — всё, что нужно, чтобы кейсы выходили на потоке и после моего ухода.",
+      {
+        list: [
+          "Переписали все продуктовые лендинги на сайте и запустили новые — около 100 страниц: опирались на бизнес-показатели и редакторский здравый смысл — конверсию, SEO, быстро считываемую структуру, ёмкость и полноту информации. Разработали ToV: не гиковский, но технически подкованный язык — энергичный, ясный, с терминами разработчиков.",
+          "Проапгрейдили сервисные и маркетинговые рассылки — в обеих ставка на пользу для пользователей: сервисные перестали быть роботизированными, маркетинговые — продающими. Общаемся с клиентами так, будто помогаем им в личном разговоре.",
+          "Перепродумали телеграм-канал: вместо контента ради контента — ресурсный подход. Клиенты просят фичу в личном кабинете → разработчики её выпускают → мы рассказываем в канале, как ей пользоваться, не просто анонсируя, а показывая на практике. Канал вырос с 2 000 до 10 000 подписчиков и стал источником для остальных соцсетей.",
+          "Запустили ежемесячный дайджест обновлений — статья, рассылка и карточки в телеграме, 12 выпусков в год; формат фирменный и уникальный среди российских облаков, адресован тем, кто не может следить за обновлениями нон-стопом.",
+          "Кейсы — ещё одна большая часть работы. Их два вида. Первый — кейсы облака на VC о том, как делаются крутые штуки внутри компании: это контент, CRM, SEO, редизайн ЛК, поддержка и другие бизнес-направления. Второй вид — истории клиентов облака о том, как они перешли в Timeweb Cloud и каких результатов добились в связи с этим переходом. Составил для кейсов дорожную карту и необходимую документацию: вопросы для интервью с клиентами, единая структура, ToV — всё, что нужно, чтобы кейсы выходили на потоке и после моего ухода.",
+        ],
+      },
       "Занимался велком-посадками и UX-текстами в личном кабинете, составил общую редполитику облачного провайдера.",
     ],
     highlights: [
@@ -84,20 +90,20 @@ export const workCases: WorkCase[] = [
       "Редполитика с нуля",
     ],
     links: [
-      { label: "Главная страница сайта", url: "https://docs.google.com/document/d/1g-EmE_iaaHLGTwmuzRcgDZ96JOzgJn505VW-txdX9Jg/edit?usp=share_link" },
-      { label: "Страница о компании", url: "https://docs.google.com/document/d/19Thy8K3sS7FpStLbJ8rIeew2hGqOU0sqefwMUwALw1c/edit?usp=share_link" },
-      { label: "Посты для ТГ, ВК и Дзена", url: "https://docs.google.com/document/d/1P8j9HDL5Cff0W36GaGMrm2Ajf8gWGgEP145ATi79c5Y/edit?usp=share_link" },
-      { label: "Клиентские кейсы", url: "https://timeweb.cloud/success-story" },
-      { label: "Структура клиентских кейсов", url: "https://docs.google.com/document/d/1bLAI2_ENPfwrbWao_1BMoeSq24En21lqtz0WMVEzrR4/edit?usp=sharing" },
-      { label: "Сценарий интервью для кейса", url: "https://docs.google.com/document/d/1ML5NXlDH6eizdtvTHoCdffQFLbs-A9x8Z2EZwVo3cGE/edit?usp=sharing" },
-      { label: "Шаблон клиентского кейса", url: "https://docs.google.com/document/d/1EiRjvcXws_y8N1RDczCxd8b7TeHUY1sde8Jk_3XphIs/edit" },
-      { label: "Тон-оф-войс компании", url: "https://docs.google.com/document/d/1pkMBuumORmv_bFnBk7C9mJGXJ0c9xhzxjxNfsB1Ta4M/edit?usp=share_link" },
-      { label: "Дайджест обновлений", url: "https://timeweb.cloud/blog/digest-july-2023" },
-      { label: "Пример статьи дайджеста", url: "https://docs.google.com/document/d/16Xo7R28dJNc0dDsFfC4HgEg7GxqCI-pcyoIERdHerKI/edit" },
+      { label: "Новая, свежая, классная главная страница сайта — её лицо", url: "https://docs.google.com/document/d/1g-EmE_iaaHLGTwmuzRcgDZ96JOzgJn505VW-txdX9Jg/edit?usp=share_link" },
+      { label: "Страница о компании: моя особая гордость — моя любимка", url: "https://docs.google.com/document/d/19Thy8K3sS7FpStLbJ8rIeew2hGqOU0sqefwMUwALw1c/edit?usp=share_link" },
+      { label: "Стопицот постов для ТГ, ВК и Дзена — читать не перечитать", url: "https://docs.google.com/document/d/1P8j9HDL5Cff0W36GaGMrm2Ajf8gWGgEP145ATi79c5Y/edit?usp=share_link" },
+      { label: "Клиентские кейсы — истории успеха на потоке", url: "https://timeweb.cloud/success-story" },
+      { label: "Структура кейса — чтобы всё выходило по одному шаблону", url: "https://docs.google.com/document/d/1bLAI2_ENPfwrbWao_1BMoeSq24En21lqtz0WMVEzrR4/edit?usp=sharing" },
+      { label: "Сценарий интервью — вопросы для разговора с клиентом", url: "https://docs.google.com/document/d/1ML5NXlDH6eizdtvTHoCdffQFLbs-A9x8Z2EZwVo3cGE/edit?usp=sharing" },
+      { label: "Готовый шаблон клиентского кейса", url: "https://docs.google.com/document/d/1EiRjvcXws_y8N1RDczCxd8b7TeHUY1sde8Jk_3XphIs/edit" },
+      { label: "Тон-оф-войс компании — в формате заметок", url: "https://docs.google.com/document/d/1pkMBuumORmv_bFnBk7C9mJGXJ0c9xhzxjxNfsB1Ta4M/edit?usp=share_link" },
+      { label: "Дайджест обновлений — фирменный формат, 12 раз в год", url: "https://timeweb.cloud/blog/digest-july-2023" },
+      { label: "Пример статьи — июльский дайджест целиком", url: "https://docs.google.com/document/d/16Xo7R28dJNc0dDsFfC4HgEg7GxqCI-pcyoIERdHerKI/edit" },
       { label: "Карточки дайджеста для соцсетей", url: "https://www.figma.com/file/hpMbg8ETlyD64ijPdQ8don/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D1%8B-Timeweb-Cloud?type=design&node-id=1801%3A2&mode=design" },
-      { label: "Пример рассылки дайджеста", url: "https://docs.google.com/document/d/1PvFC9ploqX1TDhaX8m2bD9F101kCT8Q5zyzNDQpbT5s/edit" },
-      { label: "Кейс про дайджест на vc.ru", url: "https://vc.ru/u/66957-timeweb-cloud/898702-digest-as-a-product-kak-rasskazyvat-pro-novye-fichi-regulyarno-mnogo-frendli-i-bez-podvigov" },
-      { label: "Фигма: UX-тексты, пуши, карточки", url: "https://www.figma.com/file/hpMbg8ETlyD64ijPdQ8don/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D1%8B-Timeweb-Cloud?type=design&node-id=1534%3A851&mode=design" },
+      { label: "Пример рассылки — тот же дайджест, другой канал", url: "https://docs.google.com/document/d/1PvFC9ploqX1TDhaX8m2bD9F101kCT8Q5zyzNDQpbT5s/edit" },
+      { label: "Кейс на vc.ru — как рассказывать про фичи интересно и постоянно", url: "https://vc.ru/u/66957-timeweb-cloud/898702-digest-as-a-product-kak-rasskazyvat-pro-novye-fichi-regulyarno-mnogo-frendli-i-bez-podvigov" },
+      { label: "Целая Фигма с UX-текстами, пушами и карточками", url: "https://www.figma.com/file/hpMbg8ETlyD64ijPdQ8don/%D0%A2%D0%B5%D0%BA%D1%81%D1%82%D1%8B-Timeweb-Cloud?type=design&node-id=1534%3A851&mode=design" },
     ],
   },
   {
@@ -117,14 +123,14 @@ export const workCases: WorkCase[] = [
       "Англоязычная редакция с нуля",
     ],
     links: [
-      { label: "Home page", url: "https://docs.google.com/document/d/1j36m45hK4HovnbJPoIBPASvgJNv2_mpNnkOsYQDfCWI/edit?usp=sharing" },
-      { label: "Managed databases", url: "https://docs.google.com/document/d/1k4oh05ya7CFtctLFKa-oZcYCcuLodvd8PGpvCfDt3pw/edit" },
-      { label: "Databases SEO landing page", url: "https://docs.google.com/document/d/1tYuI8OWti1W8b_D6eKv6FlE_X3surQfPGHX5MgsZ_mU/edit?usp=sharing" },
-      { label: "MySQL", url: "https://docs.google.com/document/d/1uNGuUhlwo6ImFncvvJLwtAp_951gN4oYspS3TeKZgow/edit?usp=sharing" },
-      { label: "PostgreSQL", url: "https://docs.google.com/document/d/1zTCuly20Pe-GJljenpjTrfRApP4qquYSxvClXNGad0M/edit?usp=sharing" },
-      { label: "MongoDB", url: "https://docs.google.com/document/d/1b13YVkdQr_gukvT7_pqtL5uk8_sS2VOQ7c6eVOPckNI/edit?usp=sharing" },
-      { label: "Redis", url: "https://docs.google.com/document/d/1V51ALb0uB4uVOJ1sP64orvmSL4RwRh6I7cu-QITT_6M/edit?usp=sharing" },
-      { label: "Cloud Servers", url: "https://docs.google.com/document/d/1WuuhrEbeb50PGvH_2EcaF3xVCTFT3Ts1GPcRO5YWdws/edit?usp=sharing" },
+      { label: "A cloud provider that gets developers and speaks their language — home page", url: "https://docs.google.com/document/d/1j36m45hK4HovnbJPoIBPASvgJNv2_mpNnkOsYQDfCWI/edit?usp=sharing" },
+      { label: "Always-on managed databases: from SQL to Rabbit", url: "https://docs.google.com/document/d/1k4oh05ya7CFtctLFKa-oZcYCcuLodvd8PGpvCfDt3pw/edit" },
+      { label: "And yet another page to boost SEO", url: "https://docs.google.com/document/d/1tYuI8OWti1W8b_D6eKv6FlE_X3surQfPGHX5MgsZ_mU/edit?usp=sharing" },
+      { label: "MySQL — one of the database pages", url: "https://docs.google.com/document/d/1uNGuUhlwo6ImFncvvJLwtAp_951gN4oYspS3TeKZgow/edit?usp=sharing" },
+      { label: "PostgreSQL — one of the database pages", url: "https://docs.google.com/document/d/1zTCuly20Pe-GJljenpjTrfRApP4qquYSxvClXNGad0M/edit?usp=sharing" },
+      { label: "MongoDB — one of the database pages", url: "https://docs.google.com/document/d/1b13YVkdQr_gukvT7_pqtL5uk8_sS2VOQ7c6eVOPckNI/edit?usp=sharing" },
+      { label: "Redis — one of the database pages", url: "https://docs.google.com/document/d/1V51ALb0uB4uVOJ1sP64orvmSL4RwRh6I7cu-QITT_6M/edit?usp=sharing" },
+      { label: "Powerful Cloud Servers that just work", url: "https://docs.google.com/document/d/1WuuhrEbeb50PGvH_2EcaF3xVCTFT3Ts1GPcRO5YWdws/edit?usp=sharing" },
     ],
   },
   {
@@ -139,7 +145,7 @@ export const workCases: WorkCase[] = [
     ],
     highlights: ["Премиум-сегмент", "Текст на английском", "Позиционирование проекта"],
     links: [
-      { label: "Лендинг про Дубай в Батуми", url: "https://docs.google.com/document/d/1qvu7j1WqGXeOutNEpIp5yQ0uqYP6Cu4OzC9FHxdyWac/edit?usp=sharing" },
+      { label: "Английский премиальный лендинг про свой Дубай в Батуми", url: "https://docs.google.com/document/d/1qvu7j1WqGXeOutNEpIp5yQ0uqYP6Cu4OzC9FHxdyWac/edit?usp=sharing" },
     ],
   },
   {
@@ -159,13 +165,13 @@ export const workCases: WorkCase[] = [
       "Книга: Ozon и Wildberries",
     ],
     links: [
-      { label: "Раздел 1: «Рыба презентации»", url: "https://docs.google.com/document/d/1Z3D3hv2JY290VDwZ-8TVluLlAuiBEoU4iaUvPzesVOg/edit?usp=sharing" },
-      { label: "Раздел 2: «Композиция»", url: "https://docs.google.com/document/d/1qDn6QFM7fNk9NiO44_fpb2GKyau4akBWtmgBqB1hxu0/edit?usp=sharing" },
-      { label: "Раздел 3: «Визуальная концепция»", url: "https://docs.google.com/document/d/1t_rjFcRJo14MzWbf_TKHf1kU4V09liDTcNoJp00EvL4/edit?usp=sharing" },
-      { label: "Раздел 4: «Сложный контент»", url: "https://docs.google.com/document/d/1prrkE4VepdNFtMUzv--HjeCynr0UjAD4eI2h6RpA3Es/edit?usp=sharing" },
-      { label: "Комикс: персонажи и сюжеты", url: "https://docs.google.com/document/d/1MHXUOyhVKSzWTwRaj099ZD7vjaQrYFtF1K65CTrz5zU/edit?usp=sharing" },
-      { label: "Комикс: полный сценарий", url: "https://docs.google.com/document/d/1dJEnTLJL0vPecu39CvmsMNjcMqCjaYeOQiFMlWaWWWo/edit?usp=sharing" },
-      { label: "Книга на Ozon", url: "https://www.ozon.ru/product/sekrety-uboynyh-prezentatsiy-nikolay-pere-svetlana-firsova-1393131873/" },
+      { label: "Введение и раздел 1 «Рыба презентации»: цель, структура, заголовки", url: "https://docs.google.com/document/d/1Z3D3hv2JY290VDwZ-8TVluLlAuiBEoU4iaUvPzesVOg/edit?usp=sharing" },
+      { label: "Раздел 2 «Композиция»: текст, фото, графики на слайде", url: "https://docs.google.com/document/d/1qDn6QFM7fNk9NiO44_fpb2GKyau4akBWtmgBqB1hxu0/edit?usp=sharing" },
+      { label: "Раздел 3 «Визуальная концепция»: шрифт + цвет + форма", url: "https://docs.google.com/document/d/1t_rjFcRJo14MzWbf_TKHf1kU4V09liDTcNoJp00EvL4/edit?usp=sharing" },
+      { label: "Раздел 4 «Сложный контент»: графики, схемы, таблицы", url: "https://docs.google.com/document/d/1prrkE4VepdNFtMUzv--HjeCynr0UjAD4eI2h6RpA3Es/edit?usp=sharing" },
+      { label: "Комикс: характеры персонажей и список сюжетов", url: "https://docs.google.com/document/d/1MHXUOyhVKSzWTwRaj099ZD7vjaQrYFtF1K65CTrz5zU/edit?usp=sharing" },
+      { label: "Комикс: подробный сценарий всех сюжетов", url: "https://docs.google.com/document/d/1dJEnTLJL0vPecu39CvmsMNjcMqCjaYeOQiFMlWaWWWo/edit?usp=sharing" },
+      { label: "Готовая книга — можно заказать на Ozon", url: "https://www.ozon.ru/product/sekrety-uboynyh-prezentatsiy-nikolay-pere-svetlana-firsova-1393131873/" },
     ],
   },
   {
@@ -184,12 +190,12 @@ export const workCases: WorkCase[] = [
       "Шаблоны писем для клиентов",
     ],
     links: [
-      { label: "Карточки «Актуальное»", url: "https://docs.google.com/document/d/14KVeYmE1URPBVDoozrKEV5qlomflmsw4GSQqm3gjld0/edit?usp=sharing" },
-      { label: "Фигма: пуши и баннеры", url: "https://www.figma.com/file/2aYHh1WTPvRSia2DOmK0cD/%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B8%D0%BD%D0%B0%D0%BF%D0%BF%D0%BE%D0%B2?node-id=262%3A2923" },
-      { label: "Лендинг про доставку по ссылке", url: "https://www.figma.com/file/U4vlBvFZ17QFehRn53EnXA/%D0%BB%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B5?node-id=0%3A1" },
-      { label: "Тексты для личного кабинета", url: "https://www.figma.com/file/ZsLRBfLeHcKWlZO900SRSY/yandex-delivery?node-id=34%3A13347" },
-      { label: "Раздел «Помощь»", url: "https://yandex.ru/support/delivery-profile/index.html" },
-      { label: "Шаблоны писем", url: "https://docs.google.com/document/d/18fFgdBBNNEGKbeLWuQIagee4yNl5opGtNlv4yiQaXCk/edit?usp=sharing" },
+      { label: "Карточки «Актуальное» в личном кабинете", url: "https://docs.google.com/document/d/14KVeYmE1URPBVDoozrKEV5qlomflmsw4GSQqm3gjld0/edit?usp=sharing" },
+      { label: "Целая Фигма с текстами для пушей и баннеров в приложении", url: "https://www.figma.com/file/2aYHh1WTPvRSia2DOmK0cD/%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD%D1%8B-%D0%B4%D0%BB%D1%8F-%D0%B8%D0%BD%D0%B0%D0%BF%D0%BF%D0%BE%D0%B2?node-id=262%3A2923" },
+      { label: "Лендинг про доставку по ссылке — как оплата по ссылке, только доставка", url: "https://www.figma.com/file/U4vlBvFZ17QFehRn53EnXA/%D0%BB%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B5?node-id=0%3A1" },
+      { label: "Тексты для экранов в личном кабинете и кое-что ещё", url: "https://www.figma.com/file/ZsLRBfLeHcKWlZO900SRSY/yandex-delivery?node-id=34%3A13347" },
+      { label: "Раздел «Помощь» для клиентов сервиса", url: "https://yandex.ru/support/delivery-profile/index.html" },
+      { label: "Шаблоны писем почти на все случаи жизни", url: "https://docs.google.com/document/d/18fFgdBBNNEGKbeLWuQIagee4yNl5opGtNlv4yiQaXCk/edit?usp=sharing" },
     ],
   },
   {
@@ -203,7 +209,7 @@ export const workCases: WorkCase[] = [
     ],
     highlights: ["Бренд одежды", "Креативный копирайтинг"],
     links: [
-      { label: "Студия Лебедева: сайт Red Flag", url: "https://www.artlebedev.ru/red-flag/" },
+      { label: "Креативный копирайтинг для Студии Лебедева — сайт бренда одежды Red Flag", url: "https://www.artlebedev.ru/red-flag/" },
     ],
   },
   {
@@ -214,13 +220,18 @@ export const workCases: WorkCase[] = [
     period: "Август 2019 — Сентябрь 2021 · 2 года 2 месяца",
     audience: "От частных клиентов до крупного бизнеса",
     body: [
-      "Пришёл, когда редакторская культура в компании только зарождалась — стартапный драйв внутри огромной корпорации.",
-      "За 2 года прошёл через все форматы: пуши, рассылки и продуктовые лендинги, статьи на VC и во внутренний блог для сотрудников, посты в телеграм-каналах банка и посевы в чужих.",
-      "Писал для всех направлений и аудиторий банка — от частных клиентов, ИП и самозанятых до стартапов, среднего бизнеса и корпораций; были тексты в инвестиционных и премиальных сервисах.",
-      "Участвовал в исследованиях и А/Б-тестах, помогал делать простые и ёмкие тексты в интерфейсах.",
-      "Занимался неймингом: ходил на брейнштормы с маркетологами разных направлений, потом уединялся с макбуком и придумывал названия и слоганы для продуктов, мероприятий, рекламных акций и мерча.",
-      "Самостоятельно искал аутсорс-авторов: построил воронку почти на 1000 человек в большом активном телеграм-чате — сотня прошла тестовое, из них десятка лучших, в штат взял четверых.",
-      "Дружил с PR-отделом — вместе писали пресс-релизы для сайта банка и СМИ. Писал сценарии для нескольких рекламных роликов.",
+      "Пришёл, когда редакторская культура в компании только зарождалась — стартапный драйв внутри огромной корпорации. За 2 года успел позаниматься всеми форматами, до которых только могут добраться длинные руки редактора:",
+      {
+        list: [
+          "Писал пуши, рассылки и продуктовые лендинги, статьи на VC и во внутренний блог для сотрудников, посты в телеграм-каналах банка и посевы в чужих.",
+          "Писал для всех направлений и аудиторий банка — от частных клиентов, ИП и самозанятых до стартапов, среднего бизнеса и корпораций; были тексты в инвестиционных и премиальных сервисах.",
+          "Участвовал в исследованиях и А/Б-тестах, помогал делать простые и ёмкие тексты в интерфейсах.",
+          "Занимался неймингом: ходил на брейнштормы с маркетологами разных направлений, потом уединялся с макбуком и придумывал названия и слоганы для продуктов, мероприятий, рекламных акций и мерча.",
+          "Самостоятельно искал аутсорс-авторов: построил воронку почти на 1000 человек в большом активном телеграм-чате — сотня прошла тестовое, из них десятка лучших, в штат взял четверых.",
+          "Дружил с PR-отделом — вместе писали пресс-релизы для сайта банка и СМИ.",
+          "Писал сценарии для нескольких рекламных роликов банка.",
+        ],
+      },
     ],
     highlights: [
       "Лендинги о тарифах для бизнеса",
@@ -229,11 +240,11 @@ export const workCases: WorkCase[] = [
       "Сценарии рекламных роликов",
     ],
     links: [
-      { label: "Лендинги о тарифах для бизнеса", url: "https://alfabank.ru/sme/tariffs/onepercent/" },
-      { label: "Лендинг про овердрафт", url: "https://alfabank.ru/sme/profits/overdraft/" },
-      { label: "Статья об изменениях в законодательстве", url: "https://docs.google.com/document/d/1zkQAIenn9Lwml19SGjdAa1F0HeWq53vN7zobkRoKLUo/edit" },
+      { label: "Лендинги о тарифах для бизнеса — один пример", url: "https://alfabank.ru/sme/tariffs/onepercent/" },
+      { label: "Лендинг про овердрафт — особенно горжусь разделом «Как работает»", url: "https://alfabank.ru/sme/profits/overdraft/" },
+      { label: "Пример статьи об изменениях в законодательстве", url: "https://docs.google.com/document/d/1zkQAIenn9Lwml19SGjdAa1F0HeWq53vN7zobkRoKLUo/edit" },
       { label: "Лендинг про карту для зарплаты", url: "https://www.figma.com/file/s6ZtqnchvAVFpTAMHOVdDo/%D0%9B%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3-%D0%98%D0%97%D0%9A-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%8B?node-id=0%3A1" },
-      { label: "Онбординг зарплатного проекта", url: "https://www.figma.com/file/kYfVDjqoYrpGBQPTxvyi90/Concepts?node-id=0%3A1" },
+      { label: "Онбординг в личном кабинете зарплатного проекта", url: "https://www.figma.com/file/kYfVDjqoYrpGBQPTxvyi90/Concepts?node-id=0%3A1" },
     ],
   },
   {
@@ -248,10 +259,10 @@ export const workCases: WorkCase[] = [
     ],
     highlights: ["Контент на 5 площадок", "Игры в сторис", "Анонсы мероприятий"],
     links: [
-      { label: "Типичная неделя постов", url: "https://docs.google.com/document/d/1rHxKnfQx4bBSebbOz8HSAOjJzmovL9KMla9TBt7e4hc/edit#heading=h.s98sl2wux4tq" },
-      { label: "Ещё одна неделя постов", url: "https://docs.google.com/document/d/1eyD5MjWxr7mqQ-IYXmF0U3pWOYc0al7llNMOZbyzYVw/edit" },
-      { label: "Игры в сторис", url: "https://docs.google.com/document/d/1K26PSRew3OLgSS3FzTOz9c1n_Z1D2EVX6xeQZClpeMY/edit" },
-      { label: "Анонсы мероприятий", url: "https://docs.google.com/document/d/1oFpuBS24m6r1De_zctMEDP-jvz9zNjwD4Dcl5_thKPQ/edit#heading=h.xei7ss7aw6bl" },
+      { label: "Типичная неделя в виде текстов выглядела так", url: "https://docs.google.com/document/d/1rHxKnfQx4bBSebbOz8HSAOjJzmovL9KMla9TBt7e4hc/edit#heading=h.s98sl2wux4tq" },
+      { label: "Ещё одна неделя — писал все тексты прямо в одном файле", url: "https://docs.google.com/document/d/1eyD5MjWxr7mqQ-IYXmF0U3pWOYc0al7llNMOZbyzYVw/edit" },
+      { label: "Делали клёвые игры в сторис", url: "https://docs.google.com/document/d/1K26PSRew3OLgSS3FzTOz9c1n_Z1D2EVX6xeQZClpeMY/edit" },
+      { label: "Были и анонсы мероприятий", url: "https://docs.google.com/document/d/1oFpuBS24m6r1De_zctMEDP-jvz9zNjwD4Dcl5_thKPQ/edit#heading=h.xei7ss7aw6bl" },
     ],
   },
   {
@@ -264,10 +275,10 @@ export const workCases: WorkCase[] = [
     ],
     highlights: ["Формат «вопрос–ответ»", "Обзоры книг", "b2b-блог"],
     links: [
-      { label: "Статья про дропшиппинг", url: "https://docs.google.com/document/d/1R-wpjTu8ibM9laRJjMC1HJDjxc5z1eaoNDYlCOrNBzA/edit" },
-      { label: "Обзор книг про тексты", url: "https://docs.google.com/document/d/1LbVTjNd9rw3YCRDC7BdsCcO8zKTOpre1pvYrvZx_gbs/edit" },
-      { label: "Обзор книг про email-маркетинг", url: "https://docs.google.com/document/d/1VsJVLWf391fAsSftCDXGEFRuUguViQ9dvKiFLpeLg10/edit" },
-      { label: "Конструктор сайтов или разработка с нуля", url: "https://docs.google.com/document/d/1S7A5aEBI0Ff_10dNqCq95fypA04-qpfUAPcURxlfvnk/edit?usp=sharing" },
+      { label: "Статья про дропшиппинг — в формате «вопрос–ответ»", url: "https://docs.google.com/document/d/1R-wpjTu8ibM9laRJjMC1HJDjxc5z1eaoNDYlCOrNBzA/edit" },
+      { label: "Обзор книг для тех, кто пишет тексты", url: "https://docs.google.com/document/d/1LbVTjNd9rw3YCRDC7BdsCcO8zKTOpre1pvYrvZx_gbs/edit" },
+      { label: "Ещё обзор книг, но уже по email-маркетингу", url: "https://docs.google.com/document/d/1VsJVLWf391fAsSftCDXGEFRuUguViQ9dvKiFLpeLg10/edit" },
+      { label: "Как лучше сделать сайт — на конструкторе или с нуля", url: "https://docs.google.com/document/d/1S7A5aEBI0Ff_10dNqCq95fypA04-qpfUAPcURxlfvnk/edit?usp=sharing" },
     ],
   },
   {
@@ -287,11 +298,11 @@ export const workCases: WorkCase[] = [
       "Про овердрафт, конструктор сайтов, регистрацию ИП",
     ],
     links: [
-      { label: "Как работает овердрафт", url: "https://drive.google.com/file/d/1Cny_srTzGQN7RIkYLv-PJJGcODSSMBts/view?usp=sharing" },
-      { label: "Сторис: конструктор сайтов", url: "https://docs.google.com/document/d/1UNRPV1YHAk2RfzPC5L3KByBRbCPbBkm-Dp41nOOLGGk/" },
-      { label: "Сторис: регистрация ИП", url: "https://docs.google.com/document/d/1EHu3s9RHP4nB0QM0XY7xr0V-E8U1PnMb3FJrmcZ4Kb8/" },
+      { label: "Как работает услуга овердрафта", url: "https://drive.google.com/file/d/1Cny_srTzGQN7RIkYLv-PJJGcODSSMBts/view?usp=sharing" },
+      { label: "Сторис в приложении про конструктор сайтов", url: "https://docs.google.com/document/d/1UNRPV1YHAk2RfzPC5L3KByBRbCPbBkm-Dp41nOOLGGk/" },
+      { label: "Сторис в приложении про регистрацию ИП", url: "https://docs.google.com/document/d/1EHu3s9RHP4nB0QM0XY7xr0V-E8U1PnMb3FJrmcZ4Kb8/" },
       { label: "Лендинг для чата на сайт", url: "https://www.tinkoff.ru/business/chat/" },
-      { label: "Хелп для СМС-рассылок", url: "https://help.tinkoff.ru/mailing-sms/" },
+      { label: "Хелп для сервиса СМС-рассылок", url: "https://help.tinkoff.ru/mailing-sms/" },
     ],
   },
   {
@@ -332,13 +343,13 @@ export const workCases: WorkCase[] = [
       "Газпромбанк, Yota, Райффайзен",
     ],
     links: [
-      { label: "Тексты для Yota: смс и баннеры", url: "https://docs.google.com/document/d/13HiI6SMsJrOtpJ4JG338EgL-TBSqByAClQYCPLPpBDo/edit" },
-      { label: "Статья для Райффайзен Банка", url: "https://www.raiffeisen-media.ru/zhizn/gde-eshhe-prodat-starye-veshhi-smartfony-mebel-i-nenuzhnye-bilety-krome-kak-na-avito-i-yule/" },
-      { label: "Газпромбанк Инвестиции: экраны входа", url: "https://www.figma.com/file/A9kQukRawXGJrcTwhSqEJG/Self%3A-%D0%93%D0%9F%D0%91-%D0%A3%D0%90-%D0%9B%D0%9A-%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=8662%3A1" },
-      { label: "Презентация для ThePartners", url: "https://docs.google.com/presentation/d/1pxvLr8Vof0VWfhbU-ywsuUYuvk1Lxp6hf52IP51UkUs/edit?usp=sharing" },
-      { label: "Статья про надёжность застройщика", url: "https://docs.google.com/document/d/1jTCfxywRpvDN02U3mo8yvxQJmroSj1l5sER69v9Jlo4/" },
-      { label: "Интервью для Бюро Горбунова", url: "http://studentbureau.ru/anna-chjornaja/" },
-      { label: "Статья про страх перед психологами", url: "https://lively.ru/psihologicheskaja-pomoshh/" },
+      { label: "Тексты для Yota — смс и баннеры", url: "https://docs.google.com/document/d/13HiI6SMsJrOtpJ4JG338EgL-TBSqByAClQYCPLPpBDo/edit" },
+      { label: "Статья про ресейл-площадки — для блога Райффайзен Банка", url: "https://www.raiffeisen-media.ru/zhizn/gde-eshhe-prodat-starye-veshhi-smartfony-mebel-i-nenuzhnye-bilety-krome-kak-na-avito-i-yule/" },
+      { label: "Экраны регистрации и авторизации — Газпромбанк Инвестиции", url: "https://www.figma.com/file/A9kQukRawXGJrcTwhSqEJG/Self%3A-%D0%93%D0%9F%D0%91-%D0%A3%D0%90-%D0%9B%D0%9A-%D0%94%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?node-id=8662%3A1" },
+      { label: "Презентация для бизнес-сообщества ThePartners", url: "https://docs.google.com/presentation/d/1pxvLr8Vof0VWfhbU-ywsuUYuvk1Lxp6hf52IP51UkUs/edit?usp=sharing" },
+      { label: "Статья в рассылку «Как оценить надёжность застройщика»", url: "https://docs.google.com/document/d/1jTCfxywRpvDN02U3mo8yvxQJmroSj1l5sER69v9Jlo4/" },
+      { label: "Интервью для журнала школы Бюро Горбунова", url: "http://studentbureau.ru/anna-chjornaja/" },
+      { label: "«Как перестать бояться психологов и понять, нужен ли он вам»", url: "https://lively.ru/psihologicheskaja-pomoshh/" },
     ],
   },
 ];

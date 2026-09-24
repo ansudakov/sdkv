@@ -3,7 +3,25 @@ import { Container } from "@/components/container";
 import { Expandable } from "@/components/expandable";
 import { IconBadge } from "@/components/icon-badge";
 import { WorkLinks } from "@/components/work-links";
-import { workCases } from "@/lib/site";
+import { workCases, type BodyEntry } from "@/lib/site";
+
+function renderBodyEntry(entry: BodyEntry, key: number) {
+  if (typeof entry === "string") {
+    return <p key={key}>{entry}</p>;
+  }
+  return (
+    <ol key={key} className="space-y-3">
+      {entry.list.map((item, i) => (
+        <li key={i} className="flex gap-3">
+          <span className="shrink-0 font-display font-semibold text-accent">
+            {i + 1}.
+          </span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
 
 export const metadata: Metadata = {
   title: "Портфолио",
@@ -73,9 +91,7 @@ export default function WorkPage() {
                     </div>
                   </div>
                   <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed">
-                    {item.body.map((paragraph, i) => (
-                      <p key={i}>{paragraph}</p>
-                    ))}
+                    {item.body.map((entry, i) => renderBodyEntry(entry, i))}
                   </div>
                   <ul className="mt-6 flex flex-wrap gap-2">
                     {item.highlights.map((h) => (
@@ -123,10 +139,8 @@ export default function WorkPage() {
               </div>
               <div className="min-w-0 max-w-2xl">
                 <Expandable
-                  visible={<p>{first}</p>}
-                  rest={rest.map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
-                  ))}
+                  visible={renderBodyEntry(first, 0)}
+                  rest={rest.map((entry, i) => renderBodyEntry(entry, i + 1))}
                 />
                 <ul className="mt-8 flex flex-wrap gap-2">
                   {item.highlights.map((h) => (

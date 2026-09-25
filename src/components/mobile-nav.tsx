@@ -14,8 +14,24 @@ export function MobileNav() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setOpen(false);
+    }
+    function onResize() {
+      if (window.matchMedia("(min-width: 1024px)").matches) setOpen(false);
+    }
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [open]);
+
   return (
-    <div className="sm:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         aria-label={open ? "Закрыть меню" : "Открыть меню"}
@@ -52,7 +68,7 @@ export function MobileNav() {
         )}
       </button>
       <div
-        className={`fixed inset-x-0 top-16 bottom-0 z-40 bg-background transition-transform duration-300 ease-out ${
+        className={`fixed inset-x-0 top-16 bottom-0 z-40 sm:top-20 bg-background transition-transform duration-300 ease-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!open}

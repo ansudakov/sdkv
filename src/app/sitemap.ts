@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/projects" },
     { route: "/works" },
     { route: "/photos" },
+    { route: "/contacts" },
   ].map(({ route, lastModified }) => ({
     url: `${site.url}${route}`,
     ...(lastModified ? { lastModified: new Date(lastModified) } : {}),

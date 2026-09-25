@@ -12,12 +12,12 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between sm:h-20">
         <HeaderLogo />
         <nav className="flex items-center gap-1 sm:gap-2">
-          <div className="hidden items-center gap-1 sm:flex sm:gap-2">
+          <div className="hidden items-center gap-1 lg:flex lg:gap-2">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-accent sm:px-4"
+                className="rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-accent lg:px-4"
               >
                 {item.label}
               </Link>

@@ -9,10 +9,13 @@ export const site = {
   telegram: "https://t.me/sashasdkv",
   telegramHandle: "@sashasdkv",
   telegramContact: "https://t.me/sashasudakov",
+  telegramContactHandle: "@sashasudakov",
   instagram: "https://www.instagram.com/ademoscu",
   instagramHandle: "@ademoscu",
   youtube: "https://www.youtube.com/@ademoscu",
+  youtubeHandle: "@ademoscu",
   tiktok: "https://www.tiktok.com/@ademoscu",
+  tiktokHandle: "@ademoscu",
   resume: "https://hh.ru/resume/2e68dc8bff07075f900039ed1f556c79685871",
   resumePdf: "/resume.pdf",
   description:
@@ -24,6 +27,7 @@ export const nav = [
   { href: "/works", label: "Портфолио" },
   { href: "/blog", label: "Блог" },
   { href: "/photos", label: "Фото" },
+  { href: "/contacts", label: "Контакты" },
 ];
 
 export type IconKey =

@@ -26,6 +26,11 @@ export function PostReaction({ slug }: { slug: string }) {
     if (choice) return;
     setChoice(value);
     sendGAEvent("event", "blog_reaction", { label: value, slug });
+    (
+      window as unknown as {
+        ym?: (id: number, method: string, goal: string, params?: object) => void;
+      }
+    ).ym?.(111970451, "reachGoal", "blog_reaction", { label: value, slug });
   }
 
   return (

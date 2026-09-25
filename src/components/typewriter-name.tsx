@@ -33,24 +33,32 @@ export function TypewriterName({ className }: { className?: string }) {
   }, [count, done]);
 
   const newlineIndex = FULL_TEXT.indexOf("\n");
+  const line1Full = FULL_TEXT.slice(0, newlineIndex);
+  const line2Full = FULL_TEXT.slice(newlineIndex + 1);
   const typingFirstLine = count <= newlineIndex;
-  const line1 = typingFirstLine ? FULL_TEXT.slice(0, count) : FULL_TEXT.slice(0, newlineIndex);
-  const line2 = typingFirstLine ? "" : FULL_TEXT.slice(newlineIndex + 1, count);
+  const typed1 = Math.min(count, newlineIndex);
+  const typed2 = Math.max(0, count - newlineIndex - 1);
 
+  // Весь текст резервирует место сразу (ненабранное невидимо), а курсор имеет
+  // нулевую ширину и пересоздаётся на каждом шаге (key) — иначе он "ездит" по
+  // строке и браузер считает это сдвигом макета (CLS).
   const cursor = (
-    <span className="animate-blink text-accent" aria-hidden="true">
-      {done ? "." : "|"}
+    <span key={count} className="relative inline-block h-[1em] w-0 align-baseline">
+      <span className="animate-blink absolute left-0 top-0 leading-none text-accent">|</span>
     </span>
   );
 
   return (
     <h1 aria-label="Александр Судаков." className={className}>
       <span aria-hidden="true">
-        {line1}
+        {line1Full.slice(0, typed1)}
         {typingFirstLine && cursor}
+        <span className="invisible">{line1Full.slice(typed1)}</span>
         <br />
-        {line2}
-        {!typingFirstLine && cursor}
+        {line2Full.slice(0, typed2)}
+        {!typingFirstLine && !done && cursor}
+        <span className="invisible">{line2Full.slice(typed2)}</span>
+        <span className={done ? "animate-blink text-accent" : "invisible"}>.</span>
       </span>
     </h1>
   );

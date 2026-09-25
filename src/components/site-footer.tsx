@@ -46,18 +46,46 @@ export function SiteFooter() {
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-muted">Соцсети</span>
-              <a href={site.telegram} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
+              <TrackedLink
+                gaEvent="contact_social_click"
+                gaParams={{ platform: "telegram_channel" }}
+                href={site.telegram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-accent"
+              >
                 ТГ-канал
-              </a>
-              <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
+              </TrackedLink>
+              <TrackedLink
+                gaEvent="contact_social_click"
+                gaParams={{ platform: "instagram" }}
+                href={site.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-accent"
+              >
                 Инстаграм
-              </a>
-              <a href={site.youtube} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
+              </TrackedLink>
+              <TrackedLink
+                gaEvent="contact_social_click"
+                gaParams={{ platform: "youtube" }}
+                href={site.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-accent"
+              >
                 Ютуб
-              </a>
-              <a href={site.tiktok} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
+              </TrackedLink>
+              <TrackedLink
+                gaEvent="contact_social_click"
+                gaParams={{ platform: "tiktok" }}
+                href={site.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-accent"
+              >
                 Тикток
-              </a>
+              </TrackedLink>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-muted">Резюме</span>

@@ -18,6 +18,7 @@ type Contact = {
   href: string;
   note?: string;
   gaEvent?: string;
+  gaParams?: Record<string, string>;
   external?: boolean;
 };
 
@@ -45,24 +46,32 @@ const socialContacts: Contact[] = [
     value: site.telegramHandle,
     href: site.telegram,
     note: "Заметки, мысли и всё подряд.",
+    gaEvent: "contact_social_click",
+    gaParams: { platform: "telegram_channel" },
     external: true,
   },
   {
     label: "Инстаграм",
     value: site.instagramHandle,
     href: site.instagram,
+    gaEvent: "contact_social_click",
+    gaParams: { platform: "instagram" },
     external: true,
   },
   {
     label: "Ютуб",
     value: site.youtubeHandle,
     href: site.youtube,
+    gaEvent: "contact_social_click",
+    gaParams: { platform: "youtube" },
     external: true,
   },
   {
     label: "Тикток",
     value: site.tiktokHandle,
     href: site.tiktok,
+    gaEvent: "contact_social_click",
+    gaParams: { platform: "tiktok" },
     external: true,
   },
 ];
@@ -146,6 +155,7 @@ function ContactRow({ contact }: { contact: Contact }) {
     return (
       <TrackedLink
         gaEvent={contact.gaEvent}
+        gaParams={contact.gaParams}
         href={contact.href}
         className={className}
         {...external}

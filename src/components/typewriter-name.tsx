@@ -43,14 +43,14 @@ export function TypewriterName({ className }: { className?: string }) {
   // нулевую ширину и пересоздаётся на каждом шаге (key) — иначе он "ездит" по
   // строке и браузер считает это сдвигом макета (CLS).
   const cursor = (
-    <span key={count} className="relative inline-block h-[1em] w-0 align-baseline">
-      <span className="animate-blink absolute left-0 top-0 leading-none text-accent">|</span>
+    <span key={count} className="relative inline-block h-0 w-0 align-baseline">
+      <span className="animate-blink absolute bottom-0 left-0 h-[1em] leading-none text-accent">|</span>
     </span>
   );
 
   return (
     <h1 aria-label="Александр Судаков." className={className}>
-      <span aria-hidden="true">
+      <span aria-hidden="true" className="whitespace-nowrap">
         {line1Full.slice(0, typed1)}
         {typingFirstLine && cursor}
         <span className="invisible">{line1Full.slice(typed1)}</span>

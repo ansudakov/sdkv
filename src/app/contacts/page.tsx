@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ComponentType, SVGProps } from "react";
 import { Container } from "@/components/container";
-import { InstagramIcon, TelegramIcon, TiktokIcon, YoutubeIcon } from "@/components/social-icons";
+import { InstagramIcon, MailIcon, TelegramIcon, TiktokIcon, YoutubeIcon } from "@/components/social-icons";
 import { TrackedLink } from "@/components/tracked-link";
 import { site } from "@/lib/site";
 
@@ -30,16 +30,18 @@ const workContacts: Contact[] = [
     label: "Почта",
     value: site.email,
     href: `mailto:${site.email}`,
-    note: "Задачи, брифы, договоры.",
+    note: "Задачи, брифы, договоры",
     gaEvent: "contact_email_click",
+    icon: MailIcon,
   },
   {
     label: "Телеграм",
     value: site.telegramContactHandle,
     href: site.telegramContact,
-    note: "Личные сообщения.",
+    note: "Личные сообщения",
     gaEvent: "contact_telegram_click",
     external: true,
+    icon: TelegramIcon,
   },
 ];
 
@@ -48,7 +50,7 @@ const socialContacts: Contact[] = [
     label: "ТГ-канал",
     value: site.telegramHandle,
     href: site.telegram,
-    note: "Заметки, мысли и всё подряд.",
+    note: "Заметки, мысли и всё подряд",
     gaEvent: "contact_social_click",
     gaParams: { platform: "telegram_channel" },
     external: true,
@@ -135,7 +137,7 @@ function ContactRow({ contact }: { contact: Contact }) {
           {Icon && <Icon className="h-3.5 w-3.5 shrink-0" />}
           <span>
             {contact.label}
-            {contact.note && <span className="normal-case tracking-normal"> · {contact.note}</span>}
+            {contact.note && <span> · {contact.note}</span>}
           </span>
         </span>
         <span className="break-words font-display text-xl font-semibold tracking-tight transition-colors group-hover:text-accent sm:text-3xl lg:text-5xl">

@@ -18,6 +18,15 @@ function Base({ children, ...props }: IconProps) {
   );
 }
 
+export function MailIcon(props: IconProps) {
+  return (
+    <Base {...props}>
+      <rect x="3.5" y="5.5" width="17" height="13" rx="2.5" />
+      <path d="m4.5 7 7.5 6 7.5-6" />
+    </Base>
+  );
+}
+
 export function TelegramIcon(props: IconProps) {
   return (
     <Base {...props}>

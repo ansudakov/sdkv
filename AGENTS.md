@@ -14,7 +14,7 @@ Redакторская политика — голос, синтаксис, ст�
 
 **SEO/соцшеринг-метаданные новой статьи собираются автоматически из фронтматтера `.mdx` — не добавлять руками:**
 - `og:image`/`twitter:image` — генерируются кодом (`src/app/blog/[slug]/opengraph-image.tsx`) из `title`, брендированы под сайт.
-- JSON-LD `BlogPosting` (`image`, `datePublished`, `dateModified`, `mainEntityOfPage`, `publisher`) — собирается в `src/app/blog/[slug]/page.tsx` из `date`/`updated`.
+- JSON-LD `BlogPosting` (`image`, `datePublished`, `dateModified`, `mainEntityOfPage`, `publisher`) — собирается в `src/app/blog/[slug]/page.tsx` из `date`/`updated`. Там же поля для контентной аналитики Яндекс Метрики: `@id` (URL статьи), `text` (чистый текст статьи из `getPlainText` в `src/lib/posts.ts`, без SVG и разметки), `about` (из `tags`). В счётчике выбран тип разметки «Schema.org, json-ld».
 - `alt` у обложки поста (в статье, на `/blog`, в тизере на главной) — везде `post.title`, прокидывается через `PostCoverImage`.
 - `canonical` — на уровне роута для всех страниц сайта, включая `/blog/[slug]`.
 

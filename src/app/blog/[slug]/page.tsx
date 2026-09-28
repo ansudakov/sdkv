@@ -12,6 +12,7 @@ import {
   getAdjacentPosts,
   getAllPosts,
   getHeadings,
+  getPlainText,
   getPost,
   getRelatedPosts,
   splitIntro,
@@ -63,7 +64,10 @@ export default async function BlogPostPage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": postUrl,
     headline: post.title,
+    text: getPlainText(post.content),
+    about: post.tags,
     description: post.seoDescription,
     image: `${postUrl}/opengraph-image`,
     datePublished: post.date,

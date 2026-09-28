@@ -84,6 +84,21 @@ export function getPost(slug: string): Post | null {
   };
 }
 
+// Чистый текст статьи для JSON-LD `text`: по нему Метрика считает объём и дочитываемость.
+export function getPlainText(content: string): string {
+  return stripIllustrations(content)
+    .replace(/<[^>]+>/g, " ")
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, " ")
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    .replace(/^\s{0,3}(#{1,6}|>|[-*+]|\d+\.)\s+/gm, "")
+    .replace(/^\|?[\s:|-]+\|?$/gm, " ")
+    .replace(/\|/g, " ")
+    .replace(/[*_`~]+/g, "")
+    .replace(/&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export type Heading = { text: string; slug: string };
 
 export function getHeadings(content: string): Heading[] {

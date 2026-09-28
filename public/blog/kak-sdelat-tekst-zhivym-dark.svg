@@ -1,0 +1,187 @@
+<svg
+  viewBox="0 0 960 540"
+  width="100%"
+  height="auto"
+  style="display:block;width:100%;height:auto;"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="illus-title illus-desc"
+>
+  <title id="illus-title">Слово «Месседж» в центре и 25 приемов инкрустации вокруг него</title>
+  <desc id="illus-desc">
+    В центре крупное слово Месседж. Вокруг него по всей картинке равномерно разбросаны 25 подписанных
+    карточек с приемами инкрустации, и к середине каждой карточки от слова идет своя тонкая линия:
+    метафора, эпитет, шутка, оксюморон, сценка, show, don't tell, сленг, мат, каламбур, самоирония,
+    пример, через знакомое, фактоид, гипербола, антитеза, ритм, капслок, обращение, типаж, суффикс,
+    отсылка, масштаб, пословица, возражение, эхо-повтор.
+  </desc>
+
+  <style>
+    @font-face {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      src: url(data:font/woff2;base64,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) format("woff2");
+    }
+    @font-face {
+      font-family: "Unbounded";
+      font-style: normal;
+      font-weight: 700;
+      src: url(data:font/woff2;base64,d09GMgABAAAAAAXAAA8AAAAACjgAAAVmAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYbglYcagZgP1NUQVQqAEwRCAqGTIUzCxwAATYCJAM0BCAFhEYHIBt6CMjEh94tezOZJDSBVSurrsBCXeSrJ2Jr55aqxO9/7Ve/aBPwJhZCfHtX56sN3sTtdCpESERoLglqJXqInUW2OepIVJ8eZQwFAaCFOJmCgIcMUvIeCSFIApdXUFYHh945Uy1wsHRPnwgHsIbaD2OAuX/qRGhC2b6eYRw04HAZm6EFAWU7NaDI6THYiBrw4PsGH4yYUB+59I+w+331DsSEOpZrJxDA650iNJCpEi9gOjPFBMzAtQiIW5CXp+aV6QUEtMAEdptD/+2C+qjO6vKYiCZUoAgZCIMPMhDBJP159TEE9Rnx8OrTa9QH0Kg/QFZ/AIXAsqT+STHwIi1AgP926FYfhh4iWpSBMmuI3UUxRpOcwho9JGw1nCXYaZnUa1EUH8gGJBunhikHasA4X/oyxmV0LW0KlvoHkA7EkEZ0Ww+D/gjh3nS+IruioL6eZXO/qvKrmEK8ALLrs88BmkoVAHo8QwT5gIM73QN0lsE4nbAbhFk1SvTlG8UA1yrEtWaGJBSw6MkUeubBElj29hBb4iap/z39++mXT98HzRhMQFQV1mFAlyc3QnZM+08AyRfIhQn5nXqAmO2cqoISEwdyPcAYYzZ6X0d7K609Y1qxvVNm0iy+YlAHLf3785jExxulwUQm8TqTZJ40NDQkrR0ZIUtGR+V1w8P10tERae3QEBYPD8vrRsd3l58LLdHVHXzzQ2ntx6/XnV6Kj4cmEXfiRmS6mEq+gXxSuLahj0QmLh4aGmpYNxr75sCm11/6xgfzqES0kDg5Xpc41ZpJXL228UCjTyA1jJIlI1JrfZN1S2NzT4lBNkqDcn8RJ+f/K3g5///3lffF/z9QPjj6/52rd9beuXoHRb8oyjvHr3sf/NJn/9tH31GytMuqpGX46ZZY1jltd2an6VBp86rmluZVh8pMnbuzOqeK5R8drUxICc/x8cuJjvLLyfEJT6lKPoSV1sajpe2rW5ubV+4v7TVsbqo4MvHZvDU5Ialpl4LD72aEJESVdATmZ87Xhy89tTMEIZu6Dev7tnx8zNS942L5rMqVQTmBe79fHZTfM1B7T1O9ILtoZmVV0YwF2dVpvX7laXEF7vnu/iHN1dUz4/i1qa3pL6xb01LCsjxdAvxdXiCharf35TV311z2Pl9z0Mf96HSHj75vaztaWjzGF3mtbd9dX5NfHv95EN8Mpizdbd7v9MY+p11mZekfJ6cFLfpTSdn3f8ofwYuWbf8ATFm627zf6Y19TrvMytI/Tk4LWvSnkrLv/5Q/ghcta/0AggACCAI4QBBAXRPrw3cBKIBT2UaqwEu9RV+jZar1Z08pfZh8svmZ3nBtRsEPi5o6rdPuazjurxva9mPmxuXMqT+1+Va/uPHidTGRffgFC9EvXhBP8FCx8sWNZ1PExKcA42U6rg0FbAgF9Am86A/w4sLhlS7nFsGujW1Sn5XLZd2b1Gd49PU4mg6HIKIKAj3lm5KXsPCpxtg40niRuMU1BHZEk6fQzE2GGg5R+LyGwQPXa3g0oKNGgAdyqq2QAG2CsH+PAgGJ3mmN6IcJBhgx3R4/HZMxDSmIFI6bhl5MhQmTMZ2lCFXA2y2IwCRMhQGRqEQBylCPiejBJMzARPShH24LRw4mwYI+NKAfU/s8dxImQo9oRCARUYhGKgwYwPQXWo2fhlZEIQLJTC4GSQRUBs9EPEJhoNceg2QksgI2a5/MqZ9HPVeBbHbrqYvT/EXqKVfgyZizeQWbj6xHDKIQgxjoUQcj+qFfBlXB4EkYRD96e3A2ZiALzPaeBj2CUGYDTLWnzUAPItCLSZhQAmTIQLgfA+jhDAKR0ywwXSD4iy+991P3IwYGAAA=) format("woff2");
+    }
+    .kr-hub {
+      font-family: "Unbounded", sans-serif;
+      font-weight: 700;
+      font-size: 64px;
+      letter-spacing: -0.01em;
+      fill: #f4f3ee;
+      text-anchor: middle;
+    }
+    .kr-chip-text {
+      font-family: "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 26px;
+      letter-spacing: -0.01em;
+      fill: #f4f3ee;
+      text-anchor: middle;
+    }
+  </style>
+
+  <!-- Фон на весь холст тем же kr-surface, что и у карточек: иллюстрация читается как единая
+       карточка на фоне страницы. -->
+  <rect x="0" y="0" width="960" height="540" rx="24" fill="#1c150d" />
+
+  <!-- 25 тонких полупрозрачных линий от контура слова Месседж. Каждая приходит ровно в середину
+       ближней к центру стороны своей карточки и проходит не ближе 10 единиц от чужих карточек. -->
+  <line x1="472.7" y1="229.6" x2="450.2" y2="104.8" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="439" y1="229.6" x2="388.7" y2="180" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="517.2" y1="229.6" x2="625.3" y2="112.4" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="644.1" y1="229.6" x2="727.1" y2="209.2" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="496.6" y1="310.4" x2="529.9" y2="391.3" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="319.1" y1="229.6" x2="244.2" y2="210.8" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="560.9" y1="229.6" x2="878.9" y2="70.9" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="371.3" y1="310.4" x2="259.7" y2="351.9" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="424.9" y1="310.4" x2="205.8" y2="471" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="690.9" y1="270" x2="729.6" y2="270.1" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="269.1" y1="308.2" x2="158.3" y2="328.2" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="510.2" y1="229.6" x2="630.5" y2="69" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="480.1" y1="310.4" x2="480.5" y2="490.5" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="575.6" y1="310.4" x2="767.5" y2="391.5" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="581.6" y1="229.6" x2="786.4" y2="148.2" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="492.8" y1="229.6" x2="522.8" y2="134.9" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="332.8" y1="310.4" x2="97.2" y2="375" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="491.1" y1="310.4" x2="540.7" y2="490.5" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="453.6" y1="310.4" x2="414.2" y2="370.8" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="556.1" y1="310.4" x2="858.8" y2="471" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="403.4" y1="229.6" x2="98.8" y2="69" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="476" y1="229.6" x2="458.1" y2="49.5" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="383.2" y1="229.6" x2="197.6" y2="152.1" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="646.5" y1="310.4" x2="730.5" y2="330.8" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+  <line x1="269.1" y1="269.5" x2="237.3" y2="269.5" stroke="#ffc233" stroke-width="1.25" stroke-opacity="0.5" stroke-linecap="round" />
+
+  <!-- Центр: одно слово без плашки и без рамки. -->
+  <text x="480" y="289.6" class="kr-hub">Месседж</text>
+
+  <!-- 25 карточек в порядке пунктов статьи (в разметке), равномерно разбросанных по холсту с полями
+       не меньше 30 единиц от края: по 4 или 5 карточек в каждой шестой части холста. -->
+  <g>
+    <rect x="292.7" y="85.3" width="157.5" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="371.5" y="114.2" class="kr-chip-text">Метафора</text>
+  </g>
+  <g>
+    <rect x="330.8" y="141" width="115.8" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="388.7" y="169.9" class="kr-chip-text">Эпитет</text>
+  </g>
+  <g>
+    <rect x="625.3" y="92.9" width="109" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="679.8" y="121.9" class="kr-chip-text">Шутка</text>
+  </g>
+  <g>
+    <rect x="727.1" y="189.7" width="179.8" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="817" y="218.7" class="kr-chip-text">Оксюморон</text>
+  </g>
+  <g>
+    <rect x="529.9" y="371.8" width="120.6" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="590.2" y="400.8" class="kr-chip-text">Сценка</text>
+  </g>
+  <g>
+    <rect x="30.9" y="191.3" width="213.2" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="137.6" y="220.3" class="kr-chip-text">Show, don’t tell</text>
+  </g>
+  <g>
+    <rect x="827.8" y="31.9" width="102.2" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="878.9" y="60.9" class="kr-chip-text">Сленг</text>
+  </g>
+  <g>
+    <rect x="221.2" y="351.9" width="77" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="259.7" y="380.8" class="kr-chip-text">Мат</text>
+  </g>
+  <g>
+    <rect x="128.1" y="471" width="155.5" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="205.8" y="500" class="kr-chip-text">Каламбур</text>
+  </g>
+  <g>
+    <rect x="729.6" y="250.6" width="188.6" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="823.9" y="279.5" class="kr-chip-text">Самоирония</text>
+  </g>
+  <g>
+    <rect x="30" y="308.7" width="128.3" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="94.2" y="337.7" class="kr-chip-text">Пример</text>
+  </g>
+  <g>
+    <rect x="513.7" y="30" width="233.6" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="630.5" y="59" class="kr-chip-text">Через знакомое</text>
+  </g>
+  <g>
+    <rect x="344.1" y="471" width="136.4" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="412.3" y="500" class="kr-chip-text">Фактоид</text>
+  </g>
+  <g>
+    <rect x="767.5" y="372" width="162.5" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="848.8" y="401" class="kr-chip-text">Гипербола</text>
+  </g>
+  <g>
+    <rect x="786.4" y="128.7" width="143.6" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="858.2" y="157.7" class="kr-chip-text">Антитеза</text>
+  </g>
+  <g>
+    <rect x="477" y="95.9" width="91.5" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="522.8" y="124.9" class="kr-chip-text">Ритм</text>
+  </g>
+  <g>
+    <rect x="30" y="375" width="134.4" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="97.2" y="404" class="kr-chip-text">Капслок</text>
+  </g>
+  <g>
+    <rect x="540.7" y="471" width="175.5" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="628.4" y="500" class="kr-chip-text">Обращение</text>
+  </g>
+  <g>
+    <rect x="359.7" y="370.8" width="109" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="414.2" y="399.8" class="kr-chip-text">Типаж</text>
+  </g>
+  <g>
+    <rect x="787.6" y="471" width="142.4" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="858.8" y="500" class="kr-chip-text">Суффикс</text>
+  </g>
+  <g>
+    <rect x="30.2" y="30" width="137.2" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="98.8" y="59" class="kr-chip-text">Отсылка</text>
+  </g>
+  <g>
+    <rect x="314.6" y="30" width="143.5" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="386.3" y="59" class="kr-chip-text">Масштаб</text>
+  </g>
+  <g>
+    <rect x="30" y="132.6" width="167.6" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="113.8" y="161.6" class="kr-chip-text">Пословица</text>
+  </g>
+  <g>
+    <rect x="730.5" y="311.3" width="185.1" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="823.1" y="340.2" class="kr-chip-text">Возражение</text>
+  </g>
+  <g>
+    <rect x="61.8" y="250" width="175.5" height="39" rx="12" fill="#1c150d" stroke="#ffc233" stroke-width="2" />
+    <text x="149.6" y="278.9" class="kr-chip-text">Эхо-повтор</text>
+  </g>
+</svg>

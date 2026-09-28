@@ -480,6 +480,14 @@ summary {
   .prose-article .example-step p {
     margin: 0;
   }
+  .prose-article .example-step p + p {
+    margin-top: 0.6em;
+  }
+  .prose-article .insert-highlight {
+    background-color: color-mix(in srgb, var(--accent) 12%, transparent);
+    border-radius: 0.2em;
+    padding: 0.02em 0.15em;
+  }
   .prose-article .example-step-label {
     display: block;
     font-family: var(--font-display);
@@ -543,5 +551,20 @@ summary {
     letter-spacing: 0.3em;
     color: var(--muted);
     margin: 2.75rem 0;
+  }
+  .prose-article .source-note {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--muted);
+    margin-top: -0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .prose-article .source-note a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose-article .source-note a:hover {
+    color: var(--accent);
   }
 }

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import type { ComponentType, SVGProps } from "react";
 import { Container } from "@/components/container";
+import { InstagramIcon, TelegramIcon, TiktokIcon, YoutubeIcon } from "@/components/social-icons";
 import { TrackedLink } from "@/components/tracked-link";
 import { site } from "@/lib/site";
 
@@ -20,6 +22,7 @@ type Contact = {
   gaEvent?: string;
   gaParams?: Record<string, string>;
   external?: boolean;
+  icon?: ComponentType<SVGProps<SVGSVGElement>>;
 };
 
 const workContacts: Contact[] = [
@@ -49,6 +52,7 @@ const socialContacts: Contact[] = [
     gaEvent: "contact_social_click",
     gaParams: { platform: "telegram_channel" },
     external: true,
+    icon: TelegramIcon,
   },
   {
     label: "Инстаграм",
@@ -57,6 +61,7 @@ const socialContacts: Contact[] = [
     gaEvent: "contact_social_click",
     gaParams: { platform: "instagram" },
     external: true,
+    icon: InstagramIcon,
   },
   {
     label: "Ютуб",
@@ -65,6 +70,7 @@ const socialContacts: Contact[] = [
     gaEvent: "contact_social_click",
     gaParams: { platform: "youtube" },
     external: true,
+    icon: YoutubeIcon,
   },
   {
     label: "Тикток",
@@ -73,6 +79,7 @@ const socialContacts: Contact[] = [
     gaEvent: "contact_social_click",
     gaParams: { platform: "tiktok" },
     external: true,
+    icon: TiktokIcon,
   },
 ];
 
@@ -120,12 +127,16 @@ function breakAfterAt(value: string) {
 function ContactRow({ contact }: { contact: Contact }) {
   const className =
     "group flex items-center justify-between gap-6 py-6 sm:py-8";
+  const Icon = contact.icon;
   const content = (
     <>
       <span className="flex min-w-0 flex-col gap-2">
-        <span className="font-mono text-xs uppercase tracking-widest text-muted">
-          {contact.label}
-          {contact.note && <span className="normal-case tracking-normal"> · {contact.note}</span>}
+        <span className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-muted">
+          {Icon && <Icon className="h-3.5 w-3.5 shrink-0" />}
+          <span>
+            {contact.label}
+            {contact.note && <span className="normal-case tracking-normal"> · {contact.note}</span>}
+          </span>
         </span>
         <span className="break-words font-display text-xl font-semibold tracking-tight transition-colors group-hover:text-accent sm:text-3xl lg:text-5xl">
           {breakAfterAt(contact.value)}

@@ -88,16 +88,25 @@ export function SiteFooter() {
               </TrackedLink>
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-muted">Документы</span>
-              <a href={site.resumePdf} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
-                Резюме, PDF
-              </a>
-              <a href={site.resume} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
-                Резюме на hh.ru
-              </a>
-              <a href={site.casesPdf} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
-                Кейсы, PDF
-              </a>
+              <span className="text-muted">Опыт</span>
+              {[
+                { href: site.casesPdf, label: "Кейсы и цифры", tag: "PDF" },
+                { href: site.resumePdf, label: "Резюме", tag: "PDF" },
+                { href: site.resume, label: "Резюме", tag: "hh.ru" },
+              ].map((doc) => (
+                <a
+                  key={doc.href}
+                  href={doc.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-accent"
+                >
+                  {doc.label}
+                  <sup className="ml-1 font-mono text-[0.6rem] uppercase tracking-widest text-muted">
+                    {doc.tag}
+                  </sup>
+                </a>
+              ))}
             </div>
           </div>
         </div>

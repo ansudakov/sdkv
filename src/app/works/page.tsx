@@ -3,7 +3,7 @@ import { Container } from "@/components/container";
 import { Expandable } from "@/components/expandable";
 import { IconBadge } from "@/components/icon-badge";
 import { WorkLinks } from "@/components/work-links";
-import { workCases, type BodyEntry } from "@/lib/site";
+import { site, workCases, type BodyEntry } from "@/lib/site";
 
 function renderBodyEntry(entry: BodyEntry, key: number) {
   if (typeof entry === "string") {
@@ -50,6 +50,18 @@ export default function WorkPage() {
             датам —{" "}
             <a href="/projects" className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover">
               на странице «Проекты»
+            </a>
+            .
+          </p>
+          <p className="mt-4 max-w-xl text-lg text-muted">
+            Коротко, на две страницы —{" "}
+            <a
+              href={site.casesPdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover"
+            >
+              кейсы в PDF
             </a>
             .
           </p>

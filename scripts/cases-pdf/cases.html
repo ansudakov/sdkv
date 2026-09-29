@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Кейсы контент-лида — Александр Судаков</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@600;700&display=block" rel="stylesheet" />
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --background: #161614;
+    --surface: #141412;
+    --card: #221b12;
+    --foreground: #f4f3ee;
+    --muted: #9a988e;
+    --border: #302f29;
+    --accent: #ffc233;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --display: "Unbounded", system-ui, sans-serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--sans);
+    font-size: 10.5pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    padding: 13mm 15mm 12mm;
+    background: var(--background);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .page + .page { break-before: page; }
+
+  .accent { color: var(--accent); }
+
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 15pt;
+    letter-spacing: -0.02em;
+  }
+  .masthead-meta {
+    font-family: var(--mono);
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+
+  .hero { padding: 8mm 0 4mm; }
+  .hero h1 {
+    margin-top: 4mm;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 30pt;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+  }
+  .hero .lede {
+    margin-top: 4mm;
+    max-width: 125mm;
+    color: var(--muted);
+    font-size: 11pt;
+  }
+
+  section { padding-top: 6mm; }
+  section h2 {
+    margin-bottom: 3.5mm;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    column-gap: 10mm;
+    row-gap: 2.4mm;
+    list-style: none;
+  }
+  .stats li { break-inside: avoid; }
+  .stat-lead { margin-bottom: 3.2mm; }
+  .stat-num {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .tag {
+    margin-left: 1.2mm;
+    font-family: var(--mono);
+    font-size: 6.2pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    white-space: nowrap;
+    vertical-align: 0.9em;
+    line-height: 0;
+  }
+  .tag a { color: inherit; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 2px; }
+  .inline-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .tag + .tag::before { content: "·"; margin-right: 1.2mm; }
+  .stats-section { padding-bottom: 5mm; }
+
+  .funnels { list-style: none; display: grid; }
+  .funnels li {
+    display: grid;
+    grid-template-columns: 8mm 1fr;
+    padding: 2.1mm 0;
+    border-top: 1px solid var(--border);
+    break-inside: avoid;
+  }
+  .funnels li:last-child { border-bottom: 1px solid var(--border); }
+  .num {
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .lead { font-weight: 600; }
+
+  .cases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2mm;
+  }
+  .case {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4mm;
+    padding: 3.4mm 3.8mm 3.6mm;
+    break-inside: avoid;
+    font-size: 8.8pt;
+    line-height: 1.38;
+  }
+  a.case { display: block; color: inherit; text-decoration: none; }
+  .case .num { font-size: 11pt; display: block; margin-bottom: 1.2mm; }
+  .case .lead { display: block; margin-bottom: 1.2mm; font-family: var(--display); font-weight: 600; font-size: 9.2pt; letter-spacing: -0.01em; line-height: 1.25; }
+  .case p { color: #d8d6ce; }
+
+  .contact {
+    margin-top: auto;
+    padding-top: 4mm;
+  }
+  .contact-box {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5mm;
+    padding: 5.5mm 7mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 8mm;
+  }
+  .contact-box h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 16pt;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .contact-links { text-align: right; font-size: 11pt; line-height: 1.8; }
+  .contact-links a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .contact-links .label {
+    font-family: var(--mono);
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-right: 3mm;
+  }
+
+  .footer-note {
+    margin-top: 4mm;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+  .footer-note a { color: var(--muted); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="masthead">
+    <div class="logo">SDK<span class="accent">V</span></div>
+    <div class="masthead-meta">
+      Александр Судаков<br />
+      Редактор, контент-лид, креативный копирайтер
+    </div>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Кейсы · коротко</p>
+    <h1>Что делал<span class="accent">,</span><br />за что отвечал<span class="accent">.</span></h1>
+    <p class="lede">Выжимка для тех, кому нужно быстро понять, чем я могу быть полезен. Полные кейсы с примерами работ — на <a class="inline-link" href="https://ansudakov.ru/works">ansudakov.ru/works</a>.</p>
+  </div>
+
+  <section class="stats-section">
+    <h2 class="eyebrow">Ключевые цифры</h2>
+    <p class="stat-lead"><span class="stat-num">9 лет</span> в редактуре и копирайтинге, 6 лет на удалёнке, английский C1</p>
+    <ul class="stats">
+      <li><span class="stat-num">2 000 → 10 000</span> подписчиков в телеграм-канале<sup class="tag"><a href="https://ansudakov.ru/works#timeweb-cloud">Timeweb Cloud</a></sup></li>
+      <li><span class="stat-num">≈100</span> продуктовых лендингов переписано и запущено под SEO<sup class="tag"><a href="https://ansudakov.ru/works#timeweb-cloud">Timeweb Cloud</a></sup></li>
+      <li><span class="stat-num">12</span> выпусков дайджеста в год, ни одного срыва срока<sup class="tag"><a href="https://ansudakov.ru/works#timeweb-cloud">Timeweb Cloud</a></sup></li>
+      <li><span class="stat-num">0</span> моего участия: клиентские кейсы выходят на потоке по моей документации<sup class="tag"><a href="https://ansudakov.ru/works#timeweb-cloud">Timeweb Cloud</a></sup></li>
+      <li><span class="stat-num">≈40</span> лендингов и весь англоязычный контент сайта<sup class="tag"><a href="https://ansudakov.ru/works#hostman">Hostman</a></sup></li>
+      <li><span class="stat-num">≈1 000</span> кандидатов-авторов в воронке → топ-10 → 4 оффера<sup class="tag"><a href="https://ansudakov.ru/works#alfa-bank">Альфа-Банк</a></sup></li>
+      <li><span class="stat-num">9</span> авторов в команде под моим управлением<sup class="tag"><a href="https://ansudakov.ru/works#t-bank">Т‑Банк</a></sup></li>
+      <li><span class="stat-num">9 месяцев</span> единственный автор соцсетей на 5 площадках<sup class="tag"><a href="https://ansudakov.ru/works#skillbox">Skillbox</a></sup></li>
+      <li><span class="stat-num">С нуля</span> запущен раздел «Помощь»<sup class="tag"><a href="https://ansudakov.ru/works#yandex-delivery">Яндекс Доставка</a></sup></li>
+      <li><span class="stat-num">1</span> книга отредактирована полностью, включая авторский сценарий комикса<sup class="tag"><a href="https://ansudakov.ru/works#alpina">Альпина Паблишер</a></sup></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="eyebrow">Пять воронок, которые я закрывал</h2>
+    <ol class="funnels">
+      <li><span class="num">1.</span><span><span class="lead">Лендинги</span> — середина и низ воронки. Структура страницы под снятие возражений и доведение до заявки.<sup class="tag"><a href="https://ansudakov.ru/works#timeweb-cloud">Timeweb Cloud</a></sup><sup class="tag"><a href="https://ansudakov.ru/works#hostman">Hostman</a></sup></span></li>
+      <li><span class="num">2.</span><span><span class="lead">Онбординг-страницы в продукте</span> — этап активации. Отслеживал, где пользователи отваливаются, переписывал контент под частые вопросы в поддержку.<sup class="tag"><a href="https://ansudakov.ru/works#timeweb-cloud">Timeweb Cloud</a></sup></span></li>
+      <li><span class="num">3.</span><span><span class="lead">Телеграм-канал (2 000 → 10 000)</span> — верх воронки. Удержание внимания аудитории до момента, когда она готова к продукту.<sup class="tag"><a href="https://ansudakov.ru/works#timeweb-cloud">Timeweb Cloud</a></sup></span></li>
+      <li><span class="num">4.</span><span><span class="lead">«Истории успеха» на сайте</span> — низ воронки, соцдоказательство. Работают в момент сравнения вариантов.<sup class="tag"><a href="https://ansudakov.ru/works#timeweb-cloud">Timeweb Cloud</a></sup></span></li>
+      <li><span class="num">5.</span><span><span class="lead">Тон-оф-войс и редполитика</span> — сквозная воронка. Держит доверие на всех этапах разом.<sup class="tag"><a href="https://ansudakov.ru/works#timeweb-cloud">Timeweb Cloud</a></sup></span></li>
+    </ol>
+  </section>
+</div>
+
+<div class="page">
+  <header class="masthead">
+    <div class="logo">SDK<span class="accent">V</span></div>
+    <div class="masthead-meta">
+      Кейсы контент-лида<br />
+      <a href="https://ansudakov.ru" style="color:inherit;text-decoration:none">ansudakov.ru</a>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="eyebrow">Конкретные кейсы</h2>
+    <div class="cases">
+      <a class="case" href="https://ansudakov.ru/works#timeweb-cloud"><span class="num">01</span><span class="lead">Дедлайн.</span><p>Ежемесячный дайджест в Timeweb Cloud: статья, рассылка, карточки синхронно с релизами. 12 выпусков в год, ни одного срыва — сейчас фирменный формат компании.</p></a>
+      <a class="case" href="https://ansudakov.ru/works#timeweb-cloud"><span class="num">02</span><span class="lead">SEO и спринты.</span><p>Переписал под SEO ≈100 продуктовых лендингов сайта, итерациями, с чек-листом по конверсии и структуре.</p></a>
+      <a class="case" href="https://ansudakov.ru/works#lebedev"><span class="num">03</span><span class="lead">Креатив.</span><p>Бренд одежды Red Flag, работа со стороны Студии Артемия Лебедева — позиционирование и тон-оф-войс с нуля, ключевые страницы сайта.</p></a>
+      <a class="case" href="https://ansudakov.ru/works#alfa-bank"><span class="num">04</span><span class="lead">Сложные тексты.</span><p>Альфа-Банк, Альфа-Капитал, Т‑Бизнес — структурные продукты и инвестиционный каталог: сложная финансовая механика на понятном языке.</p></a>
+      <a class="case" href="https://ansudakov.ru/works#alfa-bank"><span class="num">05</span><span class="lead">Отбор авторов.</span><p>Альфа-Банк — сам составил тестовое задание, построил воронку почти из 1 000 кандидатов → выбрал топ-10 по тестовым → сделал 4 оффера.</p></a>
+      <a class="case" href="https://ansudakov.ru/works#t-bank"><span class="num">06</span><span class="lead">Управление командой.</span><p>Т‑Банк — 9 авторов на аутсорсе: задачи, нагрузка, финальная редактура по направлению бизнес-продуктов.</p></a>
+      <a class="case" href="https://ansudakov.ru/works#hostman"><span class="num">07</span><span class="lead">Международный контент.</span><p>Hostman — весь сайт и продуктовые лендинги на английском, тон-оф-войс под аудиторию разработчиков.</p></a>
+      <a class="case" href="https://ansudakov.ru/works#timeweb-cloud"><span class="num">08</span><span class="lead">Рост ТГ-канала.</span><p>Телеграм-канал Timeweb Cloud — ресурсный подход (пост вслед за реальной фичей, не контент ради контента), рост с 2 до 10 тысяч.</p></a>
+      <a class="case" href="https://ansudakov.ru/works#timeweb-cloud"><span class="num">09</span><span class="lead">Система без меня.</span><p>Дорожная карта для клиентских кейсов Timeweb Cloud — вопросы для интервью, единая структура, тон-оф-войс. Кейсы выходят на потоке без моего личного участия.</p></a>
+      <article class="case"><span class="num">10</span><span class="lead">AI-конвейер — продуктовые страницы.</span><p>Собрал в Claude Code конвейер: агенты подбирают SEO-интент через Wordstat, готовят черновик лендинга, прогоняют через скилл очистки от AI-артефактов — весь процесс на потоке, но под моим контролем на каждом шаге.</p></article>
+      <article class="case"><span class="num">11</span><span class="lead">AI-конвейер — welcome-страницы личного кабинета.</span><p>Беру данные о поведении в личном кабинете из Metabase, чтобы понять, на каком шаге отваливаются пользователи, нейросеть готовит черновик под конкретный сценарий использования, финальную логику и правку беру на себя.</p></article>
+      <a class="case" href="https://ansudakov.ru"><span class="num">12</span><span class="lead">Свой сайт на вайбкодинге.</span><p>Собрал и веду личный сайт с помощью AI-инструментов — не только пишу на нём статьи под SEO, но и сам настраивал техническую часть через нейросети, без разработчика. Площадка для портфолио и практики метрик и аналитики.</p></a>
+    </div>
+  </section>
+
+  <div class="contact">
+    <div class="contact-box">
+      <h3>Давайте сделаем<br />что-то ёмкое<span class="accent">.</span></h3>
+      <div class="contact-links">
+        <div><span class="label">Телеграм</span><a href="https://t.me/sashasudakov">@sashasudakov</a></div>
+        <div><span class="label">Почта</span><a href="mailto:a.n.sudakov@gmail.com">a.n.sudakov@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>© 2026 Александр Судаков</span>
+      <a href="https://ansudakov.ru/works">ansudakov.ru/works</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

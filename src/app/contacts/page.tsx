@@ -265,6 +265,14 @@ export default function ContactsPage() {
             >
               Резюме на hh.ru
             </a>
+            <a
+              href={site.casesPdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            >
+              Кейсы в PDF
+            </a>
           </div>
         </Container>
       </section>

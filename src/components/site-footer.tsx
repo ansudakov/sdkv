@@ -88,12 +88,15 @@ export function SiteFooter() {
               </TrackedLink>
             </div>
             <div className="flex flex-col gap-2">
-              <span className="text-muted">Резюме</span>
+              <span className="text-muted">Документы</span>
               <a href={site.resumePdf} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
-                PDF
+                Резюме, PDF
               </a>
               <a href={site.resume} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
-                hh.ru
+                Резюме на hh.ru
+              </a>
+              <a href={site.casesPdf} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent">
+                Кейсы, PDF
               </a>
             </div>
           </div>

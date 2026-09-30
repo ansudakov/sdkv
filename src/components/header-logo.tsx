@@ -50,7 +50,7 @@ export function HeaderLogo() {
                 "--from-x": from[0],
                 "--from-y": from[1],
                 "--from-r": from[2],
-                animationDelay: `${i * 35}ms`,
+                animationDelay: `${i * 25}ms`,
               } as CSSProperties
             }
           >

@@ -41,7 +41,7 @@ export default function Home() {
               Редачил для Альфа-Банка, Т-Банка, VK, Skillbox, Газпромбанк
               Инвестиций, Yota, Райффайзен Банка, Яндекс Доставки, Альпины,
               Студии Лебедева и Ambassadori Island Batumi. Последние четыре
-              года главредил в облаках Timeweb Cloud и Hostman.
+              с половиной года главредил в облаках Timeweb Cloud и Hostman.
             </p>
             <div className="flex flex-wrap gap-3">
               <TrackedLink

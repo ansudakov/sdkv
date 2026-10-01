@@ -31,14 +31,16 @@ export function HeaderLogo() {
       onClick={handleClick}
       className="group flex items-center gap-2 font-display text-lg font-semibold tracking-tight sm:text-xl"
     >
-      <span className="logo-shake-avatar inline-block h-7 w-7 shrink-0 overflow-hidden rounded-full border border-accent">
-        <Image
-          src="/photos/alexander-main.jpg"
-          alt=""
-          width={56}
-          height={56}
-          className="h-full w-full object-cover"
-        />
+      <span className="logo-pop inline-block shrink-0">
+        <span className="logo-shake-avatar block h-7 w-7 overflow-hidden rounded-full border border-accent">
+          <Image
+            src="/photos/alexander-main.jpg"
+            alt=""
+            width={56}
+            height={56}
+            className="h-full w-full object-cover"
+          />
+        </span>
       </span>
       <span className="flex items-baseline">
         {LETTERS.map(({ char, shake, from }, i) => (
@@ -50,7 +52,7 @@ export function HeaderLogo() {
                 "--from-x": from[0],
                 "--from-y": from[1],
                 "--from-r": from[2],
-                animationDelay: `${i * 25}ms`,
+                animationDelay: `${110 + i * 25}ms`,
               } as CSSProperties
             }
           >

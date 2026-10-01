@@ -46,25 +46,56 @@ export default function WorkPage() {
           </h1>
           <p className="mt-8 max-w-xl text-lg text-muted">
             Кейсы целиком, с примерами конкретных работ по ссылкам: где-то
-            это Гугл-документ, где-то сам сайт, а где-то Фигма. Хронология по
-            датам —{" "}
-            <a href="/projects" className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover">
-              на странице «Проекты»
-            </a>
-            .
+            это Гугл-документ, где-то сам сайт, а где-то Фигма.
           </p>
-          <p className="mt-4 max-w-xl text-lg text-muted">
-            Коротко, на две страницы —{" "}
-            <a
-              href={site.casesPdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent underline underline-offset-4 transition-colors hover:text-accent-hover"
-            >
-              кейсы в PDF
-            </a>
-            .
-          </p>
+          <div className="mt-10 grid max-w-3xl gap-x-10 gap-y-6 sm:grid-cols-2">
+            {[
+              {
+                href: "/projects",
+                label: "Хронология",
+                title: "Моё участие в проектах по датам",
+                note: "На странице «Проекты»",
+                external: false,
+              },
+              {
+                href: site.casesPdf,
+                label: "Кейсы и цифры",
+                title: "Коротко о главных достижениях",
+                note: "Две страницы, PDF",
+                external: true,
+              },
+            ].map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="group flex items-start justify-between gap-4 border-t border-border pt-4"
+              >
+                <span className="flex flex-col gap-1.5">
+                  <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                    {item.label}
+                  </span>
+                  <span className="text-lg leading-snug transition-colors group-hover:text-accent">
+                    {item.title}
+                  </span>
+                  <span className="text-sm text-muted">{item.note}</span>
+                </span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="mt-0.5 shrink-0 text-muted transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-accent"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" />
+                </svg>
+              </a>
+            ))}
+          </div>
         </Container>
       </section>
 

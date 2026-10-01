@@ -71,7 +71,7 @@ export const workCases: WorkCase[] = [
     icon: "timeweb",
     company: "Timeweb Cloud",
     tagline: "Главред облачного провайдера",
-    period: "Апрель 2022 — настоящее время · 4 года 6 месяцев",
+    period: "Апрель 2022 — настоящее время · 4 года 7 месяцев",
     audience: "Разработчики и IT-компании, b2b",
     body: [
       "Главредил российским облачным провайдером из Питера, у которого достаточно амбиций, чтобы конкурировать с сами-знаете-какими грандами рынка. Аудитория — разработчики и IT-компании, би-ту-би. Под моим руководством мы:",
@@ -372,7 +372,7 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     period: "Апрель 2022 — настоящее время",
-    duration: "4 года 6 месяцев",
+    duration: "4 года 7 месяцев",
     company: "Timeweb Cloud",
     role: "Главный редактор, content lead",
     location: "Санкт-Петербург",

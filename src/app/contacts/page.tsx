@@ -50,7 +50,7 @@ const socialContacts: Contact[] = [
     label: "ТГ-канал",
     value: site.telegramHandle,
     href: site.telegram,
-    note: "Заметки, мысли и всё подряд",
+    note: "Заметки, мысли и тд",
     gaEvent: "contact_social_click",
     gaParams: { platform: "telegram_channel" },
     external: true,
@@ -133,14 +133,14 @@ function ContactRow({ contact }: { contact: Contact }) {
   const content = (
     <>
       <span className="flex min-w-0 flex-col gap-2">
-        <span className="flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-muted">
+        <span className="flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-muted sm:text-xs sm:tracking-widest">
           {Icon && <Icon className="h-3.5 w-3.5 shrink-0" />}
           <span>
             {contact.label}
             {contact.note && <span> · {contact.note}</span>}
           </span>
         </span>
-        <span className="break-words font-display text-xl font-semibold tracking-tight transition-colors group-hover:text-accent sm:text-3xl lg:text-5xl">
+        <span className="break-words font-display text-[min(1.25rem,calc((100vw-100px)/15))] font-semibold tracking-tight transition-colors group-hover:text-accent sm:text-3xl lg:text-5xl">
           {breakAfterAt(contact.value)}
         </span>
       </span>

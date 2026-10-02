@@ -48,7 +48,7 @@ export default function WorkPage() {
             Кейсы целиком, с примерами конкретных работ по ссылкам: где-то
             это Гугл-документ, где-то сам сайт, а где-то Фигма.
           </p>
-          <div className="mt-10 grid max-w-3xl gap-x-10 gap-y-6 sm:grid-cols-2">
+          <div className="mt-10 grid max-w-5xl gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 href: "/projects",
@@ -62,6 +62,13 @@ export default function WorkPage() {
                 label: "Кейсы и цифры",
                 title: "Коротко о главных достижениях",
                 note: "Две страницы, PDF",
+                external: true,
+              },
+              {
+                href: site.creativePdf,
+                label: "Креатив",
+                title: "Слоганы, сценарии, игры и нейминг",
+                note: "Три страницы, PDF",
                 external: true,
               },
             ].map((item) => (

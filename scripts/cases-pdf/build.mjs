@@ -1,5 +1,5 @@
-// node scripts/cases-pdf/build.mjs
-// Собирает public/cases.pdf из scripts/cases-pdf/cases.html через headless Chrome.
+// node scripts/cases-pdf/build.mjs [cases|creative]
+// Собирает public/<имя>.pdf из scripts/cases-pdf/<имя>.html через headless Chrome.
 // Шрифты тянутся с Google Fonts, поэтому нужен интернет. HTML отдаём по http,
 // а не file://, иначе Chrome не всегда успевает подгрузить шрифты.
 import { execFile } from "node:child_process";
@@ -10,7 +10,13 @@ import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
-const out = path.resolve(dir, "../../public/cases.pdf");
+const EXPECTED_PAGES = { cases: 2, creative: 3 };
+const name = process.argv[2] ?? "cases";
+if (!(name in EXPECTED_PAGES)) {
+  console.error(`Неизвестный документ: ${name}. Есть: ${Object.keys(EXPECTED_PAGES).join(", ")}.`);
+  process.exit(1);
+}
+const out = path.resolve(dir, `../../public/${name}.pdf`);
 const chrome =
   process.env.CHROME_PATH ?? "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
@@ -19,7 +25,7 @@ if (!fs.existsSync(chrome)) {
   process.exit(1);
 }
 
-const html = fs.readFileSync(path.join(dir, "cases.html"));
+const html = fs.readFileSync(path.join(dir, `${name}.html`));
 const server = http
   .createServer((_, res) => {
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
@@ -49,4 +55,6 @@ try {
 
 const pages = (fs.readFileSync(out, "latin1").match(/\/Type\s*\/Page[^s]/g) ?? []).length;
 console.log(`Готово: ${path.relative(process.cwd(), out)}, страниц: ${pages}`);
-if (pages !== 2) console.warn("Внимание: ожидалось 2 страницы — что-то переполнилось, проверьте вёрстку.");
+if (pages !== EXPECTED_PAGES[name]) {
+  console.warn(`Внимание: ожидалось страниц: ${EXPECTED_PAGES[name]}. Что-то переполнилось, проверьте вёрстку.`);
+}

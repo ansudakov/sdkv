@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Креатив — Александр Судаков</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@600;700&display=block" rel="stylesheet" />
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --background: #161614;
+    --surface: #141412;
+    --card: #221b12;
+    --foreground: #f4f3ee;
+    --muted: #9a988e;
+    --border: #302f29;
+    --accent: #ffc233;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --display: "Unbounded", system-ui, sans-serif;
+    --sans: "Inter", system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--sans);
+    font-size: 10.5pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    padding: 13mm 15mm 12mm;
+    background: var(--background);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .page + .page { break-before: page; }
+
+  .accent { color: var(--accent); }
+
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 15pt;
+    letter-spacing: -0.02em;
+  }
+  a.logo { color: inherit; text-decoration: none; }
+  .masthead-meta {
+    font-family: var(--mono);
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+
+  .hero { padding: 8mm 0 4mm; }
+  .hero h1 {
+    margin-top: 4mm;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 30pt;
+    line-height: 0.98;
+    letter-spacing: -0.03em;
+  }
+  .hero .lede {
+    margin-top: 4mm;
+    max-width: 160mm;
+    color: var(--muted);
+    font-size: 11pt;
+  }
+
+  section { padding-top: 6mm; }
+  section h2 {
+    margin-bottom: 3.5mm;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, auto);
+    grid-auto-flow: column;
+    column-gap: 10mm;
+    row-gap: 2.4mm;
+    list-style: none;
+  }
+  .stats li { break-inside: avoid; }
+  .stat-lead { margin-bottom: 3.2mm; }
+  .stat-num {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .tag {
+    margin-left: 1.2mm;
+    font-family: var(--mono);
+    font-size: 6.2pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    white-space: nowrap;
+    vertical-align: 0.9em;
+    line-height: 0;
+  }
+  .inline-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .tag + .tag::before { content: "·"; margin-right: 1.2mm; }
+  .stats-section { padding-bottom: 5mm; }
+
+  .funnels { list-style: none; display: grid; }
+  .funnels li {
+    display: grid;
+    grid-template-columns: 8mm 1fr;
+    padding: 2.1mm 0;
+    break-inside: avoid;
+  }
+  .num {
+    font-family: var(--display);
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .lead { font-weight: 600; }
+
+  .cases {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.2mm;
+  }
+  .case {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4mm;
+    padding: 3.4mm 3.8mm 3.6mm;
+    break-inside: avoid;
+    font-size: 8.8pt;
+    line-height: 1.38;
+  }
+  a.case { display: block; color: inherit; text-decoration: none; }
+  .case .num { font-size: 11pt; display: block; margin-bottom: 1.2mm; }
+  .case .lead { display: block; margin-bottom: 1.2mm; font-family: var(--display); font-weight: 600; font-size: 9.2pt; letter-spacing: -0.01em; line-height: 1.25; }
+  .case p { color: #d8d6ce; }
+
+  .contact {
+    margin-top: auto;
+    padding-top: 4mm;
+  }
+  .contact-box {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5mm;
+    padding: 5.5mm 7mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 8mm;
+  }
+  .contact-box h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 16pt;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .contact-links { text-align: right; font-size: 11pt; line-height: 1.8; }
+  .contact-links a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .contact-links .label {
+    font-family: var(--mono);
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    margin-right: 3mm;
+  }
+
+  .footer-note {
+    margin-top: 4mm;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 7pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+  .footer-note a { color: var(--muted); text-decoration: none; }
+</style>
+<style>
+  .principle {
+    margin-top: 5mm;
+    padding-left: 4mm;
+    border-left: 2px solid var(--accent);
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 12pt;
+    letter-spacing: -0.01em;
+  }
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10mm;
+    row-gap: 3.2mm;
+    list-style: none;
+  }
+  .skills li { break-inside: avoid; }
+  .skills .lead { display: block; }
+  .skills p { color: #d8d6ce; font-size: 9.6pt; line-height: 1.42; }
+
+  .project {
+    display: grid;
+    grid-template-columns: 44mm 1fr;
+    column-gap: 7mm;
+    padding: 5mm 0;
+    border-top: 1px solid var(--border);
+    break-inside: avoid;
+  }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project-name {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 12.5pt;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+  .project-meta {
+    margin-top: 2mm;
+    font-family: var(--mono);
+    font-size: 6.8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .project-intro { color: #d8d6ce; font-size: 9.6pt; line-height: 1.45; margin-bottom: 3mm; }
+  .works { list-style: none; display: grid; row-gap: 2.6mm; }
+  a.work { display: block; color: inherit; text-decoration: none; break-inside: avoid; }
+  .work-title { font-weight: 600; font-size: 10pt; line-height: 1.35; }
+  .work-title .arrow { color: var(--accent); font-weight: 600; margin-left: 1mm; }
+  .work-text { color: #c9c7bf; font-size: 9.3pt; line-height: 1.42; margin-top: 0.6mm; }
+  .quote { color: var(--foreground); }
+
+  .reels {
+    margin-top: 6mm;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4mm;
+    padding: 5mm 6mm;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 8mm;
+    align-items: center;
+  }
+  .reels h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 13pt;
+    letter-spacing: -0.02em;
+  }
+  .reels p { color: #d8d6ce; font-size: 9.6pt; line-height: 1.45; margin-top: 1.5mm; max-width: 105mm; }
+  .reels-links { display: grid; row-gap: 1.6mm; text-align: right; font-size: 10.5pt; }
+  .reels-links a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <header class="masthead">
+    <a class="logo" href="https://ansudakov.ru">SDK<span class="accent">V</span></a>
+    <div class="masthead-meta">
+      Александр Судаков<br />Редактор, контент-лид, креативный копирайтер
+    </div>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Креатив · коротко</p>
+    <h1>Слоганы, сценарии<span class="accent">,</span><br />игры и нейминг<span class="accent">.</span></h1>
+    <p class="lede">Креативил для банка, бренда одежды, образовательной платформы и издательства. Одинаково комфортно работаю и с чистым креативом, и со сложной финансовой темой. Ниже живые работы по проектам, каждая открывается по ссылке.</p>
+    <p class="principle">Пиши смело, редактируй деликатно<span class="accent">.</span></p>
+  </div>
+
+  <section>
+    <h2 class="eyebrow">В чём я силён</h2>
+    <ul class="skills">
+      <li><span class="lead">Нейминг и слоганы</span><p>Названия конференций, акций и мерча. Перебираю формулировки, пока не останется самая короткая и точная.</p></li>
+      <li><span class="lead">Сценарии роликов</span><p>Инфографика, интервью, HR-ролики: от идеи до комментариев для продакшена.</p></li>
+      <li><span class="lead">Игры и интерактив</span><p>Тесты и рулетки в сторис, сериалы с голосованием. Человек сначала играет, потом понимает смысл.</p></li>
+      <li><span class="lead">Голос бренда с нуля</span><p>Позиционирование и тон, которые держатся на одной сильной находке.</p></li>
+      <li><span class="lead">Сюжет и персонажи</span><p>Сценарий сквозного комикса для учебника: герои на жизненном переломе, закольцованная композиция.</p></li>
+      <li><span class="lead">Креатив в B2B</span><p>Живой язык там, где тема кажется скучной: облака, банки, сервисы для бизнеса.</p></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="eyebrow">Работы по проектам</h2>
+    <div class="project">
+      <div>
+        <p class="project-name">Red Flag</p>
+        <p class="project-meta">Сайт бренда одежды<br />Через Студию Артемия Лебедева</p>
+      </div>
+      <div>
+        <p class="project-intro">Позиционирование и тон с нуля, страницы «О бренде» и «Карьера». Находка в названии: «ред флаг» из тревожного сигнала превращается в достоинство, быть собой и не подстраиваться под толпу.</p>
+        <ul class="works">
+        <li><a class="work" href="https://docs.google.com/document/d/1bRmyWi45GcM0mQ3zz7ZtZ7Cvql1eyBcVKuqjbbe4d84/edit"><span class="work-title">Тексты сайта<span class="arrow">↗</span></span><p class="work-text"><span class="quote">«Носи то, что хочешь. Даже если это ред флаг».</span> На странице «Карьера»: <span class="quote">«Мы не ищем сотрудников. Мы ищем сообщников».</span></p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/1bRmyWi45GcM0mQ3zz7ZtZ7Cvql1eyBcVKuqjbbe4d84/edit"><span class="work-title">Игровые титулы для 25 должностей<span class="arrow">↗</span></span><p class="work-text">Скучный список сотрудников становится частью бренда: <span class="quote">«Лорд склада», «Гуру коробок», «Повелитель мемов»</span>.</p></a></li>
+        <li><a class="work" href="https://www.artlebedev.ru/red-flag/"><span class="work-title">Проект на сайте студии<span class="arrow">↗</span></span><p class="work-text">Как это выглядит вживую.</p></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page">
+  <header class="masthead">
+    <a class="logo" href="https://ansudakov.ru">SDK<span class="accent">V</span></a>
+    <div class="masthead-meta">
+      Креатив<br /><a href="https://ansudakov.ru" style="color:inherit;text-decoration:none">ansudakov.ru</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="project">
+      <div>
+        <p class="project-name">Альфа-Банк</p>
+        <p class="project-meta">Нейминг, слоганы,<br />сценарии, пуши<br />2 года в штате</p>
+      </div>
+      <div>
+        <p class="project-intro">Ходил на брейнштормы с маркетологами разных направлений, потом уединялся с макбуком и придумывал названия и слоганы для продуктов, мероприятий, акций и мерча.</p>
+        <ul class="works">
+        <li><a class="work" href="https://docs.google.com/document/d/1Bu4gBvROi_JP8lxaZIriETe2DSqKnjW2J7zCK4UmY2I/edit"><span class="work-title">Сценарий ролика «Phygital Bank» для форума Финаполис<span class="arrow">↗</span></span><p class="work-text">Вся структура держится на одном слове: physical и digital собираются в phygital, разбираются на два банка и в финале собираются снова.</p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/14gaoW_q1RpFho_U68GG1_R8hMTZ2BEEQEbz01a6IlBY/edit"><span class="work-title">Нейминг флагманской диджитал-конференции<span class="arrow">↗</span></span><p class="work-text">Четыре концепции со своим позиционированием, от Alfa Digital Talks до Alfa Digital Day.</p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/1aImr8h6OhcmRF7u6jJg3KixrTyiYzMpxAk4i7T3JfKE/edit"><span class="work-title">Нейминг конференции для региональных руководителей<span class="arrow">↗</span></span><p class="work-text">Построен на стратегическом слове банка: Phygital Branch Conference, Phygital Branch Generation и другие.</p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/1BjwnTQTvqcwGhBXnCHow7b9JUOXM7voPMZpwzUI5lBc/edit"><span class="work-title">12 слоганов для акции по Альфа-Счету<span class="arrow">↗</span></span><p class="work-text"><span class="quote">«Всем по 6,5%», «Сразу всем 6,5%», «Начните с 6,5%».</span> Перебор ради одного короткого и точного.</p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/1SCUkM7kAhN-XKirQq9gntqUYaMob6QEtkztq9-P0BbE/edit"><span class="work-title">Креатив под SEO-запрос «кредит без кредитной истории»<span class="arrow">↗</span></span><p class="work-text">Три уровня смелости: надёжный, расширенный и «слишком смелый». Заказчик видит, где граница, и выбирает сам.</p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/1dAxzmaQNKnzuGSKGkjTtROD7t_cID8xJDZ8uHXQ1z1k/edit"><span class="work-title">Пуш для геймеров<span class="arrow">↗</span></span><p class="work-text"><span class="quote">«Любите играть в Steam? Пополняйте игровой аккаунт прямо в приложении Альфа-Банка. Ускорьте свой прогресс!»</span></p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/15t1ghdiBEL8HYd_KXnVMmBFYdTXY7r1w0w-_FX_W33Q/edit"><span class="work-title">Ролик-интервью про кредитку «100 дней без процентов»<span class="arrow">↗</span></span><p class="work-text">Честный разговор о подводных камнях вместо рекламы. Версии на 2:00, 1:30 и анонс на 30 секунд.</p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/1DoIaA3HKmp1n3gHLkzYsOk65aG7m9y_m4hF-5h0vC2Y/edit"><span class="work-title">HR-ролик для программы «Кадровый актив»<span class="arrow">↗</span></span><p class="work-text">Вопрос-ответ с руководителем и заставки по темам.</p></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <div>
+        <p class="project-name">Skillbox</p>
+        <p class="project-meta">Соцсети<br />9 месяцев единственным<br />автором на 5 площадках</p>
+      </div>
+      <div>
+        <ul class="works">
+        <li><a class="work" href="https://docs.google.com/document/d/1exEuppHnTuyrmrypL0k632m4iWao-8o9sLTOpzPaDlc/edit"><span class="work-title">Игра в сторис для программистов<span class="arrow">↗</span></span><p class="work-text">Тест на JavaScript из шести сторис с финалом-перевёртышем: <span class="quote">«Если вы ответили правильно на все вопросы, вам не нужен курс. Остальные — свайпайте вверх».</span></p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/1eyD5MjWxr7mqQ-IYXmF0U3pWOYc0al7llNMOZbyzYVw/edit"><span class="work-title">«Игра по управлению проектами»<span class="arrow">↗</span></span><p class="work-text">Сериал в ленте: подписчик в роли фрилансера, каждую неделю новая ситуация, голосование в комментариях и клиффхэнгер до следующего выпуска.</p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/1eyD5MjWxr7mqQ-IYXmF0U3pWOYc0al7llNMOZbyzYVw/edit"><span class="work-title">Названия дискуссий лектория<span class="arrow">↗</span></span><p class="work-text"><span class="quote">«Мы бессмертны! (или нет)», «Роботы нас уволят?!», «Swipe влево. Секс и технологии».</span></p></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page">
+  <header class="masthead">
+    <a class="logo" href="https://ansudakov.ru">SDK<span class="accent">V</span></a>
+    <div class="masthead-meta">
+      Креатив<br /><a href="https://ansudakov.ru" style="color:inherit;text-decoration:none">ansudakov.ru</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="project">
+      <div>
+        <p class="project-name">Альпина Паблишер</p>
+        <p class="project-meta">Сценарий комикса<br />к учебнику Bonnie &amp; Slide</p>
+      </div>
+      <div>
+        <ul class="works">
+        <li><a class="work" href="https://docs.google.com/document/d/1dJEnTLJL0vPecu39CvmsMNjcMqCjaYeOQiFMlWaWWWo/edit"><span class="work-title">Квест-ограбление «Банка Слайдов»<span class="arrow">↗</span></span><p class="work-text">Три героя на жизненном переломе, каждый эпизод метафорой предваряет главу учебника, а композиция закольцована лифтом. В книгу сценарий не вошёл, но это моя особая гордость.</p></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <div>
+        <p class="project-name">Т‑Банк</p>
+        <p class="project-meta">Сторис в приложении<br />Т‑Бизнеса</p>
+      </div>
+      <div>
+        <ul class="works">
+        <li><a class="work" href="https://docs.google.com/document/d/1UNRPV1YHAk2RfzPC5L3KByBRbCPbBkm-Dp41nOOLGGk/edit"><span class="work-title">Сторис «Конструктор сайтов»<span class="arrow">↗</span></span><p class="work-text">Продукт для бизнеса, рассказанный короткими экранами.</p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/1EHu3s9RHP4nB0QM0XY7xr0V-E8U1PnMb3FJrmcZ4Kb8/edit"><span class="work-title">Сторис «Регистрация ИП»<span class="arrow">↗</span></span><p class="work-text">Сложная процедура, разложенная на простые шаги.</p></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <div>
+        <p class="project-name">Игра для бара</p>
+        <p class="project-meta">Рулетка в сторис</p>
+      </div>
+      <div>
+        <ul class="works">
+        <li><a class="work" href="https://docs.google.com/document/d/14ewLy124UwtHD6PqOqNxH6fijT2vO9a8ck9ZQZpz8yU/edit"><span class="work-title">«Выбери себе пиво»<span class="arrow">↗</span></span><p class="work-text">Скриншот, отметка бара, пиво со скидкой. <span class="quote">«Если вам выпало пиво, которое вы уже пробовали — сделайте новый скрин. Судьба будет не против».</span></p></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <div>
+        <p class="project-name">Креатив в B2B</p>
+        <p class="project-meta">Timeweb Cloud<br />Яндекс Доставка</p>
+      </div>
+      <div>
+        <ul class="works">
+        <li><a class="work" href="https://docs.google.com/document/d/1pkMBuumORmv_bFnBk7C9mJGXJ0c9xhzxjxNfsB1Ta4M/edit"><span class="work-title">Тон-оф-войс Timeweb Cloud<span class="arrow">↗</span></span><p class="work-text"><span class="quote">«Не гиковский, но технически подкованный язык»</span> для облачного провайдера и его аудитории разработчиков.</p></a></li>
+        <li><a class="work" href="https://docs.google.com/document/d/19Thy8K3sS7FpStLbJ8rIeew2hGqOU0sqefwMUwALw1c/edit?usp=share_link"><span class="work-title">Страница «О компании» Timeweb Cloud<span class="arrow">↗</span></span><p class="work-text">Моя любимка среди страниц облака.</p></a></li>
+        <li><a class="work" href="https://www.figma.com/file/U4vlBvFZ17QFehRn53EnXA/%D0%BB%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3-%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81-%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE-%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B5?node-id=0%3A1"><span class="work-title">Лендинг Яндекс Доставки<span class="arrow">↗</span></span><p class="work-text"><span class="quote">«Доставка по ссылке: это как оплата по ссылке, только доставка».</span></p></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="reels">
+    <div>
+      <h3>Рилсы снимаю сам<span class="accent">.</span></h3>
+      <p>Сам пишу и снимаю ролики для своего блога: разговорный тон, короткие удары, финал-перевёртыш. Как это выглядит:</p>
+    </div>
+    <div class="reels-links">
+      <a href="https://www.youtube.com/@ademoscu/shorts">YouTube Shorts</a>
+      <a href="https://www.instagram.com/ademoscu">Instagram</a>
+      <a href="https://www.tiktok.com/@ademoscu">TikTok</a>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div class="contact-box">
+      <h3>Давайте сделаем<br />что-то креативное<span class="accent">.</span></h3>
+      <div class="contact-links">
+        <div><span class="label">Телеграм</span><a href="https://t.me/sashasudakov">@sashasudakov</a></div>
+        <div><span class="label">Почта</span><a href="mailto:a.n.sudakov@gmail.com">a.n.sudakov@gmail.com</a></div>
+      </div>
+    </div>
+    <div class="footer-note">
+      <span>© 2026 Александр Судаков</span>
+      <a href="https://ansudakov.ru/works">ansudakov.ru/works</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -91,6 +91,7 @@ export function SiteFooter() {
               <span className="text-muted">Опыт</span>
               {[
                 { href: site.casesPdf, label: "Кейсы и цифры", tag: "PDF" },
+                { href: site.creativePdf, label: "Креатив", tag: "PDF" },
                 { href: site.resumePdf, label: "Резюме", tag: "PDF" },
                 { href: site.resume, label: "Резюме", tag: "hh.ru" },
               ].map((doc) => (

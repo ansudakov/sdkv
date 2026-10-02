@@ -4,8 +4,8 @@ const nextConfig: NextConfig = {
   headers() {
     return [
       {
-        // Выжимка дублирует /works — не даём ей конкурировать с портфолио в поиске.
-        source: "/cases.pdf",
+        // PDF-выжимки дублируют /works — не даём им конкурировать с портфолио в поиске.
+        source: "/:file(cases|creative).pdf",
         headers: [{ key: "X-Robots-Tag", value: "noindex" }],
       },
     ];

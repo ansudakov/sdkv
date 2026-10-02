@@ -19,6 +19,7 @@ export const site = {
   resume: "https://hh.ru/resume/2e68dc8bff07075f900039ed1f556c79685871",
   resumePdf: "/resume.pdf",
   casesPdf: "/cases.pdf",
+  creativePdf: "/creative.pdf",
   description:
     "Сеньор-редактор, контент-лид и креативный копирайтер. Пишу, руковожу редакциями и снимаю рилсы.",
 };

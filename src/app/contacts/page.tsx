@@ -273,6 +273,14 @@ export default function ContactsPage() {
             >
               Кейсы в PDF
             </a>
+            <a
+              href={site.creativePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            >
+              Креатив в PDF
+            </a>
           </div>
         </Container>
       </section>

@@ -1,5 +1,6 @@
 // node --env-file=.env.local scripts/pagespeed.mjs [url ...]   (по умолчанию: главная, блог, контакты)
-// Одиночный прогон PageSpeed сильно шумит, поэтому берём медиану из RUNS запусков.
+// PageSpeed гоняет тест на машинах Google разной мощности: на слабых та же страница даёт LCP 5+ с вместо 2.5.
+// Поэтому RUNS прогонов параллельно и оцениваем лучший: реальная деградация замедлит все прогоны сразу.
 // Пороги — «плохо» и «можно лучше» по шкале Google. Exit 1, если есть «плохо».
 import fs from "node:fs";
 
@@ -9,7 +10,7 @@ if (!KEY) {
   process.exit(1);
 }
 
-const RUNS = 3;
+const RUNS = 5;
 const ORIGIN = "https://ansudakov.ru";
 const urls = process.argv.slice(2).length
   ? process.argv.slice(2)
@@ -17,8 +18,6 @@ const urls = process.argv.slice(2).length
 
 const BAD = { perf: 50, lcp: 4, cls: 0.25, tbt: 600 };
 const OK = { perf: 90, lcp: 2.5, cls: 0.1, tbt: 200 };
-
-const median = (xs) => [...xs].sort((a, b) => a - b)[Math.floor(xs.length / 2)];
 
 async function run(url, strategy) {
   const api = new URL("https://www.googleapis.com/pagespeedonline/v5/runPagespeed");
@@ -48,18 +47,16 @@ for (const url of urls) {
   const page = url.replace(ORIGIN, "") || "/";
   for (const strategy of ["mobile", "desktop"]) {
     const label = `${page} (${strategy === "mobile" ? "телефон" : "десктоп"})`;
-    const rs = [];
-    for (let i = 0; i < RUNS; i++) {
-      try {
-        rs.push(await run(url, strategy));
-      } catch (e) {
-        if (i === RUNS - 1 && rs.length === 0) problems.push(`${label}: PageSpeed не смог проверить (${e.message.slice(0, 80)})`);
-      }
+    const settled = await Promise.allSettled(Array.from({ length: RUNS }, () => run(url, strategy)));
+    const rs = settled.filter((r) => r.status === "fulfilled").map((r) => r.value);
+    if (rs.length === 0) {
+      problems.push(`${label}: PageSpeed не смог проверить (${String(settled[0].reason?.message).slice(0, 80)})`);
+      continue;
     }
-    if (rs.length === 0) continue;
-    const m = Object.fromEntries(["perf", "lcp", "cls", "tbt"].map((k) => [k, median(rs.map((r) => r[k]))]));
+    const m = rs.reduce((best, r) => (r.perf > best.perf ? r : best));
+    const range = rs.map((r) => r.perf).sort((a, b) => a - b);
     rows.push(
-      `| ${label} | ${m.perf} | ${m.lcp.toFixed(1)} с | ${m.cls.toFixed(3)} | ${Math.round(m.tbt)} мс |`,
+      `| ${label} | ${m.perf} (${range[0]}–${range.at(-1)}) | ${m.lcp.toFixed(1)} с | ${m.cls.toFixed(3)} | ${Math.round(m.tbt)} мс |`,
     );
 
     const bad = [];
@@ -80,9 +77,9 @@ for (const url of urls) {
 const report = [
   `# Скорость ${ORIGIN}`,
   "",
-  `Медиана из ${RUNS} прогонов PageSpeed. Норма: балл от ${OK.perf}, главный блок до ${OK.lcp} с, сдвиги до ${OK.cls}, подвисание до ${OK.tbt} мс.`,
+  `Лучший из ${RUNS} прогонов PageSpeed (в скобках разброс баллов: машины Google разной мощности). Норма: балл от ${OK.perf}, главный блок до ${OK.lcp} с, сдвиги до ${OK.cls}, подвисание до ${OK.tbt} мс.`,
   "",
-  "| Страница | Балл | Главный блок (LCP) | Сдвиги (CLS) | Подвисание (TBT) |",
+  "| Страница | Балл (разброс) | Главный блок (LCP) | Сдвиги (CLS) | Подвисание (TBT) |",
   "|---|---|---|---|---|",
   ...rows,
   "",

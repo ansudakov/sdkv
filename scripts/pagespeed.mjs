@@ -1,5 +1,8 @@
 // node --env-file=.env.local scripts/pagespeed.mjs [url ...]   (по умолчанию: главная, блог, контакты)
 // Одиночный прогон PageSpeed сильно шумит, поэтому берём медиану из RUNS запусков.
+// Пороги — «плохо» и «можно лучше» по шкале Google. Exit 1, если есть «плохо».
+import fs from "node:fs";
+
 const KEY = process.env.PAGESPEED_API_KEY;
 if (!KEY) {
   console.error("Нужен PAGESPEED_API_KEY в .env.local. Запуск: node --env-file=.env.local scripts/pagespeed.mjs");
@@ -12,6 +15,9 @@ const urls = process.argv.slice(2).length
   ? process.argv.slice(2)
   : [ORIGIN, `${ORIGIN}/blog`, `${ORIGIN}/contacts`];
 
+const BAD = { perf: 50, lcp: 4, cls: 0.25, tbt: 600 };
+const OK = { perf: 90, lcp: 2.5, cls: 0.1, tbt: 200 };
+
 const median = (xs) => [...xs].sort((a, b) => a - b)[Math.floor(xs.length / 2)];
 
 async function run(url, strategy) {
@@ -20,47 +26,73 @@ async function run(url, strategy) {
   api.searchParams.set("url", `${url}${url.includes("?") ? "&" : "?"}psi=${Math.random().toString(36).slice(2)}`);
   api.searchParams.set("strategy", strategy);
   api.searchParams.set("key", KEY);
-  for (const c of ["performance", "seo", "accessibility", "best-practices"]) {
-    api.searchParams.append("category", c);
-  }
+  api.searchParams.append("category", "performance");
   const res = await fetch(api);
   const j = await res.json();
   if (!res.ok) throw new Error(`${res.status} ${j.error?.message ?? ""}`);
   const lh = j.lighthouseResult;
   const a = lh.audits;
-  const score = (k) => Math.round((lh.categories[k]?.score ?? 0) * 100);
   return {
-    perf: score("performance"),
-    seo: score("seo"),
-    a11y: score("accessibility"),
-    best: score("best-practices"),
+    perf: Math.round((lh.categories.performance?.score ?? 0) * 100),
     lcp: a["largest-contentful-paint"].numericValue / 1000,
     cls: a["cumulative-layout-shift"].numericValue,
     tbt: a["total-blocking-time"].numericValue,
-    fcp: a["first-contentful-paint"].numericValue / 1000,
   };
 }
 
+const problems = [];
+const notes = [];
+const rows = [];
+
 for (const url of urls) {
+  const page = url.replace(ORIGIN, "") || "/";
   for (const strategy of ["mobile", "desktop"]) {
-    try {
-      const rs = [];
-      for (let i = 0; i < RUNS; i++) {
-        try {
-          rs.push(await run(url, strategy));
-        } catch (e) {
-          console.log(`  (прогон ${i + 1} пропущен: ${e.message.slice(0, 80)})`);
-        }
+    const label = `${page} (${strategy === "mobile" ? "телефон" : "десктоп"})`;
+    const rs = [];
+    for (let i = 0; i < RUNS; i++) {
+      try {
+        rs.push(await run(url, strategy));
+      } catch (e) {
+        if (i === RUNS - 1 && rs.length === 0) problems.push(`${label}: PageSpeed не смог проверить (${e.message.slice(0, 80)})`);
       }
-      if (rs.length === 0) throw new Error("все прогоны упали");
-      const m = (k) => median(rs.map((r) => r[k]));
-      console.log(
-        `${strategy.padEnd(7)} ${url}  (медиана из ${rs.length})\n` +
-          `  perf ${m("perf")} [${rs.map((r) => r.perf).join(", ")}] | seo ${m("seo")} | a11y ${m("a11y")} | best ${m("best")}\n` +
-          `  LCP ${m("lcp").toFixed(1)} s | CLS ${m("cls").toFixed(3)} | TBT ${Math.round(m("tbt"))} ms | FCP ${m("fcp").toFixed(1)} s`,
-      );
-    } catch (e) {
-      console.log(`${strategy} ${url}: ${e.message}`);
     }
+    if (rs.length === 0) continue;
+    const m = Object.fromEntries(["perf", "lcp", "cls", "tbt"].map((k) => [k, median(rs.map((r) => r[k]))]));
+    rows.push(
+      `| ${label} | ${m.perf} | ${m.lcp.toFixed(1)} с | ${m.cls.toFixed(3)} | ${Math.round(m.tbt)} мс |`,
+    );
+
+    const bad = [];
+    const meh = [];
+    if (m.perf < BAD.perf) bad.push(`балл ${m.perf}`);
+    else if (m.perf < OK.perf) meh.push(`балл ${m.perf}`);
+    if (m.lcp > BAD.lcp) bad.push(`главный блок грузится ${m.lcp.toFixed(1)} с`);
+    else if (m.lcp > OK.lcp) meh.push(`главный блок грузится ${m.lcp.toFixed(1)} с`);
+    if (m.cls > BAD.cls) bad.push(`сдвиги макета ${m.cls.toFixed(2)}`);
+    else if (m.cls > OK.cls) meh.push(`сдвиги макета ${m.cls.toFixed(2)}`);
+    if (m.tbt > BAD.tbt) bad.push(`страница подвисает ${Math.round(m.tbt)} мс`);
+    else if (m.tbt > OK.tbt) meh.push(`страница подвисает ${Math.round(m.tbt)} мс`);
+    if (bad.length) problems.push(`${label}: ${bad.join(", ")}`);
+    if (meh.length) notes.push(`${label}: ${meh.join(", ")}`);
   }
 }
+
+const report = [
+  `# Скорость ${ORIGIN}`,
+  "",
+  `Медиана из ${RUNS} прогонов PageSpeed. Норма: балл от ${OK.perf}, главный блок до ${OK.lcp} с, сдвиги до ${OK.cls}, подвисание до ${OK.tbt} мс.`,
+  "",
+  "| Страница | Балл | Главный блок (LCP) | Сдвиги (CLS) | Подвисание (TBT) |",
+  "|---|---|---|---|---|",
+  ...rows,
+  "",
+  `## Плохо: ${problems.length}`,
+  ...(problems.length ? problems.map((p) => `- ${p}`) : ["Нет."]),
+  "",
+  `## Можно лучше: ${notes.length}`,
+  ...(notes.length ? notes.map((n) => `- ${n}`) : ["Нет."]),
+].join("\n");
+
+console.log(report);
+if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, report + "\n");
+process.exit(problems.length ? 1 : 0);

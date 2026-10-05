@@ -1,0 +1,75 @@
+name: Weekly site check
+
+on:
+  schedule:
+    # Понедельник 06:17 UTC = 09:17 по Москве. Не ровно в начало часа: в :00 GitHub
+    # перегружен и запуски по расписанию теряются.
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: SEO audit
+        id: seo
+        continue-on-error: true
+        run: node scripts/seo-audit.mjs | tee seo.md; exit ${PIPESTATUS[0]}
+
+      - name: PageSpeed
+        id: speed
+        continue-on-error: true
+        env:
+          PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
+        run: |
+          if [ -z "$PAGESPEED_API_KEY" ]; then
+            printf '# Скорость\n\nНе проверена: в секретах репозитория нет PAGESPEED_API_KEY.\n' | tee speed.md
+            exit 1
+          fi
+          node scripts/pagespeed.mjs | tee speed.md; exit ${PIPESTATUS[0]}
+
+      - name: Post weekly report
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SEO: ${{ steps.seo.outcome }}
+          SPEED: ${{ steps.speed.outcome }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          date=$(TZ=Europe/Moscow date +%d.%m.%Y)
+          if [ "$SEO" = success ] && [ "$SPEED" = success ]; then
+            status="✅ всё в порядке"
+          else
+            status="⚠️ есть проблемы"
+          fi
+          line() { [ "$1" = success ] && echo "✅ $2: в порядке" || echo "⚠️ $2: есть проблемы, подробности ниже"; }
+          {
+            echo "@${{ github.repository_owner }} отчёт за $date: **$status**"
+            echo
+            line "$SEO" "SEO (ссылки, title, description, картинки)"
+            line "$SPEED" "Скорость загрузки"
+            echo
+            cat seo.md
+            echo
+            cat speed.md
+            echo
+            echo "[Запуск на GitHub]($RUN_URL)"
+          } > report.md
+
+          title="Еженедельный отчёт сайта: $status ($date)"
+          gh label create weekly-report --color 0e8a16 --description "Еженедельный отчёт сайта" 2>/dev/null || true
+          issue=$(gh issue list --label weekly-report --state open --json number --jq '.[0].number')
+          if [ -z "$issue" ]; then
+            gh issue create --title "$title" --label weekly-report --body-file report.md
+          else
+            gh issue edit "$issue" --title "$title"
+            gh issue comment "$issue" --body-file report.md
+          fi

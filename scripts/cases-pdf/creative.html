@@ -80,7 +80,7 @@
     color: var(--accent);
   }
 
-  .hero { padding: 8mm 0 4mm; }
+  .hero { padding: 6mm 0 3mm; }
   .hero h1 {
     margin-top: 4mm;
     font-family: var(--display);
@@ -97,8 +97,9 @@
   }
 
   section { padding-top: 6mm; }
+  .works-section { padding-top: 11mm; }
   section h2 {
-    margin-bottom: 3.5mm;
+    margin-bottom: 4.5mm;
   }
 
   .stats {
@@ -227,7 +228,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10mm;
-    row-gap: 3.2mm;
+    row-gap: 2.4mm;
     list-style: none;
   }
   .skills li { break-inside: avoid; }
@@ -238,7 +239,7 @@
     display: grid;
     grid-template-columns: 44mm 1fr;
     column-gap: 7mm;
-    padding: 5mm 0;
+    padding: 7mm 0;
     border-top: 1px solid var(--border);
     break-inside: avoid;
   }
@@ -260,7 +261,7 @@
     line-height: 1.6;
   }
   .project-intro { color: #d8d6ce; font-size: 9.6pt; line-height: 1.45; margin-bottom: 3mm; }
-  .works { list-style: none; display: grid; row-gap: 2.6mm; }
+  .works { list-style: none; display: grid; row-gap: 3.4mm; }
   a.work { display: block; color: inherit; text-decoration: none; break-inside: avoid; }
   .work-title { font-weight: 600; font-size: 10pt; line-height: 1.35; }
   .work-title .arrow { color: var(--accent); font-weight: 600; margin-left: 1mm; }
@@ -318,7 +319,7 @@
     </ul>
   </section>
 
-  <section>
+  <section class="works-section">
     <h2 class="eyebrow">Работы по проектам</h2>
     <div class="project">
       <div>
@@ -438,18 +439,6 @@
         </ul>
       </div>
     </div>
-    <div class="project">
-      <div>
-        <p class="project-name">Skillbox</p>
-        <p class="project-meta">Соцсети<br />9 месяцев единственным<br />автором на 5 площадках</p>
-      </div>
-      <div>
-        <ul class="works">
-          <li><a class="work" href="https://docs.google.com/document/d/1exEuppHnTuyrmrypL0k632m4iWao-8o9sLTOpzPaDlc/edit"><span class="work-title">Игра в сторис для программистов<span class="arrow">↗</span></span><p class="work-text">Тест на JavaScript из шести сторис с финалом-перевертышем: <span class="quote">Если вы ответили правильно на все вопросы, вам не нужен курс. Остальные — свайпайте вверх.</span></p></a></li>
-          <li><a class="work" href="https://docs.google.com/document/d/1eyD5MjWxr7mqQ-IYXmF0U3pWOYc0al7llNMOZbyzYVw/edit?tab=t.0#heading=h.s98sl2wux4tq"><span class="work-title">Игра по управлению проектами<span class="arrow">↗</span></span><p class="work-text">Сериал в ленте: подписчик в роли фрилансера, каждую неделю новая рабочая ситуация, голосование в комментариях и клиффхэнгер до следующего выпуска.</p></a></li>
-        </ul>
-      </div>
-    </div>
   </section>
 </div>
 
@@ -462,6 +451,18 @@
   </header>
 
   <section>
+    <div class="project">
+      <div>
+        <p class="project-name">Skillbox</p>
+        <p class="project-meta">Соцсети<br />9 месяцев единственным<br />автором на 5 площадках</p>
+      </div>
+      <div>
+        <ul class="works">
+          <li><a class="work" href="https://docs.google.com/document/d/1exEuppHnTuyrmrypL0k632m4iWao-8o9sLTOpzPaDlc/edit"><span class="work-title">Игра в сторис для программистов<span class="arrow">↗</span></span><p class="work-text">Тест на JavaScript из шести сторис с финалом-перевертышем: <span class="quote">Если вы ответили правильно на все вопросы, вам не нужен курс. Остальные — свайпайте вверх.</span></p></a></li>
+          <li><a class="work" href="https://docs.google.com/document/d/1eyD5MjWxr7mqQ-IYXmF0U3pWOYc0al7llNMOZbyzYVw/edit?tab=t.0#heading=h.s98sl2wux4tq"><span class="work-title">Игра по управлению проектами<span class="arrow">↗</span></span><p class="work-text">Сериал в ленте: подписчик в роли фрилансера, каждую неделю новая рабочая ситуация, голосование в комментариях и клиффхэнгер до следующего выпуска.</p></a></li>
+        </ul>
+      </div>
+    </div>
     <div class="project">
       <div>
         <p class="project-name">Т‑Банк</p>

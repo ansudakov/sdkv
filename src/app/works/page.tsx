@@ -68,7 +68,7 @@ export default function WorkPage() {
                 href: site.creativePdf,
                 label: "Креатив",
                 title: "Слоганы, сценарии, игры и нейминг",
-                note: "Три страницы, PDF",
+                note: "Четыре страницы, PDF",
                 external: true,
               },
             ].map((item) => (

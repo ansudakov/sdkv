@@ -23,7 +23,7 @@ export default function BlogPage() {
             Блог
           </p>
           <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
-            Про редактуру,
+            Про редактуру<span className="text-accent">,</span>
             <br />контент-маркетинг
             <br />и нейросети<span className="text-accent">.</span>
           </h1>

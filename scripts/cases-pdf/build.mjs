@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
-const EXPECTED_PAGES = { cases: 2, creative: 3 };
+const EXPECTED_PAGES = { cases: 2, creative: 4 };
 const name = process.argv[2] ?? "cases";
 if (!(name in EXPECTED_PAGES)) {
   console.error(`Неизвестный документ: ${name}. Есть: ${Object.keys(EXPECTED_PAGES).join(", ")}.`);

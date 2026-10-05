@@ -564,15 +564,18 @@ summary {
     padding-left: 1.25rem;
     margin: 1.75rem 0;
     color: var(--muted);
-    font-style: italic;
   }
   .prose-article code {
+    font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+    font-variant-ligatures: none;
     background: var(--border);
     padding: 0.15em 0.4em;
     border-radius: 0.3em;
     font-size: 0.9em;
   }
   .prose-article pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 0.6em;
@@ -580,11 +583,48 @@ summary {
     margin: 1.75rem 0;
     overflow-x: auto;
   }
+  .prose-article > svg,
+  .prose-article > p > svg {
+    display: block;
+    margin: 2rem 0;
+  }
+  .prose-article .code-block {
+    position: relative;
+    margin: 1.75rem 0;
+  }
+  .prose-article .code-block pre {
+    margin: 0;
+    padding-right: 3.25rem;
+  }
+  .prose-article .code-copy {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.45rem;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--muted);
+    cursor: pointer;
+    opacity: 0.75;
+    transition: color 0.15s, opacity 0.15s;
+  }
+  .prose-article .code-block:hover .code-copy,
+  .prose-article .code-copy:focus-visible {
+    opacity: 1;
+  }
+  .prose-article .code-copy:hover {
+    color: var(--accent);
+  }
   .prose-article pre code {
     background: none;
     padding: 0;
     border-radius: 0;
     font-size: 0.85em;
+    line-height: 1.65;
   }
   .prose-article strong {
     font-weight: 600;

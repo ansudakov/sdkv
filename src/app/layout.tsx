@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Unbounded, Inter } from "next/font/google";
+import { Unbounded, Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { AnalyticsGate } from "@/components/analytics-gate";
@@ -23,6 +23,14 @@ const unbounded = Unbounded({
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "cyrillic"],
+  display: "swap",
+});
+
+// Код и примеры файлов в статьях: блоки кода и инлайн-код.
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -71,7 +79,7 @@ export default function RootLayout({
     <html
       lang="ru"
       suppressHydrationWarning
-      className={`${unbounded.variable} ${inter.variable}`}
+      className={`${unbounded.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />

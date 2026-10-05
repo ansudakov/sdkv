@@ -99,14 +99,17 @@ export function getPlainText(content: string): string {
     .trim();
 }
 
-export type Heading = { text: string; slug: string };
+export type Heading = { text: string; slug: string; level: 2 | 3 };
 
 export function getHeadings(content: string): Heading[] {
   const slugger = new GithubSlugger();
-  const matches = content.matchAll(/^##\s+(.+)$/gm);
+  // Строки «## …» внутри блоков кода — не заголовки статьи.
+  const withoutCode = content.replace(/^(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1[ \t]*$/gm, "");
+  // H2 и H3 одним slugger'ом и по порядку — так же, как rehype-slug проставляет id в теле.
+  const matches = withoutCode.matchAll(/^(#{2,3})\s+(.+)$/gm);
   return Array.from(matches, (m) => {
-    const text = m[1].trim();
-    return { text, slug: slugger.slug(text) };
+    const text = m[2].replace(/[`*_]/g, "").trim();
+    return { text, slug: slugger.slug(text), level: m[1].length as 2 | 3 };
   });
 }
 

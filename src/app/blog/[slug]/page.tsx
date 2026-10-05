@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import { CodeBlock } from "@/components/code-block";
 import { Container } from "@/components/container";
 import { PostCoverImage } from "@/components/post-cover-image";
 import { PostKeyboardNav } from "@/components/post-keyboard-nav";
@@ -147,10 +148,10 @@ export default async function BlogPostPage({
               </p>
               <ol className="mt-4 space-y-2.5">
                 {headings.map((h) => (
-                  <li key={h.slug}>
+                  <li key={h.slug} className={h.level === 3 ? "pl-5" : undefined}>
                     <a
                       href={`#${h.slug}`}
-                      className="text-sm text-muted transition-colors hover:text-accent"
+                      className={`${h.level === 3 ? "text-[13px]" : "text-sm"} text-muted transition-colors hover:text-accent`}
                     >
                       {h.text}
                     </a>
@@ -163,6 +164,7 @@ export default async function BlogPostPage({
         <div className="article-body prose-article mt-12">
           <MDXRemote
             source={body}
+            components={{ pre: CodeBlock }}
             options={{
               mdxOptions: { remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug] },
             }}

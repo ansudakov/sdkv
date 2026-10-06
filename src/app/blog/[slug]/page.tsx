@@ -33,7 +33,7 @@ export async function generateMetadata({
   const post = getPost(slug);
   if (!post) return {};
   return {
-    title: post.title,
+    title: { absolute: post.title },
     description: post.seoDescription,
     alternates: {
       canonical: `/blog/${slug}`,

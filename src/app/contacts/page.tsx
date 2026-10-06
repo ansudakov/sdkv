@@ -250,6 +250,22 @@ export default function ContactsPage() {
           </dl>
           <div className="mt-10 flex flex-wrap gap-3">
             <a
+              href={site.casesPdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            >
+              Кейсы и цифры в PDF
+            </a>
+            <a
+              href={site.creativePdf}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            >
+              Креатив в PDF
+            </a>
+            <a
               href={site.resumePdf}
               target="_blank"
               rel="noopener noreferrer"
@@ -264,22 +280,6 @@ export default function ContactsPage() {
               className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
             >
               Резюме на hh.ru
-            </a>
-            <a
-              href={site.casesPdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              Кейсы в PDF
-            </a>
-            <a
-              href={site.creativePdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              Креатив в PDF
             </a>
           </div>
         </Container>

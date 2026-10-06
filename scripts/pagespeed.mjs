@@ -47,13 +47,29 @@ for (const url of urls) {
   const page = url.replace(ORIGIN, "") || "/";
   for (const strategy of ["mobile", "desktop"]) {
     const label = `${page} (${strategy === "mobile" ? "телефон" : "десктоп"})`;
-    const settled = await Promise.allSettled(Array.from({ length: RUNS }, () => run(url, strategy)));
-    const rs = settled.filter((r) => r.status === "fulfilled").map((r) => r.value);
+    const measure = async () => {
+      const settled = await Promise.allSettled(Array.from({ length: RUNS }, () => run(url, strategy)));
+      return {
+        ok: settled.filter((r) => r.status === "fulfilled").map((r) => r.value),
+        error: settled.find((r) => r.status === "rejected")?.reason?.message,
+      };
+    };
+    const isBad = (r) => r.perf < BAD.perf || r.lcp > BAD.lcp || r.cls > BAD.cls || r.tbt > BAD.tbt;
+    const best = (xs) => xs.reduce((b, r) => (r.perf > b.perf ? r : b));
+
+    let { ok: rs, error } = await measure();
+    // Сразу после деплоя кеши CDN холодные и все прогоны бывают медленными: прежде чем бить тревогу, перемеряем.
+    if (rs.length === 0 || isBad(best(rs))) {
+      await new Promise((r) => setTimeout(r, 60_000));
+      const retry = await measure();
+      rs = [...rs, ...retry.ok];
+      error ??= retry.error;
+    }
     if (rs.length === 0) {
-      problems.push(`${label}: PageSpeed не смог проверить (${String(settled[0].reason?.message).slice(0, 80)})`);
+      problems.push(`${label}: PageSpeed не смог проверить (${String(error).slice(0, 80)})`);
       continue;
     }
-    const m = rs.reduce((best, r) => (r.perf > best.perf ? r : best));
+    const m = best(rs);
     const range = rs.map((r) => r.perf).sort((a, b) => a - b);
     rows.push(
       `| ${label} | ${m.perf} (${range[0]}–${range.at(-1)}) | ${m.lcp.toFixed(1)} с | ${m.cls.toFixed(3)} | ${Math.round(m.tbt)} мс |`,
@@ -77,7 +93,7 @@ for (const url of urls) {
 const report = [
   `# Скорость ${ORIGIN}`,
   "",
-  `Лучший из ${RUNS} прогонов PageSpeed (в скобках разброс баллов: машины Google разной мощности). Норма: балл от ${OK.perf}, главный блок до ${OK.lcp} с, сдвиги до ${OK.cls}, подвисание до ${OK.tbt} мс.`,
+  `Лучший из ${RUNS} прогонов PageSpeed, при плохом результате страница перемеряется ещё раз через минуту (в скобках разброс баллов: машины Google разной мощности). Норма: балл от ${OK.perf}, главный блок до ${OK.lcp} с, сдвиги до ${OK.cls}, подвисание до ${OK.tbt} мс.`,
   "",
   "| Страница | Балл (разброс) | Главный блок (LCP) | Сдвиги (CLS) | Подвисание (TBT) |",
   "|---|---|---|---|---|",

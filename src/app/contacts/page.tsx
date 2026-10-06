@@ -249,38 +249,31 @@ export default function ContactsPage() {
             ))}
           </dl>
           <div className="mt-10 flex flex-wrap gap-3">
-            <a
-              href={site.casesPdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              Кейсы и цифры в PDF
-            </a>
-            <a
-              href={site.creativePdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              Креатив в PDF
-            </a>
-            <a
-              href={site.resumePdf}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              Резюме в PDF
-            </a>
-            <a
-              href={site.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-border px-5 py-3 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
-            >
-              Резюме на hh.ru
-            </a>
+            {[
+              { href: site.casesPdf, label: "Кейсы и цифры", tag: "PDF", primary: true },
+              { href: site.creativePdf, label: "Креатив", tag: "PDF", primary: true },
+              { href: site.resumePdf, label: "Резюме", tag: "PDF", primary: false },
+              { href: site.resume, label: "Резюме на hh.ru", tag: null, primary: false },
+            ].map((doc) => (
+              <a
+                key={doc.href}
+                href={doc.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`rounded-full border px-5 py-3 text-sm font-medium transition-colors ${
+                  doc.primary
+                    ? "border-accent/50 bg-accent/10 text-accent hover:border-accent hover:bg-accent/20"
+                    : "border-border hover:border-accent hover:text-accent"
+                }`}
+              >
+                {doc.label}
+                {doc.tag && (
+                  <sup className="ml-1 font-mono text-[0.6rem] uppercase tracking-widest opacity-70">
+                    {doc.tag}
+                  </sup>
+                )}
+              </a>
+            ))}
           </div>
         </Container>
       </section>

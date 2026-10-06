@@ -16,7 +16,7 @@
 }
 
 .dark {
-  --background: #0a0a09;
+  --background: #161614;
   --surface: #141412;
   --card: #1c150d;
   --foreground: #f4f3ee;
@@ -359,6 +359,14 @@ summary {
     .article-toc {
       position: sticky;
       top: 6rem;
+      /* Длинное оглавление не влезает в экран — крутится внутри себя, а не
+         тянет за собой страницу. overscroll-behavior не пускает прокрутку
+         дальше в статью, пока курсор над оглавлением. */
+      max-height: calc(100vh - 7.5rem);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
     }
     .article-body {
       grid-area: body;

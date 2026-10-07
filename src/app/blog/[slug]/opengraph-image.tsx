@@ -4,6 +4,8 @@ import { readFile } from "node:fs/promises";
 import { getAllPosts, getPost } from "@/lib/posts";
 import { site } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

@@ -13,6 +13,12 @@ const nextConfig: NextConfig = isStaticExport
       headers() {
         return [
           {
+            // Копия на *.vercel.app не должна индексироваться: основной сайт живёт на ansudakov.ru.
+            source: "/:path*",
+            has: [{ type: "host", value: ".*\\.vercel\\.app" }],
+            headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+          },
+          {
             // PDF-выжимки дублируют /works — не даём им конкурировать с портфолио в поиске.
             source: "/:file(cases|creative).pdf",
             headers: [{ key: "X-Robots-Tag", value: "noindex" }],

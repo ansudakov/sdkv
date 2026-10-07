@@ -7,7 +7,8 @@ const isStaticExport = process.env.STATIC_EXPORT === "1";
 const nextConfig: NextConfig = isStaticExport
   ? {
       output: "export",
-      images: { unoptimized: true },
+      // Фото заранее уменьшаются скриптом scripts/optimize-images.mjs
+      images: { loader: "custom", loaderFile: "./src/lib/image-loader.ts" },
     }
   : {
       headers() {

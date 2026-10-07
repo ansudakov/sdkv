@@ -1,0 +1,53 @@
+name: Deploy to Selectel
+
+# Сайт собирается в статичные файлы (STATIC_EXPORT=1) и выкладывается на сервер в Москве.
+# Каждая выкладка попадает в новую папку releases/<время>-<коммит>, затем символическая
+# ссылка current атомарно переключается на неё. Старые релизы (кроме 5 последних) удаляются.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-selectel
+  cancel-in-progress: true
+
+env:
+  SERVER_HOST: 161.104.46.49
+  SERVER_USER: deploy
+  # Отпечаток ключа сервера: защищает от подмены сервера при выкладке
+  SERVER_HOST_KEY: "161.104.46.49 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbn18LiXTLh86uICcYzZBanvIFa5ELaANwfkQMxWfvr"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Build static export
+        run: npm run build
+        env:
+          STATIC_EXPORT: "1"
+      - name: Prepare SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          echo "$SERVER_HOST_KEY" > ~/.ssh/known_hosts
+          printf '%s\n' "${{ secrets.SELECTEL_DEPLOY_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+      - name: Upload release and switch
+        run: |
+          REL="$(date +%Y%m%d%H%M%S)-${GITHUB_SHA::7}"
+          SSH="ssh -i $HOME/.ssh/deploy_key -o IdentitiesOnly=yes -o BatchMode=yes"
+          rsync -az -e "$SSH" out/ "$SERVER_USER@$SERVER_HOST:/var/www/releases/$REL/"
+          $SSH "$SERVER_USER@$SERVER_HOST" "ln -sfn /var/www/releases/$REL /var/www/current.tmp && mv -Tf /var/www/current.tmp /var/www/current && cd /var/www/releases && ls -1dt */ | tail -n +6 | xargs -r rm -rf"
+      - name: Smoke test
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "http://$SERVER_HOST/")
+          echo "HTTP $code"
+          test "$code" = "200"

@@ -99,8 +99,13 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <SiteFooter />
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
+        {/* Скрипты Vercel работают только на самом Vercel (там есть /_vercel/insights); на Selectel они дали бы 404 */}
+        {process.env.VERCEL ? (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
         <AnalyticsGate />
         <CookieConsent />
         <TelegramToast />

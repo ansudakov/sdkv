@@ -128,6 +128,7 @@ export default async function BlogPostPage({
                 srcDark={post.imageDark}
                 alt={post.title}
                 sizes="(min-width: 1024px) 960px, (min-width: 640px) 768px, 100vw"
+                fetchPriority="high"
               />
             </div>
           )}

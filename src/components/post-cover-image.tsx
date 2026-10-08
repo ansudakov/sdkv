@@ -6,6 +6,8 @@ type PostCoverImageProps = {
   alt: string;
   sizes: string;
   className?: string;
+  /** Порядок загрузки: у первых картинок списка "high", у остальных "low" (грузятся после них). */
+  fetchPriority?: "high" | "low" | "auto";
 };
 
 /**
@@ -19,9 +21,19 @@ export function PostCoverImage({
   alt,
   sizes,
   className = "object-cover",
+  fetchPriority,
 }: PostCoverImageProps) {
   if (!srcDark) {
-    return <Image src={src} alt={alt} fill sizes={sizes} className={className} />;
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        fetchPriority={fetchPriority}
+        className={className}
+      />
+    );
   }
   return (
     <>
@@ -30,6 +42,7 @@ export function PostCoverImage({
         alt={alt}
         fill
         sizes={sizes}
+        fetchPriority={fetchPriority}
         className={`${className} dark:hidden`}
       />
       <Image
@@ -37,6 +50,7 @@ export function PostCoverImage({
         alt=""
         fill
         sizes={sizes}
+        fetchPriority={fetchPriority}
         className={`hidden ${className} dark:block`}
       />
     </>

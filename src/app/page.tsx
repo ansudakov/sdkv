@@ -269,7 +269,7 @@ export default function Home() {
             <p className="text-muted">Первые статьи скоро появятся здесь.</p>
           ) : (
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-              {posts.map((post) => (
+              {posts.map((post, index) => (
                 <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
                   {post.image && (
                     <div className="relative aspect-video overflow-hidden rounded-xl border border-border bg-surface">
@@ -278,6 +278,7 @@ export default function Home() {
                         srcDark={post.imageDark}
                         alt={post.title}
                         sizes="(min-width: 640px) 33vw, 100vw"
+                        fetchPriority={index < 2 ? "high" : "low"}
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     </div>

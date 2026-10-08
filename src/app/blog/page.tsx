@@ -35,7 +35,7 @@ export default function BlogPage() {
           <p className="text-muted">Статей пока нет — первая скоро выйдет.</p>
         ) : (
           <div className="divide-y divide-border">
-            {posts.map((post) => (
+            {posts.map((post, index) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
@@ -48,6 +48,7 @@ export default function BlogPage() {
                       srcDark={post.imageDark}
                       alt={post.title}
                       sizes="(min-width: 640px) 256px, 100vw"
+                      fetchPriority={index < 2 ? "high" : "low"}
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>

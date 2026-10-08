@@ -35,7 +35,7 @@ export function SiteFooter() {
               </TrackedLink>
             </div>
           </div>
-          <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+          <div className="flex flex-wrap gap-x-5 gap-y-3 text-sm sm:gap-x-8">
             <div className="flex flex-col gap-2">
               <span className="text-muted">Разделы</span>
               {nav.map((item) => (

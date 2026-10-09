@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { NavLink } from "@/components/nav-link";
 import { useEffect, useState } from "react";
 import { nav } from "@/lib/site";
 
@@ -84,11 +84,13 @@ export function MobileNav() {
       >
         <nav className="flex h-full flex-col justify-center gap-1 px-8 pb-16">
           {nav.map((item) => (
-            <Link
+            <NavLink
               key={item.href}
               href={item.href}
-              onClick={() => setOpen(false)}
-              className="group flex items-center justify-between gap-4 border-b border-border py-5 font-display text-4xl font-semibold tracking-tight text-foreground transition-colors hover:text-accent"
+              onNavigate={() => setOpen(false)}
+              className="group flex items-center justify-between gap-4 border-b border-border py-5 font-display text-4xl font-semibold tracking-tight transition-colors hover:text-accent"
+              activeClassName="text-accent"
+              inactiveClassName="text-foreground"
             >
               {item.label}
               <svg
@@ -104,7 +106,7 @@ export function MobileNav() {
               >
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
-            </Link>
+            </NavLink>
           ))}
         </nav>
       </div>

@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { Container } from "@/components/container";
 import { HeaderLogo } from "@/components/header-logo";
 import { MobileNav } from "@/components/mobile-nav";
+import { NavLink } from "@/components/nav-link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { TrackedLink } from "@/components/tracked-link";
 import { nav, site } from "@/lib/site";
@@ -14,13 +14,15 @@ export function SiteHeader() {
         <nav className="flex items-center gap-1 sm:gap-2">
           <div className="hidden items-center gap-1 lg:flex lg:gap-2">
             {nav.map((item) => (
-              <Link
+              <NavLink
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-3 py-2 text-sm font-medium text-muted transition-colors hover:text-accent lg:px-4"
+                className="rounded-full px-3 py-2 text-sm font-medium transition-colors hover:text-accent lg:px-4"
+                activeClassName="text-accent"
+                inactiveClassName="text-muted"
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
           </div>
           <TrackedLink

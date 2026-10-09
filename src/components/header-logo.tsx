@@ -19,9 +19,15 @@ export function HeaderLogo() {
   const pathname = usePathname();
 
   function handleClick(e: MouseEvent) {
+    // Если открыто мобильное меню, закрываем его: иначе оно остаётся поверх главной
+    const menuWasOpen = document.body.style.overflow === "hidden";
+    window.dispatchEvent(new Event("close-mobile-nav"));
     if (pathname === "/") {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // Пока меню открыто, прокрутка страницы заблокирована: ждём, пока оно закроется
+      const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+      if (menuWasOpen) setTimeout(toTop, 80);
+      else toTop();
     }
   }
 

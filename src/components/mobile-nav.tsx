@@ -15,6 +15,15 @@ export function MobileNav() {
   }, [open]);
 
   useEffect(() => {
+    // Логотип в шапке просит закрыть меню (см. header-logo.tsx)
+    function close() {
+      setOpen(false);
+    }
+    window.addEventListener("close-mobile-nav", close);
+    return () => window.removeEventListener("close-mobile-nav", close);
+  }, []);
+
+  useEffect(() => {
     if (!open) return;
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") setOpen(false);

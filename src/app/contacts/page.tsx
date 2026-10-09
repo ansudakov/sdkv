@@ -236,7 +236,7 @@ export default function ContactsPage() {
       <section className="py-14 sm:py-16">
         <Container>
           <h2 className="mb-8 font-mono text-sm uppercase tracking-[0.2em] text-accent">
-            Как со мной работать
+            Формат работы
           </h2>
           <dl className="grid gap-x-10 gap-y-6 sm:grid-cols-2">
             {facts.map((fact) => (

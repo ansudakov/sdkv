@@ -247,7 +247,7 @@ export const workCases: WorkCase[] = [
     ],
     links: [
       { label: "Лендинги о тарифах для бизнеса — один пример", url: "https://alfabank.ru/sme/tariffs/onepercent/" },
-      { label: "Лендинг про овердрафт — особенно горжусь разделом «Как работает»", url: "https://docs.google.com/document/d/1oXa0VCEp6lcQ0FsT1WeJFN0769a8EnUz9-iqrbx2jZ4/" },
+      { label: "Лендинг про овердрафт — особенно горжусь разделом «Как работает»", url: "https://www.figma.com/design/COnYGN1eYGyl748Xh3b2fn/alfabank?node-id=617-499" },
       { label: "Пример статьи об изменениях в законодательстве", url: "https://docs.google.com/document/d/1zkQAIenn9Lwml19SGjdAa1F0HeWq53vN7zobkRoKLUo/edit" },
       { label: "Лендинг про карту для зарплаты", url: "https://www.figma.com/file/s6ZtqnchvAVFpTAMHOVdDo/%D0%9B%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3-%D0%98%D0%97%D0%9A-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%8B?node-id=0%3A1" },
       { label: "Онбординг в личном кабинете зарплатного проекта", url: "https://www.figma.com/file/kYfVDjqoYrpGBQPTxvyi90/Concepts?node-id=0%3A1" },

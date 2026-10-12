@@ -1,0 +1,51 @@
+(site) {
+	root * /var/www/current
+	encode zstd gzip
+
+	# /works/ -> /works (как на Vercel)
+	@slash path_regexp slash ^/(.+)/$
+	redir @slash /{re.slash.1} 308
+
+	# /works -> works.html, /blog/x -> blog/x.html, / -> index.html
+	try_files {path} {path}.html {path}/index.html
+
+	@og path_regexp og ^/(.*/)?(opengraph|twitter)-image$
+	header @og Content-Type image/png
+
+	@static path /_next/static/*
+	header @static Cache-Control "public, max-age=31536000, immutable"
+
+	@img path /_img/*
+	header @img Cache-Control "public, max-age=86400"
+
+	@pages not path /_next/static/* /_img/*
+	header @pages Cache-Control "public, max-age=0, must-revalidate"
+
+	@pdf path /cases.pdf /creative.pdf
+	header @pdf X-Robots-Tag noindex
+
+	header Strict-Transport-Security "max-age=63072000"
+	file_server
+	handle_errors {
+		rewrite * /404.html
+		file_server
+	}
+}
+
+# Основной адрес сайта (сертификат выпускает и продлевает Caddy сам)
+ansudakov.ru {
+	import site
+}
+
+# www -> основной адрес (как было на Vercel)
+www.ansudakov.ru {
+	redir https://ansudakov.ru{uri} 307
+}
+
+# Вход по IP без HTTPS: для проверок и для проверки выкладки
+:80 {
+	# именованные хосты по http -> https; обращения по IP (проверки) отдаём как есть
+	@named host ansudakov.ru www.ansudakov.ru
+	redir @named https://{host}{uri} 308
+	import site
+}

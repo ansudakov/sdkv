@@ -247,7 +247,7 @@ export const workCases: WorkCase[] = [
     ],
     links: [
       { label: "Лендинги о тарифах для бизнеса — один пример", url: "https://alfabank.ru/sme/tariffs/onepercent/" },
-      { label: "Лендинг про овердрафт — особенно горжусь разделом «Как работает»", url: "https://alfabank.ru/sme/profits/overdraft/" },
+      { label: "Лендинг про овердрафт — особенно горжусь разделом «Как работает»", url: "https://docs.google.com/document/d/1oXa0VCEp6lcQ0FsT1WeJFN0769a8EnUz9-iqrbx2jZ4/" },
       { label: "Пример статьи об изменениях в законодательстве", url: "https://docs.google.com/document/d/1zkQAIenn9Lwml19SGjdAa1F0HeWq53vN7zobkRoKLUo/edit" },
       { label: "Лендинг про карту для зарплаты", url: "https://www.figma.com/file/s6ZtqnchvAVFpTAMHOVdDo/%D0%9B%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3-%D0%98%D0%97%D0%9A-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D1%8B?node-id=0%3A1" },
       { label: "Онбординг в личном кабинете зарплатного проекта", url: "https://www.figma.com/file/kYfVDjqoYrpGBQPTxvyi90/Concepts?node-id=0%3A1" },
@@ -307,8 +307,8 @@ export const workCases: WorkCase[] = [
       { label: "Как работает услуга овердрафта", url: "https://drive.google.com/file/d/1Cny_srTzGQN7RIkYLv-PJJGcODSSMBts/view?usp=sharing" },
       { label: "Сторис в приложении про конструктор сайтов", url: "https://docs.google.com/document/d/1UNRPV1YHAk2RfzPC5L3KByBRbCPbBkm-Dp41nOOLGGk/" },
       { label: "Сторис в приложении про регистрацию ИП", url: "https://docs.google.com/document/d/1EHu3s9RHP4nB0QM0XY7xr0V-E8U1PnMb3FJrmcZ4Kb8/" },
-      { label: "Лендинг для чата на сайт", url: "https://www.tinkoff.ru/business/chat/" },
-      { label: "Хелп для сервиса СМС-рассылок", url: "https://help.tinkoff.ru/mailing-sms/" },
+      { label: "Лендинг для чата на сайт", url: "https://docs.google.com/document/d/18BeFkR7JEIXMIBQQ7NML9HQeTI7eVuRm7PbrfEx7wO4/" },
+      { label: "Хелп для сервиса СМС-рассылок", url: "https://docs.google.com/document/d/19rf5c396uYC6nymLCeTPgbThrRAMHUUnAvezoMrAIqA/" },
     ],
   },
   {

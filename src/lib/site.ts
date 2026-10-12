@@ -307,7 +307,7 @@ export const workCases: WorkCase[] = [
       { label: "Как работает услуга овердрафта", url: "https://drive.google.com/file/d/1Cny_srTzGQN7RIkYLv-PJJGcODSSMBts/view?usp=sharing" },
       { label: "Сторис в приложении про конструктор сайтов", url: "https://docs.google.com/document/d/1UNRPV1YHAk2RfzPC5L3KByBRbCPbBkm-Dp41nOOLGGk/" },
       { label: "Сторис в приложении про регистрацию ИП", url: "https://docs.google.com/document/d/1EHu3s9RHP4nB0QM0XY7xr0V-E8U1PnMb3FJrmcZ4Kb8/" },
-      { label: "Лендинг для чата на сайт", url: "https://docs.google.com/document/d/18BeFkR7JEIXMIBQQ7NML9HQeTI7eVuRm7PbrfEx7wO4/" },
+      { label: "Лендинг для чата на сайт", url: "https://docs.google.com/document/d/1bqHi2qSn3kr6iL2oApNmXcluBQ-IZNHOEqJ-xEufO5I/" },
       { label: "Хелп для сервиса СМС-рассылок", url: "https://docs.google.com/document/d/19rf5c396uYC6nymLCeTPgbThrRAMHUUnAvezoMrAIqA/" },
     ],
   },

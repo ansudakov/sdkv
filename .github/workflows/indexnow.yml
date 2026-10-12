@@ -1,15 +1,12 @@
 name: IndexNow
 
+# Ручной запуск: отправляет в IndexNow все страницы из sitemap.xml.
+# Автоматическая отправка изменённых статей идёт из deploy-selectel.yml после каждой выкладки.
 on:
-  deployment_status:
   workflow_dispatch:
 
 jobs:
   ping:
-    if: >
-      github.event_name == 'workflow_dispatch' ||
-      (github.event.deployment_status.state == 'success' &&
-       github.event.deployment.environment == 'Production')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,4 +16,4 @@ jobs:
         with:
           node-version: 22
       - name: Ping IndexNow
-        run: node scripts/indexnow.mjs ${{ github.event_name == 'workflow_dispatch' && '--all' || '--changed' }}
+        run: node scripts/indexnow.mjs --all

@@ -51,3 +51,17 @@ jobs:
           code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "http://$SERVER_HOST/")
           echo "HTTP $code"
           test "$code" = "200"
+
+  # После успешной выкладки сообщаем поисковикам (Яндекс, Bing) об изменённых статьях.
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Ping IndexNow
+        run: node scripts/indexnow.mjs --changed

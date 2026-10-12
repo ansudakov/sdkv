@@ -123,8 +123,9 @@ if (pdfFiles.length) {
       const bucket = abs.startsWith(ORIGIN) ? internalLinks : externalLinks;
       bucket.set(abs, [...new Set([...(bucket.get(abs) ?? []), `${file} (стр. ${page})`])]);
     }
-  } catch {
-    warn("PDF", "ссылки внутри PDF не проверены: нужен python3 с PyMuPDF (pip install pymupdf)");
+  } catch (e) {
+    const why = String(e.stderr ?? e.message).trim().split("\n").at(-1);
+    warn("PDF", `ссылки внутри PDF не проверены: нужен python3 с PyMuPDF (pip install pymupdf). Причина: ${why}`);
   }
   for (const f of pdfFiles) {
     const res = await request(`${ORIGIN}/${f}`, { method: "HEAD" }).catch(() => null);

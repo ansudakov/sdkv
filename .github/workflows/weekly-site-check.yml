@@ -46,7 +46,9 @@ jobs:
 
       - name: Install PDF reader
         if: steps.guard.outputs.skip != 'true'
-        run: pip install --quiet pymupdf
+        run: |
+          python3 -m pip install --quiet --break-system-packages pymupdf
+          python3 -c "import fitz; print('PyMuPDF', fitz.__doc__.splitlines()[0])"
 
       - name: SEO audit
         id: seo

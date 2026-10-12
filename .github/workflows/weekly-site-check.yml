@@ -2,9 +2,13 @@ name: Weekly site check
 
 on:
   schedule:
-    # Понедельник 06:17 UTC = 09:17 по Москве. Не ровно в начало часа: в :00 GitHub
-    # перегружен и запуски по расписанию теряются.
+    # Понедельник, МСК 09:17 / 10:17 / 11:17 / 13:17. GitHub выполняет расписания «по возможности»:
+    # запуск может прийти с опозданием на часы или потеряться совсем. Поэтому попыток несколько,
+    # а шаг guard пропускает остальные, если отчёт за сегодня уже опубликован.
     - cron: "17 6 * * 1"
+    - cron: "17 7 * * 1"
+    - cron: "17 8 * * 1"
+    - cron: "17 10 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -15,18 +19,40 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - name: Guard (пропустить, если отчёт за сегодня уже есть)
+        id: guard
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          skip=false
+          if [ "$EVENT" = schedule ]; then
+            today=$(TZ=Europe/Moscow date +%d.%m.%Y)
+            issue=$(gh issue list --label weekly-report --state open --json number --jq '.[0].number')
+            if [ -n "$issue" ] && gh issue view "$issue" --json comments --jq '.comments[].body' | grep -q "отчёт за $today"; then
+              skip=true
+              echo "Отчёт за $today уже опубликован, пропускаю."
+            fi
+          fi
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
+
       - uses: actions/checkout@v4
+        if: steps.guard.outputs.skip != 'true'
       - uses: actions/setup-node@v4
+        if: steps.guard.outputs.skip != 'true'
         with:
           node-version: 22
 
       - name: SEO audit
         id: seo
+        if: steps.guard.outputs.skip != 'true'
         continue-on-error: true
         run: node scripts/seo-audit.mjs | tee seo.md; exit ${PIPESTATUS[0]}
 
       - name: PageSpeed
         id: speed
+        if: steps.guard.outputs.skip != 'true'
         continue-on-error: true
         env:
           PAGESPEED_API_KEY: ${{ secrets.PAGESPEED_API_KEY }}
@@ -38,6 +64,7 @@ jobs:
           node scripts/pagespeed.mjs | tee speed.md; exit ${PIPESTATUS[0]}
 
       - name: Post weekly report
+        if: steps.guard.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
           SEO: ${{ steps.seo.outcome }}

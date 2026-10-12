@@ -114,9 +114,11 @@ await pool(pages, 4, async (url) => {
 const pdfFiles = fs.existsSync("public") ? fs.readdirSync("public").filter((f) => f.endsWith(".pdf")) : [];
 if (pdfFiles.length) {
   try {
-    const found = JSON.parse(
-      execFileSync("python3", ["scripts/pdf-links.py", ...pdfFiles.map((f) => `public/${f}`)], { encoding: "utf8" }),
-    );
+    const raw = execFileSync("python3", ["scripts/pdf-links.py", ...pdfFiles.map((f) => `public/${f}`)], {
+      encoding: "utf8",
+    });
+    // MuPDF иногда печатает служебные «warning:» в stdout, JSON всегда в последней строке.
+    const found = JSON.parse(raw.trim().split("\n").at(-1));
     for (const { file, page, uri } of found) {
       if (!/^https?:/.test(uri)) continue;
       const abs = uri.split("#")[0].replace(/\/$/, "");

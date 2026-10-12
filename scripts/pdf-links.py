@@ -8,6 +8,8 @@ import sys
 
 import fitz
 
+fitz.TOOLS.mupdf_display_errors(False)
+
 out = []
 for path in sys.argv[1:]:
     with fitz.open(path) as doc:

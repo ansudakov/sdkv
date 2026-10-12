@@ -1,6 +1,7 @@
 // SEO-аудит живого сайта: node scripts/seo-audit.mjs [origin]
 // Ошибки (exit 1): страница или внутренняя ссылка не отдаёт 200, нет title/description/h1/canonical.
 // Предупреждения: длина title/description, дубли, тяжёлые картинки, внешние ссылки с ошибкой.
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 
 const ORIGIN = (process.argv[2] ?? "https://ansudakov.ru").replace(/\/$/, "");
@@ -14,9 +15,11 @@ const IMG_CHECK_WIDTH = 1080;
 // российские сертификаты Минцифры, антибот-редиректы, таймауты) у живых посетителей обычно открывается.
 const EXT_BROKEN_STATUS = [404, 410];
 const EXT_BROKEN_CODES = ["ENOTFOUND", "EAI_AGAIN"];
+// Эти сервисы отдают обычному браузеру 200 на любую открытую ссылку. Если отвечают 401/403, файл
+// закрыт или удалён (проверено на Figma: открытые файлы дают 200, закрытый 403) — это ошибка.
+const STRICT_HOSTS = /(^|\.)(docs\.google\.com|drive\.google\.com|figma\.com|github\.com|vc\.ru|wikipedia\.org|arxiv\.org)$/;
 
 const errors = [];
-const unverifiable = [];
 const warnings = [];
 const err = (page, msg) => errors.push(`${page}: ${msg}`);
 const warn = (page, msg) => warnings.push(`${page}: ${msg}`);
@@ -107,6 +110,28 @@ await pool(pages, 4, async (url) => {
   }
 });
 
+// Ссылки внутри PDF из public/ (в sitemap их нет, но читатели открывают их по прямым ссылкам).
+const pdfFiles = fs.existsSync("public") ? fs.readdirSync("public").filter((f) => f.endsWith(".pdf")) : [];
+if (pdfFiles.length) {
+  try {
+    const found = JSON.parse(
+      execFileSync("python3", ["scripts/pdf-links.py", ...pdfFiles.map((f) => `public/${f}`)], { encoding: "utf8" }),
+    );
+    for (const { file, page, uri } of found) {
+      if (!/^https?:/.test(uri)) continue;
+      const abs = uri.split("#")[0].replace(/\/$/, "");
+      const bucket = abs.startsWith(ORIGIN) ? internalLinks : externalLinks;
+      bucket.set(abs, [...new Set([...(bucket.get(abs) ?? []), `${file} (стр. ${page})`])]);
+    }
+  } catch {
+    warn("PDF", "ссылки внутри PDF не проверены: нужен python3 с PyMuPDF (pip install pymupdf)");
+  }
+  for (const f of pdfFiles) {
+    const res = await request(`${ORIGIN}/${f}`, { method: "HEAD" }).catch(() => null);
+    if (!res || res.status !== 200) err(f, `PDF не открывается на сайте (${res?.status ?? "нет ответа"})`);
+  }
+}
+
 for (const [title, where] of titles) if (where.length > 1) warn(where.join(", "), `одинаковый title «${title}»`);
 for (const [, where] of descs) if (where.length > 1) warn(where.join(", "), "одинаковый description");
 
@@ -116,11 +141,27 @@ await pool([...internalLinks], 6, async ([link, from]) => {
 });
 
 await pool([...externalLinks], 6, async ([link, from]) => {
-  const res = await request(link).catch((e) => ({ status: e.cause?.code ?? e.name ?? e.message }));
+  const where = from.join(", ");
+  const host = new URL(link).hostname;
+  const probe = async () => {
+    const res = await request(link).catch((e) => ({ status: e.cause?.code ?? e.name ?? e.message }));
+    await res.body?.cancel?.();
+    return res;
+  };
+  let res = await probe();
+  // Временные сбои (429, 5xx, таймаут) перепроверяем через паузу, чтобы не поднимать ложную тревогу.
+  if (typeof res.status !== "number" || res.status === 429 || res.status >= 500) {
+    await new Promise((r) => setTimeout(r, 5000));
+    res = await probe();
+  }
+  if (res.url && new URL(res.url).hostname === "accounts.google.com")
+    return err(where, `ссылка просит войти в Google (документ закрыт): ${link}`);
   if (res.status === 200) return;
   if (EXT_BROKEN_STATUS.includes(res.status) || EXT_BROKEN_CODES.includes(res.status))
-    return warn(from.join(", "), `битая внешняя ссылка ${link} → ${res.status}`);
-  unverifiable.push(`${new URL(link).hostname} (${res.status})`);
+    return err(where, `битая внешняя ссылка ${link} → ${res.status}`);
+  if (STRICT_HOSTS.test(host) && [401, 403].includes(res.status))
+    return err(where, `ссылка закрыта или удалена ${link} → ${res.status}`);
+  // Остальное (антибот-защита, сертификат Минцифры, ограничения частоты) проверить нельзя, не шумим.
 });
 
 await pool([...images], 6, async ([src, from]) => {
@@ -136,16 +177,13 @@ await pool([...images], 6, async ([src, from]) => {
 const report = [
   `# SEO-аудит ${ORIGIN}`,
   "",
-  `Страниц: ${pages.length} · внутренних ссылок: ${internalLinks.size} · внешних: ${externalLinks.size} · картинок: ${images.size}`,
+  `Страниц: ${pages.length} · PDF: ${pdfFiles.length} · внутренних ссылок: ${internalLinks.size} · внешних: ${externalLinks.size} · картинок: ${images.size}`,
   "",
   `## Ошибки: ${errors.length}`,
   ...(errors.length ? errors.sort().map((e) => `- ${e}`) : ["Нет."]),
   "",
   `## Предупреждения: ${warnings.length}`,
   ...(warnings.length ? warnings.sort().map((w) => `- ${w}`) : ["Нет."]),
-  "",
-  `Не удалось проверить автоматически (сайт не пускает ботов или использует сертификат Минцифры), внешних ссылок: ${unverifiable.length}` +
-    (unverifiable.length ? ` — ${[...new Set(unverifiable)].sort().join(", ")}` : ""),
 ].join("\n");
 
 console.log(report);

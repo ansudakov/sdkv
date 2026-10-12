@@ -44,6 +44,10 @@ jobs:
         with:
           node-version: 22
 
+      - name: Install PDF reader
+        if: steps.guard.outputs.skip != 'true'
+        run: pip install --quiet pymupdf
+
       - name: SEO audit
         id: seo
         if: steps.guard.outputs.skip != 'true'

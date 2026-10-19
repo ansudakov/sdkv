@@ -113,3 +113,36 @@ jobs:
             gh issue edit "$issue" --title "$title"
             gh issue comment "$issue" --body-file report.md
           fi
+
+      - name: Send Telegram message
+        if: steps.guard.outputs.skip != 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SEO: ${{ steps.seo.outcome }}
+          SPEED: ${{ steps.speed.outcome }}
+        run: |
+          if [ -z "$TG_TOKEN" ] || [ -z "$TG_CHAT" ]; then
+            echo "Телеграм не настроен (нет TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID), пропускаю."
+            exit 0
+          fi
+          date=$(TZ=Europe/Moscow date +%d.%m.%Y)
+          url=$(gh issue list --label weekly-report --state open --json url --jq '.[0].url')
+          if [ "$SEO" = success ] && [ "$SPEED" = success ]; then head="✅ Отчёт сайта за $date: всё в порядке"; else head="⚠️ Отчёт сайта за $date: есть проблемы"; fi
+          {
+            echo "$head"
+            echo
+            [ "$SEO" = success ] && echo "✅ SEO: в порядке" || echo "⚠️ SEO: есть проблемы"
+            [ "$SPEED" = success ] && echo "✅ Скорость: в порядке" || echo "⚠️ Скорость: есть проблемы"
+            grep -h '^- ' seo.md speed.md || true
+            echo
+            echo "Подробности: $url"
+          } > tg.txt
+          head -c 3800 tg.txt > tg-short.txt
+          curl -sS --fail-with-body "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TG_CHAT}" \
+            --data-urlencode "text@tg-short.txt" \
+            --data-urlencode "disable_web_page_preview=true" > /dev/null
+          echo "Сообщение в Телеграм отправлено."

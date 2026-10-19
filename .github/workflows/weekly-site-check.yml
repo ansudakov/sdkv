@@ -119,13 +119,13 @@ jobs:
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
-          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TG_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN_SDKV }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID_SDKV }}
           SEO: ${{ steps.seo.outcome }}
           SPEED: ${{ steps.speed.outcome }}
         run: |
           if [ -z "$TG_TOKEN" ] || [ -z "$TG_CHAT" ]; then
-            echo "Телеграм не настроен (нет TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID), пропускаю."
+            echo "Телеграм не настроен (нет TELEGRAM_BOT_TOKEN_SDKV / TELEGRAM_CHAT_ID_SDKV), пропускаю."
             exit 0
           fi
           date=$(TZ=Europe/Moscow date +%d.%m.%Y)

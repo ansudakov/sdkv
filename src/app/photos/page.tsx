@@ -4,7 +4,7 @@ import { PhotoCard } from "@/components/photo-card";
 
 export const metadata: Metadata = {
   title: "Фото",
-  description: "Фотографии и кадры из рилсов Александра Судакова.",
+  description: "Фотографии и кадры из рилсов Александра Судакова: портреты и рабочие будни.",
   alternates: {
     canonical: "/photos",
   },

@@ -37,7 +37,7 @@ export default function AboutPage() {
     {
       title: "Ежедневно",
       stats: [
-        { label: "Кофе", value: "≈3", unit: "чашки" },
+        { label: "Кофе", value: "2–3", unit: "чашки" },
         { label: "Шагов", value: "5–10 тыс" },
         { label: "Сон", value: "≈8", unit: "ч" },
         { label: "Больших задач", value: "2–3" },

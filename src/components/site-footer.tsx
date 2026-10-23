@@ -111,14 +111,23 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-2 border-t border-border pt-6 text-[10px] leading-snug text-muted max-[340px]:text-[9px] sm:gap-6 sm:text-xs">
           <span>
             © {new Date().getFullYear()} ИП {site.name}, ИНН {site.inn}
           </span>
-          <Link href="/privacy" className="transition-colors hover:text-accent">
-            Политика конфиденциальности
+          <Link href="/privacy" className="text-center transition-colors hover:text-accent">
+            Политика
+            <br className="md:hidden" /> конфиденциальности
           </Link>
-          <span className="md:text-right">{site.role}</span>
+          <span className="text-right">
+            {site.role.split(", ").map((part, i, all) => (
+              <span key={part} className={`block md:inline ${part.includes(" ") ? "" : "whitespace-nowrap"}`}>
+                {part}
+                {i < all.length - 1 ? "," : ""}
+                <span className="hidden md:inline"> </span>
+              </span>
+            ))}
+          </span>
         </div>
         <FooterMark />
       </Container>

@@ -1,0 +1,26 @@
+name: Server audit (one-off)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read-only audit over SSH
+        env:
+          HOSTKEY: "161.104.46.49 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbn18LiXTLh86uICcYzZBanvIFa5ELaANwfkQMxWfvr"
+        run: |
+          install -m 700 -d ~/.ssh
+          echo "$HOSTKEY" > ~/.ssh/known_hosts
+          printf '%s\n' "${{ secrets.SELECTEL_DEPLOY_KEY }}" > ~/.ssh/k && chmod 600 ~/.ssh/k
+          ssh -i ~/.ssh/k -o IdentitiesOnly=yes -o BatchMode=yes deploy@161.104.46.49 '
+            echo "== php binaries"; command -v php php-fpm php8.1 php8.3 || echo "none"
+            echo "== php packages installed"; dpkg -l | awk "/^ii/ && tolower(\$2) ~ /php/ {print \$2, \$3}" | head; echo "(end)"
+            echo "== apache/nginx/httpd packages"; dpkg -l | awk "/^ii/ && \$2 ~ /^(apache2|nginx|httpd|libapache2)/ {print \$2}"; echo "(end)"
+            echo "== listening ports"; ss -ltn | awk "NR>1{print \$4}" | sort -u
+            echo "== services running"; systemctl list-units --type=service --state=running --no-legend | awk "{print \$1}"
+            echo "== php files on disk"; find /var/www /srv /home -iname "*.php" 2>/dev/null | head -3; echo "(end)"
+            echo "== uptime / kernel"; uptime -p; uname -r
+            echo "== caddy"; systemctl is-active caddy; caddy version
+          '

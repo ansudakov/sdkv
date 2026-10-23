@@ -56,7 +56,7 @@ export default function AboutPage() {
             Вот он я в 3D<span className="text-accent">.</span>
           </h1>
           <p className="mt-4 max-w-xl text-base text-muted sm:text-lg">
-            Покрутите меня и посмотрите цифры. Контент-стратег, креативный копирайтер, редактор. Живу в Москве.
+            Покрутите меня и посмотрите цифры. {site.role}. Живу в Москве.
           </p>
         </Container>
       </section>

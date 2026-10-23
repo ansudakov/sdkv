@@ -33,7 +33,7 @@ export default function Home() {
             </div>
           </div>
           <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
-            Контент-стратег, креативный копирайтер, редактор
+            {site.role}
           </p>
           <TypewriterName className="balance no-hyphens min-h-[1.85em] font-display text-[13vw] font-semibold leading-[0.92] tracking-tight sm:text-[8.5vw] lg:text-[7rem]" />
           <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">

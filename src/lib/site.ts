@@ -1,6 +1,6 @@
 export const site = {
   name: "Александр Судаков",
-  role: "Редактор, контент-лид, креативный копирайтер",
+  role: "Контент-стратег, креативный копирайтер, редактор",
   domain: "ansudakov.ru",
   url: "https://ansudakov.ru",
   email: "a.n.sudakov@gmail.com",

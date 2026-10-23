@@ -118,7 +118,7 @@ export function SiteFooter() {
           <Link href="/privacy" className="transition-colors hover:text-accent">
             Политика конфиденциальности
           </Link>
-          <span className="md:text-right">Контент-стратег, креативный копирайтер, редактор</span>
+          <span className="md:text-right">{site.role}</span>
         </div>
         <FooterMark />
       </Container>

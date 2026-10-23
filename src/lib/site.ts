@@ -29,6 +29,7 @@ export const nav = [
   { href: "/works", label: "Портфолио" },
   { href: "/blog", label: "Блог" },
   { href: "/photos", label: "Фото" },
+  { href: "/about", label: "3D-эскиз" },
   { href: "/contacts", label: "Контакты" },
 ];
 

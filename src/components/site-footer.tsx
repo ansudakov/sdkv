@@ -111,16 +111,14 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6">
           <span>
             © {new Date().getFullYear()} ИП {site.name}, ИНН {site.inn}
           </span>
-          <div className="flex items-center gap-4">
-            <Link href="/privacy" className="transition-colors hover:text-accent">
-              Политика конфиденциальности
-            </Link>
-            <span>{site.role}</span>
-          </div>
+          <Link href="/privacy" className="transition-colors hover:text-accent">
+            Политика конфиденциальности
+          </Link>
+          <span className="md:text-right">Контент-стратег, креативный копирайтер, редактор</span>
         </div>
         <FooterMark />
       </Container>

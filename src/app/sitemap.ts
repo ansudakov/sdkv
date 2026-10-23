@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { route: "/projects" },
     { route: "/works" },
     { route: "/photos" },
+    { route: "/about" },
     { route: "/contacts" },
   ].map(({ route, lastModified }) => ({
     url: `${site.url}${route}`,

@@ -9,7 +9,7 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-border">
       <Container className="flex flex-col gap-10 py-14 sm:py-16">
-        <div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end">
+        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div>
             <p className="block w-full rounded-2xl border border-border bg-white/5 px-6 py-5 font-display text-[calc((100vw-96px)/13)] font-semibold tracking-tight sm:inline-block sm:w-auto sm:px-8 sm:py-6 sm:text-3xl">
               Давайте сделаем

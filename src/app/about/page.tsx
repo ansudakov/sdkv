@@ -66,8 +66,8 @@ export default function AboutPage() {
         <AboutStats
           name={site.name}
           meta={[
-            { label: "Статус", value: "в работе" },
             { label: "Характер", value: "нордический, выдержанный" },
+            { label: "Статус", value: "в работе" },
           ]}
           groups={groups}
         />

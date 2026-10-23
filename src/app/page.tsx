@@ -32,10 +32,10 @@ export default function Home() {
               />
             </div>
           </div>
-          <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-accent sm:pr-48 sm:text-sm md:pr-64 lg:pr-80">
+          <p className="mb-6 font-mono text-[13px] uppercase tracking-[0.2em] text-accent sm:pr-48 sm:text-sm md:pr-64 lg:pr-80">
             {site.role}
           </p>
-          <TypewriterName className="balance no-hyphens min-h-[1.85em] font-display text-[11.5vw] font-semibold leading-[0.92] tracking-tight sm:text-[8.5vw] lg:text-[7rem]" />
+          <TypewriterName className="balance no-hyphens min-h-[1.85em] font-display text-[12vw] font-semibold leading-[0.92] tracking-tight sm:text-[8.5vw] lg:text-[length:min(6.5rem,calc((100vw-408px)/7))]" />
           <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <p className="max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
               Редачил для Альфа-Банка, Т-Банка, VK, Skillbox, Газпромбанк

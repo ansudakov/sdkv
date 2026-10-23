@@ -111,25 +111,14 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-2 items-start gap-x-2 gap-y-2 border-t border-border pt-6 text-[10px] leading-snug text-muted max-[340px]:text-[9px] sm:gap-x-6 sm:text-xs md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-y-0">
-          <span className="col-start-1 row-span-2 row-start-1 md:row-span-1">
+        <div className="flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted md:grid md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:items-start md:gap-x-6 md:gap-y-0">
+          <span>
             © {new Date().getFullYear()} ИП {site.name}, ИНН {site.inn}
           </span>
-          <Link
-            href="/privacy"
-            className="col-start-2 row-start-2 text-right transition-colors hover:text-accent md:col-start-2 md:row-start-1 md:text-center"
-          >
+          <Link href="/privacy" className="order-3 transition-colors hover:text-accent md:order-none md:text-center">
             Политика конфиденциальности
           </Link>
-          <span className="col-start-2 row-start-1 text-right md:col-start-3">
-            {site.role.split(", ").map((part, i, all) => (
-              <span key={part} className={`block md:inline ${part.includes(" ") ? "" : "whitespace-nowrap"}`}>
-                {part}
-                {i < all.length - 1 ? "," : ""}
-                <span className="hidden md:inline"> </span>
-              </span>
-            ))}
-          </span>
+          <span className="md:text-right">{site.role}</span>
         </div>
         <FooterMark />
       </Container>

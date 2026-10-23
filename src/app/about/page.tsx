@@ -47,15 +47,15 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="border-b border-border pt-8 pb-6 sm:pt-10 sm:pb-8">
+      <section className="border-b border-border pt-16 pb-14 sm:pt-20 sm:pb-16">
         <Container>
-          <p className="mb-3 font-mono text-sm uppercase tracking-[0.2em] text-accent">
+          <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
             3D-эскиз
           </p>
-          <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-6xl">
+          <h1 className="balance font-display text-4xl font-semibold leading-[0.95] tracking-tight sm:text-7xl">
             Вот он я в 3D<span className="text-accent">.</span>
           </h1>
-          <p className="mt-4 max-w-xl text-base text-muted sm:text-lg">
+          <p className="mt-8 max-w-xl text-lg text-muted">
             Покрутите меня и посмотрите цифры. {site.role}. Живу в Москве.
           </p>
         </Container>

@@ -111,15 +111,17 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-2 border-t border-border pt-6 text-[10px] leading-snug text-muted max-[340px]:text-[9px] sm:gap-6 sm:text-xs">
-          <span>
+        <div className="grid grid-cols-2 items-start gap-x-2 gap-y-2 border-t border-border pt-6 text-[10px] leading-snug text-muted max-[340px]:text-[9px] sm:gap-x-6 sm:text-xs md:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] md:gap-y-0">
+          <span className="col-start-1 row-span-2 row-start-1 md:row-span-1">
             © {new Date().getFullYear()} ИП {site.name}, ИНН {site.inn}
           </span>
-          <Link href="/privacy" className="text-center transition-colors hover:text-accent">
-            Политика
-            <br className="md:hidden" /> конфиденциальности
+          <Link
+            href="/privacy"
+            className="col-start-2 row-start-2 text-right transition-colors hover:text-accent md:col-start-2 md:row-start-1 md:text-center"
+          >
+            Политика конфиденциальности
           </Link>
-          <span className="text-right">
+          <span className="col-start-2 row-start-1 text-right md:col-start-3">
             {site.role.split(", ").map((part, i, all) => (
               <span key={part} className={`block md:inline ${part.includes(" ") ? "" : "whitespace-nowrap"}`}>
                 {part}

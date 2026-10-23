@@ -82,20 +82,20 @@ export function MobileNav() {
         }`}
         aria-hidden={!open}
       >
-        <nav className="flex h-full flex-col justify-center gap-1 px-8 pb-16">
+        <nav className="flex h-full flex-col justify-center gap-0.5 overflow-y-auto px-8 pb-12">
           {nav.map((item) => (
             <NavLink
               key={item.href}
               href={item.href}
               onNavigate={() => setOpen(false)}
-              className="group flex items-center justify-between gap-4 border-b border-border py-5 font-display text-4xl font-semibold tracking-tight transition-colors hover:text-accent"
+              className="group flex items-center justify-between gap-4 border-b border-border py-3.5 font-display text-2xl font-semibold sm:py-5 sm:text-4xl tracking-tight transition-colors hover:text-accent"
               activeClassName="text-accent"
               inactiveClassName="text-foreground"
             >
               {item.label}
               <svg
-                width="26"
-                height="26"
+                width="22"
+                height="22"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"

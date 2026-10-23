@@ -21,7 +21,7 @@ export default function Home() {
       <section className="relative border-b border-border pt-16 pb-20 sm:pt-24 sm:pb-28">
         <Container className="relative">
           <div className="absolute right-6 top-0 hidden sm:right-8 sm:block">
-            <div className="h-32 w-32 overflow-hidden rounded-full border-2 border-accent md:h-44 md:w-44 lg:h-52 lg:w-52">
+            <div className="h-40 w-40 overflow-hidden rounded-full border-2 border-accent md:h-56 md:w-56 lg:h-72 lg:w-72">
               <Image
                 src="/photos/alexander-main.jpg"
                 alt="Александр Судаков"
@@ -32,10 +32,10 @@ export default function Home() {
               />
             </div>
           </div>
-          <p className="mb-6 font-mono text-sm uppercase tracking-[0.2em] text-accent">
+          <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-accent sm:pr-48 sm:text-sm md:pr-64 lg:pr-80">
             {site.role}
           </p>
-          <TypewriterName className="balance no-hyphens min-h-[1.85em] font-display text-[13vw] font-semibold leading-[0.92] tracking-tight sm:text-[8.5vw] lg:text-[7rem]" />
+          <TypewriterName className="balance no-hyphens min-h-[1.85em] font-display text-[11.5vw] font-semibold leading-[0.92] tracking-tight sm:text-[8.5vw] lg:text-[7rem]" />
           <div className="mt-10 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <p className="max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
               Редачил для Альфа-Банка, Т-Банка, VK, Skillbox, Газпромбанк

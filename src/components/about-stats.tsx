@@ -8,7 +8,7 @@ function StatItem({ label, value, unit }: Stat): ReactNode {
     <div>
       <dt className="text-xs leading-tight text-muted">{label}</dt>
       <dd className="flex items-baseline gap-1.5">
-        <span className="font-display whitespace-nowrap text-base font-medium md:text-sm lg:text-base tracking-tight tabular-nums">{value}</span>
+        <span className="font-display text-base font-medium md:whitespace-nowrap md:text-sm lg:text-base tracking-tight tabular-nums">{value}</span>
         {unit && <span className="text-xs text-muted">{unit}</span>}
       </dd>
     </div>

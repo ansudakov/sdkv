@@ -45,8 +45,7 @@ export function AboutSceneLoader() {
 
   return (
     <div className="min-w-0">
-      {/* На телефоне холст уже экрана: по бокам остаются поля, где палец прокручивает страницу. */}
-      <div className="relative mx-auto h-[340px] w-3/5 overflow-hidden sm:h-[440px] md:w-full lg:h-[520px]">
+      <div className="relative h-[340px] w-full overflow-hidden sm:h-[440px] lg:h-[520px]">
         <div
           className={`absolute inset-0 transition-opacity duration-500 ${
             mode === "3d" && ready ? "opacity-0" : "opacity-100"

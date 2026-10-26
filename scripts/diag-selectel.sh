@@ -13,10 +13,10 @@ OUT="$(cd "$(dirname "$0")/.." && pwd)/diag-output.txt"
   echo; echo "=== Назначение DESTINATION_IP: $IP ($DOMAIN)"
 
   echo; echo "=== 1. ICMP: ping 100 пакетов (около 20 секунд)"
-  ping -c 100 -i 0.2 "$IP" 2>&1 | tail -4
+  ping -c 100 -i 1 "$IP" 2>&1 | tail -4
 
   echo; echo "=== 2. Трассировка до сервера"
-  if command -v mtr >/dev/null; then sudo mtr -bwzrc 100 -n "$IP" 2>&1 | tail -25; else traceroute -n -w 2 -q 2 "$IP" 2>&1 | tail -25; fi
+  if command -v mtr >/dev/null; then mtr -bwzrc 100 -n "$IP" 2>&1 | head -40; else traceroute -n -m 30 -w 2 -q 2 "$IP" 2>&1 | head -40; fi
 
   echo; echo "=== 3. TCP-проверка портов"
   for p in 22 80 443; do nc -vz -w 5 "$IP" "$p" 2>&1; done

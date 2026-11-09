@@ -38,10 +38,8 @@ jobs:
         run: |
           install -m 700 -d ~/.ssh
           echo "$SERVER_HOST_KEY" > ~/.ssh/known_hosts
-          printf '%s\n' "${{ secrets.SELECTEL_DEPLOY_KEY }}" > ~/.ssh/deploy_key
+          printf '%s\n' "${{ secrets.NETCUP_DEPLOY_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-      - name: Show deploy public key for netcup migration
-        run: ssh-keygen -y -f ~/.ssh/deploy_key
       - name: Upload release and switch
         run: |
           REL="$(date +%Y%m%d%H%M%S)-${GITHUB_SHA::7}"

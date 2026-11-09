@@ -1,6 +1,6 @@
-name: Deploy to Selectel
+name: Deploy to netcup
 
-# Сайт собирается в статичные файлы (STATIC_EXPORT=1) и выкладывается на сервер в Москве.
+# Сайт собирается в статичные файлы (STATIC_EXPORT=1) и выкладывается на сервер netcup в Нюрнберге.
 # Каждая выкладка попадает в новую папку releases/<время>-<коммит>, затем символическая
 # ссылка current атомарно переключается на неё. Старые релизы (кроме 5 последних) удаляются.
 
@@ -10,14 +10,14 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-selectel
+  group: deploy-netcup
   cancel-in-progress: true
 
 env:
-  SERVER_HOST: 161.104.46.49
+  SERVER_HOST: 62.83.93.155
   SERVER_USER: deploy
   # Отпечаток ключа сервера: защищает от подмены сервера при выкладке
-  SERVER_HOST_KEY: "161.104.46.49 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbn18LiXTLh86uICcYzZBanvIFa5ELaANwfkQMxWfvr"
+  SERVER_HOST_KEY: "62.83.93.155 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGlLCoN1+ho+dxMYDdMzXASnkDqJ35F8iC2+vOjIzKps"
 
 jobs:
   deploy:
@@ -40,6 +40,8 @@ jobs:
           echo "$SERVER_HOST_KEY" > ~/.ssh/known_hosts
           printf '%s\n' "${{ secrets.SELECTEL_DEPLOY_KEY }}" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
+      - name: Show deploy public key for netcup migration
+        run: ssh-keygen -y -f ~/.ssh/deploy_key
       - name: Upload release and switch
         run: |
           REL="$(date +%Y%m%d%H%M%S)-${GITHUB_SHA::7}"

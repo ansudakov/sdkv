@@ -37,6 +37,14 @@ yarn-error.log*
 google-service-account*.json
 *-service-account*.json
 
+# local infrastructure credentials
+infra/**/credentials.local.*
+infra/**/deploy_key.local
+infra/**/deploy_key.local.pub
+infra/**/github_deploy_key.local
+infra/**/github_deploy_key.local.pub
+infra/**/known_hosts.local
+
 # vercel
 .vercel
 
